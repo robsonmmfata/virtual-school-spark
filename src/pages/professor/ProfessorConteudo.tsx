@@ -68,7 +68,14 @@ const ProfessorConteudo = () => {
               <p className="text-sm text-muted-foreground mb-2">
                 Arraste o vídeo aqui ou clique para selecionar
               </p>
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => toast({
+                  title: "Selecionando arquivo",
+                  description: "Abrindo seletor de arquivos de vídeo...",
+                })}
+              >
                 Selecionar Arquivo
               </Button>
             </div>
@@ -115,7 +122,14 @@ const ProfessorConteudo = () => {
               <p className="text-sm text-muted-foreground mb-2">
                 PDF, DOC, PPT (máx. 10MB)
               </p>
-              <Button variant="outline" size="sm">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => toast({
+                  title: "Selecionando arquivo",
+                  description: "Abrindo seletor de materiais de apoio...",
+                })}
+              >
                 Selecionar Arquivo
               </Button>
             </div>
@@ -164,7 +178,13 @@ const ProfessorConteudo = () => {
             </Select>
           </div>
 
-          <Button className="bg-education-green hover:bg-education-green/90">
+          <Button 
+            className="bg-education-green hover:bg-education-green/90"
+            onClick={() => toast({
+              title: "Link compartilhado!",
+              description: "O link foi enviado para a turma selecionada.",
+            })}
+          >
             Compartilhar Link
           </Button>
         </CardContent>

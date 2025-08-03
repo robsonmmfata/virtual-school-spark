@@ -77,12 +77,28 @@ const AdminComunicados = () => {
     setIsComposeOpen(false);
   };
 
-  const handleDelete = (id: number) => {
+  const handleView = (titulo: string) => {
     toast({
-      title: "Comunicado excluído!",
-      description: "O comunicado foi removido permanentemente.",
-      variant: "destructive"
+      title: "Visualizando comunicado",
+      description: `Abrindo detalhes de: ${titulo}`,
     });
+  };
+
+  const handleEdit = (titulo: string) => {
+    toast({
+      title: "Editando comunicado",
+      description: `Abrindo editor para: ${titulo}`,
+    });
+  };
+
+  const handleDelete = (id: number, titulo: string) => {
+    if (confirm(`Tem certeza que deseja excluir o comunicado "${titulo}"?`)) {
+      toast({
+        title: "Comunicado excluído!",
+        description: "O comunicado foi removido permanentemente.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -277,16 +293,24 @@ const AdminComunicados = () => {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleView(comunicado.titulo)}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleEdit(comunicado.titulo)}
+                      >
                         <Edit className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleDelete(comunicado.id)}
+                        onClick={() => handleDelete(comunicado.id, comunicado.titulo)}
                         className="text-destructive hover:text-destructive"
                       >
                         <Trash2 className="h-4 w-4" />

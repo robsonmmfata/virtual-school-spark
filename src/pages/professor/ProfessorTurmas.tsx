@@ -2,8 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Eye, MessageSquare, Plus } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const ProfessorTurmas = () => {
+  const { toast } = useToast();
+  
   const turmas = [
     {
       id: 1,
@@ -28,6 +31,27 @@ const ProfessorTurmas = () => {
     }
   ];
 
+  const handleNovaTurma = () => {
+    toast({
+      title: "Nova turma",
+      description: "Abrindo formulário para criar uma nova turma.",
+    });
+  };
+
+  const handleVerAlunos = (nomeTurma: string) => {
+    toast({
+      title: "Lista de alunos",
+      description: `Visualizando alunos da turma: ${nomeTurma}`,
+    });
+  };
+
+  const handleChat = (nomeTurma: string) => {
+    toast({
+      title: "Chat da turma",
+      description: `Abrindo chat da turma: ${nomeTurma}`,
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -35,7 +59,10 @@ const ProfessorTurmas = () => {
           <h1 className="text-2xl font-bold text-foreground">Minhas Turmas</h1>
           <p className="text-muted-foreground">Gerencie suas turmas e alunos</p>
         </div>
-        <Button className="bg-education-green hover:bg-education-green/90">
+        <Button 
+          className="bg-education-green hover:bg-education-green/90"
+          onClick={handleNovaTurma}
+        >
           <Plus className="h-4 w-4 mr-2" />
           Nova Turma
         </Button>
@@ -64,11 +91,21 @@ const ProfessorTurmas = () => {
               </div>
 
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex-1"
+                  onClick={() => handleVerAlunos(turma.nome)}
+                >
                   <Eye className="h-4 w-4 mr-2" />
                   Ver Alunos
                 </Button>
-                <Button variant="outline" size="sm" className="flex-1">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex-1"
+                  onClick={() => handleChat(turma.nome)}
+                >
                   <MessageSquare className="h-4 w-4 mr-2" />
                   Chat
                 </Button>

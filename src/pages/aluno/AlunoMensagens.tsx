@@ -13,8 +13,10 @@ import {
   User,
   CheckCircle2
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AlunoMensagens = () => {
+  const { toast } = useToast();
   const [novaMensagem, setNovaMensagem] = useState("");
   const [conversaSelecionada, setConversaSelecionada] = useState(1);
 
@@ -97,10 +99,26 @@ const AlunoMensagens = () => {
 
   const enviarMensagem = () => {
     if (novaMensagem.trim()) {
-      // Simulação de envio
-      alert(`Mensagem enviada: ${novaMensagem}`);
+      toast({
+        title: "Mensagem enviada!",
+        description: "Sua mensagem foi entregue ao professor.",
+      });
       setNovaMensagem("");
     }
+  };
+
+  const handleNovaConversa = () => {
+    toast({
+      title: "Nova conversa",
+      description: "Iniciando uma nova conversa com um professor.",
+    });
+  };
+
+  const handleVerPerfil = () => {
+    toast({
+      title: "Perfil do professor",
+      description: "Visualizando informações do professor.",
+    });
   };
 
   return (
@@ -110,7 +128,7 @@ const AlunoMensagens = () => {
           <h1 className="text-3xl font-bold text-foreground">Mensagens</h1>
           <p className="text-muted-foreground">Converse com seus professores e tire suas dúvidas</p>
         </div>
-        <Button>
+        <Button onClick={handleNovaConversa}>
           <Plus className="h-4 w-4 mr-2" />
           Nova Conversa
         </Button>
@@ -192,7 +210,11 @@ const AlunoMensagens = () => {
                 </div>
               </div>
               <div className="flex space-x-2">
-                <Button variant="outline" size="sm">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={handleVerPerfil}
+                >
                   <User className="h-4 w-4 mr-2" />
                   Perfil
                 </Button>

@@ -10,8 +10,11 @@ import {
   ChevronLeft,
   ChevronRight
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AlunoCronograma = () => {
+  const { toast } = useToast();
+  
   const eventos = [
     {
       id: 1,
@@ -77,6 +80,27 @@ const AlunoCronograma = () => {
     }
   };
 
+  const handlePreviousMonth = () => {
+    toast({
+      title: "Mês anterior",
+      description: "Navegando para o mês anterior.",
+    });
+  };
+
+  const handleNextMonth = () => {
+    toast({
+      title: "Próximo mês",
+      description: "Navegando para o próximo mês.",
+    });
+  };
+
+  const handleSelectDay = (dia: number) => {
+    toast({
+      title: `Dia ${dia} selecionado`,
+      description: "Visualizando eventos do dia selecionado.",
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -96,10 +120,18 @@ const AlunoCronograma = () => {
                 <span>Março 2024</span>
               </CardTitle>
               <div className="flex space-x-2">
-                <Button variant="outline" size="icon">
+                <Button 
+                  variant="outline" 
+                  size="icon"
+                  onClick={handlePreviousMonth}
+                >
                   <ChevronLeft className="h-4 w-4" />
                 </Button>
-                <Button variant="outline" size="icon">
+                <Button 
+                  variant="outline" 
+                  size="icon"
+                  onClick={handleNextMonth}
+                >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
               </div>
@@ -128,6 +160,7 @@ const AlunoCronograma = () => {
                       : ''
                     }
                   `}
+                  onClick={() => !item.isOutroMes && handleSelectDay(item.dia)}
                 >
                   {item.dia}
                   {/* Indicadores de eventos */}

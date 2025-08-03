@@ -9,8 +9,11 @@ import {
   Upload,
   Calendar
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AlunoTarefas = () => {
+  const { toast } = useToast();
+  
   const tarefas = [
     {
       id: 1,
@@ -94,6 +97,48 @@ const AlunoTarefas = () => {
     "Física": "bg-green-100 text-green-800",
     "Literatura": "bg-purple-100 text-purple-800",
     "Química": "bg-orange-100 text-orange-800"
+  };
+
+  const handleIniciarTarefa = (titulo: string) => {
+    toast({
+      title: "Tarefa iniciada!",
+      description: `Você começou a trabalhar na tarefa: ${titulo}`,
+    });
+  };
+
+  const handleEnviarTarefa = (titulo: string) => {
+    toast({
+      title: "Tarefa enviada!",
+      description: `A tarefa "${titulo}" foi enviada com sucesso.`,
+    });
+  };
+
+  const handleVerDetalhes = (titulo: string) => {
+    toast({
+      title: "Detalhes da tarefa",
+      description: `Visualizando informações detalhadas de: ${titulo}`,
+    });
+  };
+
+  const handleVerSubmissao = (titulo: string) => {
+    toast({
+      title: "Visualizando submissão",
+      description: `Abrindo arquivo enviado para: ${titulo}`,
+    });
+  };
+
+  const handleVerFeedback = (titulo: string) => {
+    toast({
+      title: "Feedback do professor",
+      description: `Visualizando correção e comentários de: ${titulo}`,
+    });
+  };
+
+  const handleVerDetalhesProximas = (titulo: string) => {
+    toast({
+      title: "Próximas entregas",
+      description: `Visualizando detalhes da tarefa: ${titulo}`,
+    });
   };
 
   return (
@@ -186,11 +231,17 @@ const AlunoTarefas = () => {
                     
                     {tarefa.status !== "entregue" && (
                       <div className="flex space-x-2">
-                        <Button className="flex-1">
+                        <Button 
+                          className="flex-1"
+                          onClick={() => tarefa.status === "em-andamento" ? handleEnviarTarefa(tarefa.titulo) : handleIniciarTarefa(tarefa.titulo)}
+                        >
                           <Upload className="h-4 w-4 mr-2" />
                           {tarefa.status === "em-andamento" ? "Enviar Tarefa" : "Iniciar Tarefa"}
                         </Button>
-                        <Button variant="outline">
+                        <Button 
+                          variant="outline"
+                          onClick={() => handleVerDetalhes(tarefa.titulo)}
+                        >
                           <FileText className="h-4 w-4 mr-2" />
                           Ver Detalhes
                         </Button>
@@ -199,11 +250,18 @@ const AlunoTarefas = () => {
                     
                     {tarefa.status === "entregue" && (
                       <div className="flex space-x-2">
-                        <Button variant="outline" className="flex-1">
+                        <Button 
+                          variant="outline" 
+                          className="flex-1"
+                          onClick={() => handleVerSubmissao(tarefa.titulo)}
+                        >
                           <FileText className="h-4 w-4 mr-2" />
                           Ver Submissão
                         </Button>
-                        <Button variant="outline">
+                        <Button 
+                          variant="outline"
+                          onClick={() => handleVerFeedback(tarefa.titulo)}
+                        >
                           Ver Feedback
                         </Button>
                       </div>
@@ -235,7 +293,13 @@ const AlunoTarefas = () => {
                 </div>
                 <div className="text-right">
                   <p className="font-medium text-primary">{item.prazo}</p>
-                  <Button variant="ghost" size="sm">Ver detalhes</Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => handleVerDetalhesProximas(item.tarefa)}
+                  >
+                    Ver detalhes
+                  </Button>
                 </div>
               </div>
             ))}

@@ -72,19 +72,28 @@ const AdminAlunos = () => {
     setIsAddDialogOpen(false);
   };
 
-  const handleEditAluno = (id: number) => {
+  const handleViewAluno = (id: number, nome: string) => {
     toast({
-      title: "Aluno editado!",
-      description: "As informações do aluno foram atualizadas.",
+      title: "Visualizando aluno",
+      description: `Abrindo perfil detalhado de: ${nome}`,
     });
   };
 
-  const handleDeleteAluno = (id: number) => {
+  const handleEditAluno = (id: number, nome: string) => {
     toast({
-      title: "Aluno removido!",
-      description: "O aluno foi removido do sistema.",
-      variant: "destructive"
+      title: "Editando aluno",
+      description: `Abrindo formulário de edição para: ${nome}`,
     });
+  };
+
+  const handleDeleteAluno = (id: number, nome: string) => {
+    if (confirm(`Tem certeza que deseja excluir o aluno ${nome}?`)) {
+      toast({
+        title: "Aluno removido!",
+        description: `${nome} foi removido do sistema.`,
+        variant: "destructive"
+      });
+    }
   };
 
   return (
@@ -198,20 +207,24 @@ const AdminAlunos = () => {
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm">
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleViewAluno(aluno.id, aluno.nome)}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleEditAluno(aluno.id)}
+                        onClick={() => handleEditAluno(aluno.id, aluno.nome)}
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleDeleteAluno(aluno.id)}
+                        onClick={() => handleDeleteAluno(aluno.id, aluno.nome)}
                         className="text-destructive hover:text-destructive"
                       >
                         <Trash2 className="h-4 w-4" />

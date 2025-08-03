@@ -11,8 +11,11 @@ import {
   Calendar,
   User
 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AlunoMateriais = () => {
+  const { toast } = useToast();
+  
   const materiais = [
     {
       id: 1,
@@ -97,8 +100,24 @@ const AlunoMateriais = () => {
   };
 
   const handlePreview = (titulo: string) => {
-    // Simulação de visualização
-    alert(`Visualizando: ${titulo}`);
+    toast({
+      title: "Visualizando material",
+      description: `Abrindo pré-visualização de: ${titulo}`,
+    });
+  };
+
+  const handleFilter = () => {
+    toast({
+      title: "Filtros aplicados",
+      description: "Os materiais foram filtrados conforme sua seleção.",
+    });
+  };
+
+  const handleFilterByDate = () => {
+    toast({
+      title: "Filtro por data",
+      description: "Ordenando materiais por data de upload.",
+    });
   };
 
   return (
@@ -124,11 +143,17 @@ const AlunoMateriais = () => {
               </div>
             </div>
             <div className="flex gap-2">
-              <Button variant="outline">
+              <Button 
+                variant="outline"
+                onClick={handleFilter}
+              >
                 <Filter className="h-4 w-4 mr-2" />
                 Filtrar por Matéria
               </Button>
-              <Button variant="outline">
+              <Button 
+                variant="outline"
+                onClick={handleFilterByDate}
+              >
                 <Calendar className="h-4 w-4 mr-2" />
                 Data
               </Button>

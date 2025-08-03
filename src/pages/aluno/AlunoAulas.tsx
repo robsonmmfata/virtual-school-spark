@@ -2,8 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Clock, Users, Star } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const AlunoAulas = () => {
+  const { toast } = useToast();
+  
   const aulas = [
     {
       id: 1,
@@ -64,6 +67,41 @@ const AlunoAulas = () => {
     }
   };
 
+  const handleEntrarAula = (titulo: string) => {
+    toast({
+      title: "Entrando na aula...",
+      description: `Conectando à aula: ${titulo}`,
+    });
+  };
+
+  const handleLembrete = (titulo: string) => {
+    toast({
+      title: "Lembrete ativado!",
+      description: `Você será notificado antes da aula: ${titulo}`,
+    });
+  };
+
+  const handleAssistirGravacao = (titulo: string) => {
+    toast({
+      title: "Reproduzindo aula...",
+      description: `Iniciando reprodução: ${titulo}`,
+    });
+  };
+
+  const handleFavoritar = (titulo: string) => {
+    toast({
+      title: "Adicionado aos favoritos!",
+      description: `Aula salva: ${titulo}`,
+    });
+  };
+
+  const handleVerDetalhes = (titulo: string) => {
+    toast({
+      title: "Detalhes da aula",
+      description: `Visualizando informações de: ${titulo}`,
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -81,7 +119,10 @@ const AlunoAulas = () => {
               <h2 className="text-xl font-semibold text-foreground mb-2">🔴 Aula Acontecendo Agora!</h2>
               <p className="text-foreground/80">{aulas.find(aula => aula.status === "ao-vivo")?.titulo}</p>
             </div>
-            <Button className="bg-red-500 hover:bg-red-600">
+            <Button 
+              className="bg-red-500 hover:bg-red-600"
+              onClick={() => handleEntrarAula(aulas.find(aula => aula.status === "ao-vivo")?.titulo || "")}
+            >
               <Play className="h-4 w-4 mr-2" />
               Entrar na Aula
             </Button>
@@ -133,24 +174,38 @@ const AlunoAulas = () => {
 
               <div className="flex space-x-2">
                 {aula.status === "ao-vivo" && (
-                  <Button className="flex-1 bg-red-500 hover:bg-red-600">
+                  <Button 
+                    className="flex-1 bg-red-500 hover:bg-red-600"
+                    onClick={() => handleEntrarAula(aula.titulo)}
+                  >
                     <Play className="h-4 w-4 mr-2" />
                     Entrar na Aula
                   </Button>
                 )}
                 {aula.status === "agendado" && (
-                  <Button variant="outline" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    className="flex-1"
+                    onClick={() => handleLembrete(aula.titulo)}
+                  >
                     <Clock className="h-4 w-4 mr-2" />
                     Lembrar-me
                   </Button>
                 )}
                 {aula.status === "gravado" && (
-                  <Button className="flex-1">
+                  <Button 
+                    className="flex-1"
+                    onClick={() => handleAssistirGravacao(aula.titulo)}
+                  >
                     <Play className="h-4 w-4 mr-2" />
                     Assistir Gravação
                   </Button>
                 )}
-                <Button variant="outline" size="icon">
+                <Button 
+                  variant="outline" 
+                  size="icon"
+                  onClick={() => handleFavoritar(aula.titulo)}
+                >
                   <Star className="h-4 w-4" />
                 </Button>
               </div>
@@ -178,7 +233,13 @@ const AlunoAulas = () => {
                 </div>
                 <div className="text-right">
                   <p className="font-medium text-primary">{item.horario}</p>
-                  <Button variant="ghost" size="sm">Ver detalhes</Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => handleVerDetalhes(item.aula)}
+                  >
+                    Ver detalhes
+                  </Button>
                 </div>
               </div>
             ))}
