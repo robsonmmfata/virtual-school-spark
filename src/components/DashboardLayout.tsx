@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation, Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { 
   GraduationCap, 
@@ -27,33 +28,34 @@ interface DashboardLayoutProps {
 const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const getMenuItems = () => {
     switch (userType) {
       case "aluno":
         return [
-          { name: "Aulas", path: "/dashboard/aluno/aulas", icon: Video },
-          { name: "Materiais", path: "/dashboard/aluno/materiais", icon: FileText },
-          { name: "Tarefas", path: "/dashboard/aluno/tarefas", icon: CheckSquare },
-          { name: "Cronograma", path: "/dashboard/aluno/cronograma", icon: Calendar },
-          { name: "Mensagens", path: "/dashboard/aluno/mensagens", icon: MessageSquare },
+          { name: t('dashboard.classes'), path: "/dashboard/aluno/aulas", icon: Video },
+          { name: t('dashboard.materials'), path: "/dashboard/aluno/materiais", icon: FileText },
+          { name: t('dashboard.tasks'), path: "/dashboard/aluno/tarefas", icon: CheckSquare },
+          { name: t('dashboard.schedule'), path: "/dashboard/aluno/cronograma", icon: Calendar },
+          { name: t('dashboard.messages'), path: "/dashboard/aluno/mensagens", icon: MessageSquare },
         ];
       case "professor":
         return [
-          { name: "Minhas Turmas", path: "/dashboard/professor/turmas", icon: Users },
-          { name: "Enviar Conteúdo", path: "/dashboard/professor/conteudo", icon: Upload },
-          { name: "Corrigir Tarefas", path: "/dashboard/professor/correcao", icon: CheckSquare },
-          { name: "Desempenho", path: "/dashboard/professor/desempenho", icon: BarChart3 },
-          { name: "Mensagens", path: "/dashboard/professor/mensagens", icon: MessageSquare },
+          { name: t('teacher.myGroups'), path: "/dashboard/professor/turmas", icon: Users },
+          { name: t('teacher.sendContent'), path: "/dashboard/professor/conteudo", icon: Upload },
+          { name: t('teacher.correctTasks'), path: "/dashboard/professor/correcao", icon: CheckSquare },
+          { name: t('teacher.performance'), path: "/dashboard/professor/desempenho", icon: BarChart3 },
+          { name: t('dashboard.messages'), path: "/dashboard/professor/mensagens", icon: MessageSquare },
         ];
       case "admin":
         return [
-          { name: "Dashboard", path: "/dashboard/admin", icon: BarChart3 },
-          { name: "Gerenciar Alunos", path: "/dashboard/admin/alunos", icon: Users },
-          { name: "Gerenciar Professores", path: "/dashboard/admin/professores", icon: Shield },
-          { name: "Comunicados", path: "/dashboard/admin/comunicados", icon: MessageSquare },
-          { name: "Relatórios", path: "/dashboard/admin/relatorios", icon: FileText },
-          { name: "Configurações", path: "/dashboard/admin/configuracoes", icon: Settings },
+          { name: t('navigation.dashboard'), path: "/dashboard/admin", icon: BarChart3 },
+          { name: t('admin.manageStudents'), path: "/dashboard/admin/alunos", icon: Users },
+          { name: t('admin.manageTeachers'), path: "/dashboard/admin/professores", icon: Shield },
+          { name: t('admin.announcements'), path: "/dashboard/admin/comunicados", icon: MessageSquare },
+          { name: t('admin.reports'), path: "/dashboard/admin/relatorios", icon: FileText },
+          { name: t('admin.configurations'), path: "/dashboard/admin/configuracoes", icon: Settings },
         ];
       default:
         return [];
@@ -117,9 +119,9 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
             <div>
               <p className="font-medium text-foreground">{userName}</p>
               <p className={`text-sm ${getUserColor()}`}>
-                {userType === "aluno" && "Estudante"}
-                {userType === "professor" && "Professor"}
-                {userType === "admin" && "Administrador"}
+                {userType === "aluno" && t('student.myClasses').split(' ')[0]}
+                {userType === "professor" && t('common.teacher')}
+                {userType === "admin" && t('admin.manageStudents').split(' ')[0]}
               </p>
             </div>
           </div>
@@ -151,7 +153,7 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
             onClick={() => window.location.href = "/"}
           >
             <LogOut className="h-5 w-5 mr-3" />
-            Sair
+            {t('common.exit')}
           </Button>
         </div>
       </div>
@@ -169,14 +171,14 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
             <Menu className="h-5 w-5" />
           </Button>
           <h2 className="text-xl font-semibold text-foreground">
-            Dashboard {userType === "aluno" && "do Aluno"}
-            {userType === "professor" && "do Professor"}
-            {userType === "admin" && "Administrativo"}
+            {t('navigation.dashboard')} {userType === "aluno" && t('student.myClasses').split(' ')[0]}
+            {userType === "professor" && t('common.teacher')}
+            {userType === "admin" && "Admin"}
           </h2>
           <div className="flex items-center space-x-2">
             <Button variant="outline" size="sm">
               <BookOpen className="h-4 w-4 mr-2" />
-              Ajuda
+              {t('common.help')}
             </Button>
           </div>
         </header>

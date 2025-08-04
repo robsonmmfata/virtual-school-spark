@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ const LoginProfessor = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const LoginProfessor = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 text-primary-foreground hover:text-education-orange transition-colors duration-300">
             <ArrowLeft className="h-5 w-5" />
-            <span>Voltar ao site</span>
+            <span>{t('common.backToSite')}</span>
           </Link>
         </div>
 
@@ -38,10 +40,10 @@ const LoginProfessor = () => {
               <Users className="h-8 w-8 text-primary-foreground" />
             </div>
             <CardTitle className="text-2xl font-bold text-foreground">
-              Portal do Professor
+              {t('common.teacherPortal')}
             </CardTitle>
             <p className="text-muted-foreground">
-              Acesse sua área de ensino
+              {t('common.accessTeachingArea')}
             </p>
           </CardHeader>
 
@@ -50,7 +52,7 @@ const LoginProfessor = () => {
               <div className="space-y-2">
                 <Label htmlFor="email" className="flex items-center gap-2 text-foreground">
                   <User className="h-4 w-4 text-education-green" />
-                  E-mail Institucional
+                  {t('common.institutionalEmail')}
                 </Label>
                 <Input
                   id="email"
@@ -66,12 +68,12 @@ const LoginProfessor = () => {
               <div className="space-y-2">
                 <Label htmlFor="password" className="flex items-center gap-2 text-foreground">
                   <Lock className="h-4 w-4 text-education-green" />
-                  Senha
+                  {t('auth.password')}
                 </Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Digite sua senha"
+                  placeholder={t('auth.password')}
                   value={credentials.password}
                   onChange={(e) => setCredentials({...credentials, password: e.target.value})}
                   required
@@ -82,10 +84,10 @@ const LoginProfessor = () => {
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center space-x-2 text-muted-foreground cursor-pointer">
                   <input type="checkbox" className="rounded border-border" />
-                  <span>Lembrar-me</span>
+                  <span>{t('common.rememberMe')}</span>
                 </label>
                 <Link to="#" className="text-education-green hover:text-education-green/80 transition-colors duration-300">
-                  Esqueceu a senha?
+                  {t('common.forgotPasswordQuestion')}
                 </Link>
               </div>
 
@@ -96,19 +98,19 @@ const LoginProfessor = () => {
                 size="lg" 
                 disabled={isLoading}
               >
-                {isLoading ? "Entrando..." : "Entrar"}
+                {isLoading ? t('common.enteringLogin') : t('auth.signIn')}
               </Button>
             </form>
 
             <div className="mt-6 text-center text-sm text-muted-foreground">
-              <p>Acesso restrito aos professores da instituição.</p>
+              <p>{t('common.restrictedAccess')}</p>
             </div>
 
             <div className="mt-4 text-center">
               <p className="text-sm text-muted-foreground">
-                É aluno?{" "}
+                {t('common.isStudent')}{" "}
                 <Link to="/login/aluno" className="text-primary hover:text-primary-glow transition-colors duration-300">
-                  Acesse o Portal do Aluno
+                  {t('common.accessStudentPortal')}
                 </Link>
               </p>
             </div>
@@ -117,7 +119,7 @@ const LoginProfessor = () => {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-blue-200">
-            Para demonstração, use qualquer e-mail/senha
+            {t('common.forDemonstration')}
           </p>
         </div>
       </div>

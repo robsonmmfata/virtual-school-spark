@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ const Footer = () => {
                 {t('navigation.features')}
               </Link>
               <Link to="/#equipe" className="text-blue-200 hover:text-primary-foreground transition-colors duration-300 text-sm">
-                Nossa Equipe
+                {t('home.footer.about')}
               </Link>
               <Link to="/#contato" className="text-blue-200 hover:text-primary-foreground transition-colors duration-300 text-sm">
                 {t('navigation.contact')}
@@ -49,7 +50,7 @@ const Footer = () => {
 
           {/* Portals */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Portais</h4>
+            <h4 className="text-lg font-semibold">{t('common.portals')}</h4>
             <nav className="flex flex-col space-y-2">
               <Link to="/login/aluno" className="text-blue-200 hover:text-primary-foreground transition-colors duration-300 text-sm">
                 {t('auth.loginAsStudent')}
@@ -82,7 +83,7 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="space-y-2">
+            <div className="space-y-3">
               <h5 className="font-medium">{t('home.footer.followUs')}</h5>
               <div className="flex space-x-3">
                 <Button size="icon" variant="ghost" className="h-8 w-8 text-blue-200 hover:text-primary-foreground hover:bg-primary/20">
@@ -94,6 +95,11 @@ const Footer = () => {
                 <Button size="icon" variant="ghost" className="h-8 w-8 text-blue-200 hover:text-primary-foreground hover:bg-primary/20">
                   <Youtube className="h-4 w-4" />
                 </Button>
+              </div>
+              
+              <div className="pt-2">
+                <h5 className="font-medium mb-2">{t('common.language')}</h5>
+                <LanguageSelector />
               </div>
             </div>
           </div>

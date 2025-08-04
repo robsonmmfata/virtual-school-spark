@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,6 +11,7 @@ const LoginAdmin = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ const LoginAdmin = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 text-primary-foreground hover:text-education-orange transition-colors duration-300">
             <ArrowLeft className="h-5 w-5" />
-            <span>Voltar ao site</span>
+            <span>{t('common.backToSite')}</span>
           </Link>
         </div>
 
@@ -38,10 +40,10 @@ const LoginAdmin = () => {
               <Shield className="h-8 w-8 text-primary-foreground" />
             </div>
             <CardTitle className="text-2xl font-bold text-foreground">
-              Painel Administrativo
+              {t('common.administrativePanel')}
             </CardTitle>
             <p className="text-muted-foreground">
-              Acesso restrito à administração
+              {t('common.restrictedAdminAccess')}
             </p>
           </CardHeader>
 
@@ -50,7 +52,7 @@ const LoginAdmin = () => {
               <div className="space-y-2">
                 <Label htmlFor="email" className="flex items-center gap-2 text-foreground">
                   <User className="h-4 w-4 text-education-purple" />
-                  E-mail Administrativo
+                  {t('common.administrativeEmail')}
                 </Label>
                 <Input
                   id="email"
@@ -66,12 +68,12 @@ const LoginAdmin = () => {
               <div className="space-y-2">
                 <Label htmlFor="password" className="flex items-center gap-2 text-foreground">
                   <Lock className="h-4 w-4 text-education-purple" />
-                  Senha
+                  {t('auth.password')}
                 </Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Digite sua senha"
+                  placeholder={t('auth.password')}
                   value={credentials.password}
                   onChange={(e) => setCredentials({...credentials, password: e.target.value})}
                   required
@@ -82,10 +84,10 @@ const LoginAdmin = () => {
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center space-x-2 text-muted-foreground cursor-pointer">
                   <input type="checkbox" className="rounded border-border" />
-                  <span>Lembrar-me</span>
+                  <span>{t('common.rememberMe')}</span>
                 </label>
                 <Link to="#" className="text-education-purple hover:text-education-purple/80 transition-colors duration-300">
-                  Esqueceu a senha?
+                  {t('common.forgotPasswordQuestion')}
                 </Link>
               </div>
 
@@ -96,23 +98,23 @@ const LoginAdmin = () => {
                 size="lg" 
                 disabled={isLoading}
               >
-                {isLoading ? "Entrando..." : "Entrar"}
+                {isLoading ? t('common.enteringLogin') : t('auth.signIn')}
               </Button>
             </form>
 
             <div className="mt-6 text-center text-sm text-muted-foreground">
-              <p>Área restrita para administradores e secretaria.</p>
+              <p>{t('common.secretaryArea')}</p>
             </div>
 
             <div className="mt-4 space-y-2 text-center">
               <p className="text-sm text-muted-foreground">
-                Outros acessos:{" "}
+                {t('common.otherAccess')}:{" "}
                 <Link to="/login/aluno" className="text-primary hover:text-primary-glow transition-colors duration-300">
-                  Aluno
+                  {t('auth.loginAsStudent').replace('Login do ', '')}
                 </Link>
                 {" | "}
                 <Link to="/login/professor" className="text-education-green hover:text-education-green/80 transition-colors duration-300">
-                  Professor
+                  {t('common.teacher')}
                 </Link>
               </p>
             </div>
@@ -121,7 +123,7 @@ const LoginAdmin = () => {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-blue-200">
-            Para demonstração, use qualquer e-mail/senha
+            {t('common.forDemonstration')}
           </p>
         </div>
       </div>
