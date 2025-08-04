@@ -1,24 +1,27 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Menu, X, GraduationCap } from "lucide-react";
+import { LanguageSelector } from "@/components/LanguageSelector";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { name: "Início", path: "/" },
-    { name: "Sobre", path: "/#sobre" },
-    { name: "Estrutura", path: "/#estrutura" },
+    { name: t('navigation.home'), path: "/" },
+    { name: t('navigation.about'), path: "/#sobre" },
+    { name: t('navigation.features'), path: "/#estrutura" },
     { name: "Equipe", path: "/#equipe" },
-    { name: "Contato", path: "/#contato" },
+    { name: t('navigation.contact'), path: "/#contato" },
   ];
 
   const loginOptions = [
-    { name: "Portal do Aluno", path: "/login/aluno" },
-    { name: "Portal do Professor", path: "/login/professor" },
-    { name: "Painel Admin", path: "/login/admin" },
+    { name: t('auth.loginAsStudent'), path: "/login/aluno" },
+    { name: t('auth.loginAsTeacher'), path: "/login/professor" },
+    { name: t('auth.loginAsAdmin'), path: "/login/admin" },
   ];
 
   return (
@@ -52,9 +55,10 @@ const Header = () => {
 
           {/* Login Dropdown */}
           <div className="hidden lg:flex items-center space-x-4">
+            <LanguageSelector />
             <div className="relative group">
               <Button variant="outline" className="group-hover:border-primary">
-                Entrar
+                {t('navigation.login')}
               </Button>
               <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-elegant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="p-2">
@@ -96,7 +100,8 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-4 py-2">
-                <p className="text-sm font-medium text-muted-foreground mb-2">Entrar</p>
+                <LanguageSelector />
+                <p className="text-sm font-medium text-muted-foreground mb-2">{t('navigation.login')}</p>
                 {loginOptions.map((option) => (
                   <Link
                     key={option.name}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -26,6 +27,7 @@ import teacher2 from "@/assets/teacher-2.jpg";
 import teacher3 from "@/assets/teacher-3.jpg";
 
 const Home = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,41 +37,40 @@ const Home = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulação de envio
-    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    alert(t('notifications.messagesSent'));
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
   const estruturaCards = [
     {
       icon: Video,
-      title: "Aulas Ao Vivo",
-      description: "Interação em tempo real com professores especializados através de videoconferências interativas."
+      title: t('home.features.virtualClassroom'),
+      description: t('home.features.virtualClassroomDesc')
     },
     {
       icon: BookOpen,
-      title: "Material Didático",
-      description: "Conteúdo exclusivo desenvolvido por nossa equipe pedagógica, sempre atualizado e acessível."
+      title: t('home.features.materialManagement'),
+      description: t('home.features.materialManagementDesc')
     },
     {
       icon: Users,
-      title: "Tutoria Personalizada",
-      description: "Acompanhamento individual com tutores dedicados para potencializar seu aprendizado."
+      title: t('home.features.progressTracking'),
+      description: t('home.features.progressTrackingDesc')
     },
     {
       icon: Award,
-      title: "Certificação",
-      description: "Certificado reconhecido pelo MEC com validade em todo território nacional."
+      title: t('common.certificate'),
+      description: t('common.certificateDesc')
     },
     {
       icon: Clock,
-      title: "Flexibilidade",
-      description: "Estude no seu ritmo, quando e onde quiser, com acesso 24/7 à plataforma."
+      title: t('common.flexibility'),
+      description: t('common.flexibilityDesc')
     },
     {
       icon: Globe,
-      title: "Plataforma Global",
-      description: "Tecnologia de ponta que conecta estudantes de todo o Brasil em um ambiente virtual seguro."
+      title: t('common.globalPlatform'),
+      description: t('common.globalPlatformDesc')
     }
   ];
 
@@ -112,20 +113,19 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center text-primary-foreground space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Educação de Qualidade
-              <span className="block text-education-orange">Onde Você Estiver</span>
+              {t('home.title')}
+              <span className="block text-education-orange">{t('home.subtitle')}</span>
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Transforme seu futuro com nossa escola virtual 100% online. 
-              Aprenda com os melhores professores do país, no conforto da sua casa.
+              {t('home.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
               <Button size="xl" variant="hero" className="group">
-                Comece Agora
+                {t('home.getStarted')}
                 <CheckCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
               </Button>
               <Button size="xl" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-primary-foreground hover:bg-white/20">
-                Saiba Mais
+                {t('home.learnMore')}
               </Button>
             </div>
           </div>
