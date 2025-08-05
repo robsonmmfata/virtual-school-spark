@@ -183,6 +183,44 @@
     "description": "Una plataforma completa para educación en línea con características avanzadas para estudiantes, profesores y administradores.",
     "getStarted": "Comenzar",
     "learnMore": "Saber Más",
+    "aboutEduVirtual": "Sobre EduVirtual",
+    "aboutDescription1": "Somos una escuela secundaria 100% virtual, comprometida en ofrecer educación de calidad a través de tecnología innovadora. Nuestra misión es democratizar el acceso al conocimiento, conectando estudiantes con los mejores profesores del país.",
+    "aboutDescription2": "Con una metodología única que combina clases en vivo, materiales exclusivos y seguimiento personalizado, preparamos a nuestros estudiantes no solo para los exámenes de ingreso universitario, sino para los desafíos del futuro.",
+    "studentsGraduated": "Estudiantes Graduados",
+    "approvalRate": "Tasa de Aprobación",
+    "teachingStructure": "Nuestra Estructura de Enseñanza",
+    "teachingStructureDesc": "Metodología innovadora que combina tecnología de vanguardia con la experiencia de los mejores educadores del país.",
+    "pedagogicalTeam": "Nuestro Equipo Pedagógico",
+    "pedagogicalTeamDesc": "Profesores especialistas y maestros en sus áreas, dedicados a tu éxito académico.",
+    "contact": "Contacto",
+    "contactDesc": "¿Tienes preguntas? Nuestro equipo está listo para ayudarte a comenzar tu jornada educativa.",
+    "fullName": "Nombre Completo",
+    "fullNamePlaceholder": "Tu nombre completo",
+    "emailPlaceholder": "tu@email.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "¿Cuál es el asunto de tu mensaje?",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "sendMessage": "Enviar Mensaje",
+    "virtualEducation": "Educación Virtual",
+    "virtualClassroom": "Aula Virtual",
+    "teachers": {
+      "ana": {
+        "name": "Prof. Ana Silva",
+        "specialty": "Matemáticas y Física",
+        "experience": "15 años de experiencia"
+      },
+      "carlos": {
+        "name": "Prof. Carlos Santos",
+        "specialty": "Lengua Portuguesa y Literatura",
+        "experience": "12 años de experiencia"
+      },
+      "marina": {
+        "name": "Prof. Marina Costa",
+        "specialty": "Biología y Química",
+        "experience": "18 años de experiencia"
+      }
+    },
     "features": {
       "title": "Características Principales",
       "virtualClassroom": "Aula Virtual",

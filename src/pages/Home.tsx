@@ -76,21 +76,21 @@ const Home = () => {
 
   const professores = [
     {
-      name: "Profa. Ana Silva",
-      specialty: "Matemática e Física",
-      experience: "15 anos de experiência",
+      name: t('home.teachers.ana.name'),
+      specialty: t('home.teachers.ana.specialty'),
+      experience: t('home.teachers.ana.experience'),
       image: teacher1
     },
     {
-      name: "Prof. Carlos Santos",
-      specialty: "Língua Portuguesa e Literatura",
-      experience: "12 anos de experiência",
+      name: t('home.teachers.carlos.name'),
+      specialty: t('home.teachers.carlos.specialty'),
+      experience: t('home.teachers.carlos.experience'),
       image: teacher2
     },
     {
-      name: "Profa. Marina Costa",
-      specialty: "Biologia e Química",
-      experience: "18 anos de experiência",
+      name: t('home.teachers.marina.name'),
+      specialty: t('home.teachers.marina.specialty'),
+      experience: t('home.teachers.marina.experience'),
       image: teacher3
     }
   ];
@@ -104,7 +104,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImage} 
-            alt="Educação Virtual" 
+            alt={t('home.virtualEducation')} 
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
@@ -142,33 +142,29 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Sobre a <span className="text-primary">EduVirtual</span>
+                {t('home.aboutEduVirtual')}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Somos uma escola de ensino médio 100% virtual, comprometida em oferecer educação de qualidade 
-                através de tecnologia inovadora. Nossa missão é democratizar o acesso ao conhecimento, 
-                conectando estudantes aos melhores professores do país.
+                {t('home.aboutDescription1')}
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Com uma metodologia única que combina aulas ao vivo, materiais exclusivos e 
-                acompanhamento personalizado, preparamos nossos alunos não apenas para o ENEM, 
-                mas para os desafios do futuro.
+                {t('home.aboutDescription2')}
               </p>
               <div className="grid grid-cols-2 gap-6 pt-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">5000+</div>
-                  <div className="text-muted-foreground">Alunos Formados</div>
+                  <div className="text-muted-foreground">{t('home.studentsGraduated')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">98%</div>
-                  <div className="text-muted-foreground">Taxa de Aprovação</div>
+                  <div className="text-muted-foreground">{t('home.approvalRate')}</div>
                 </div>
               </div>
             </div>
             <div className="relative">
               <img 
                 src={virtualClassroomImage} 
-                alt="Sala de Aula Virtual" 
+                alt={t('home.virtualClassroom')} 
                 className="rounded-lg shadow-elegant w-full"
               />
               <div className="absolute inset-0 bg-gradient-primary/10 rounded-lg"></div>
@@ -182,11 +178,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Nossa <span className="text-primary">Estrutura de Ensino</span>
+              {t('home.teachingStructure')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Metodologia inovadora que combina tecnologia de ponta com a expertise 
-              dos melhores educadores do país.
+              {t('home.teachingStructureDesc')}
             </p>
           </div>
 
@@ -211,10 +206,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Nossa <span className="text-primary">Equipe Pedagógica</span>
+              {t('home.pedagogicalTeam')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Professores especialistas e mestres em suas áreas, dedicados ao seu sucesso acadêmico.
+              {t('home.pedagogicalTeamDesc')}
             </p>
           </div>
 
@@ -253,10 +248,10 @@ const Home = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-4 mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                Entre em <span className="text-primary">Contato</span>
+                {t('home.contact')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Tem dúvidas? Nossa equipe está pronta para ajudar você a começar sua jornada educacional.
+                {t('home.contactDesc')}
               </p>
             </div>
 
@@ -267,11 +262,11 @@ const Home = () => {
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground flex items-center gap-2">
                         <User className="h-4 w-4 text-primary" />
-                        Nome Completo
+                        {t('home.fullName')}
                       </label>
                       <Input
                         type="text"
-                        placeholder="Seu nome completo"
+                        placeholder={t('home.fullNamePlaceholder')}
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         required
@@ -281,11 +276,11 @@ const Home = () => {
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground flex items-center gap-2">
                         <Mail className="h-4 w-4 text-primary" />
-                        E-mail
+                        {t('common.email')}
                       </label>
                       <Input
                         type="email"
-                        placeholder="seu@email.com"
+                        placeholder={t('home.emailPlaceholder')}
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         required
@@ -297,11 +292,11 @@ const Home = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground flex items-center gap-2">
                       <FileText className="h-4 w-4 text-primary" />
-                      Assunto
+                      {t('home.subject')}
                     </label>
                     <Input
                       type="text"
-                      placeholder="Qual o assunto da sua mensagem?"
+                      placeholder={t('home.subjectPlaceholder')}
                       value={formData.subject}
                       onChange={(e) => setFormData({...formData, subject: e.target.value})}
                       required
@@ -312,10 +307,10 @@ const Home = () => {
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground flex items-center gap-2">
                       <MessageSquare className="h-4 w-4 text-primary" />
-                      Mensagem
+                      {t('home.message')}
                     </label>
                     <Textarea
-                      placeholder="Escreva sua mensagem aqui..."
+                      placeholder={t('home.messagePlaceholder')}
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -325,7 +320,7 @@ const Home = () => {
                   </div>
 
                   <Button type="submit" size="lg" className="w-full">
-                    Enviar Mensagem
+                    {t('home.sendMessage')}
                     <Mail className="ml-2 h-5 w-5" />
                   </Button>
                 </form>

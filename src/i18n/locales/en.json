@@ -183,6 +183,44 @@
     "description": "A complete platform for online education with advanced features for students, teachers and administrators.",
     "getStarted": "Get Started",
     "learnMore": "Learn More",
+    "aboutEduVirtual": "About EduVirtual",
+    "aboutDescription1": "We are a 100% virtual high school, committed to offering quality education through innovative technology. Our mission is to democratize access to knowledge, connecting students to the country's best teachers.",
+    "aboutDescription2": "With a unique methodology that combines live classes, exclusive materials and personalized support, we prepare our students not only for college entrance exams, but for future challenges.",
+    "studentsGraduated": "Graduated Students",
+    "approvalRate": "Approval Rate",
+    "teachingStructure": "Our Teaching Structure",
+    "teachingStructureDesc": "Innovative methodology that combines cutting-edge technology with the expertise of the country's best educators.",
+    "pedagogicalTeam": "Our Pedagogical Team",
+    "pedagogicalTeamDesc": "Specialist teachers and masters in their areas, dedicated to your academic success.",
+    "contact": "Contact Us",
+    "contactDesc": "Have questions? Our team is ready to help you start your educational journey.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What is the subject of your message?",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "sendMessage": "Send Message",
+    "virtualEducation": "Virtual Education",
+    "virtualClassroom": "Virtual Classroom",
+    "teachers": {
+      "ana": {
+        "name": "Prof. Ana Silva",
+        "specialty": "Mathematics and Physics",
+        "experience": "15 years of experience"
+      },
+      "carlos": {
+        "name": "Prof. Carlos Santos",
+        "specialty": "Portuguese Language and Literature",
+        "experience": "12 years of experience"
+      },
+      "marina": {
+        "name": "Prof. Marina Costa",
+        "specialty": "Biology and Chemistry",
+        "experience": "18 years of experience"
+      }
+    },
     "features": {
       "title": "Main Features",
       "virtualClassroom": "Virtual Classroom",

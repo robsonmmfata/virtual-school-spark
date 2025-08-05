@@ -189,6 +189,44 @@
     "description": "Uma plataforma completa para educação online com recursos avançados para alunos, professores e administradores.",
     "getStarted": "Começar",
     "learnMore": "Saiba Mais",
+    "aboutEduVirtual": "Sobre a EduVirtual",
+    "aboutDescription1": "Somos uma escola de ensino médio 100% virtual, comprometida em oferecer educação de qualidade através de tecnologia inovadora. Nossa missão é democratizar o acesso ao conhecimento, conectando estudantes aos melhores professores do país.",
+    "aboutDescription2": "Com uma metodologia única que combina aulas ao vivo, materiais exclusivos e acompanhamento personalizado, preparamos nossos alunos não apenas para o ENEM, mas para os desafios do futuro.",
+    "studentsGraduated": "Alunos Formados",
+    "approvalRate": "Taxa de Aprovação",
+    "teachingStructure": "Nossa Estrutura de Ensino",
+    "teachingStructureDesc": "Metodologia inovadora que combina tecnologia de ponta com a expertise dos melhores educadores do país.",
+    "pedagogicalTeam": "Nossa Equipe Pedagógica",
+    "pedagogicalTeamDesc": "Professores especialistas e mestres em suas áreas, dedicados ao seu sucesso acadêmico.",
+    "contact": "Entre em Contato",
+    "contactDesc": "Tem dúvidas? Nossa equipe está pronta para ajudar você a começar sua jornada educacional.",
+    "fullName": "Nome Completo",
+    "fullNamePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "seu@email.com",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Qual o assunto da sua mensagem?",
+    "message": "Mensagem",
+    "messagePlaceholder": "Escreva sua mensagem aqui...",
+    "sendMessage": "Enviar Mensagem",
+    "virtualEducation": "Educação Virtual",
+    "virtualClassroom": "Sala de Aula Virtual",
+    "teachers": {
+      "ana": {
+        "name": "Profa. Ana Silva",
+        "specialty": "Matemática e Física",
+        "experience": "15 anos de experiência"
+      },
+      "carlos": {
+        "name": "Prof. Carlos Santos",
+        "specialty": "Língua Portuguesa e Literatura",
+        "experience": "12 anos de experiência"
+      },
+      "marina": {
+        "name": "Profa. Marina Costa",
+        "specialty": "Biologia e Química",
+        "experience": "18 anos de experiência"
+      }
+    },
     "features": {
       "title": "Recursos Principais",
       "virtualClassroom": "Sala de Aula Virtual",
