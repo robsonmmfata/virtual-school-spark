@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Play, Clock, Users, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const AlunoAulas = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   
   const aulas = [
     {
@@ -106,7 +108,7 @@ const AlunoAulas = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">Minhas Aulas</h1>
+          <h1 className="text-3xl font-bold text-foreground">{t('student.myClasses')}</h1>
           <p className="text-muted-foreground">Assista suas aulas ao vivo ou gravadas</p>
         </div>
       </div>

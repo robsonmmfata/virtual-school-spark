@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Eye, MessageSquare, Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const ProfessorTurmas = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   
   const turmas = [
     {
@@ -56,7 +58,7 @@ const ProfessorTurmas = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Minhas Turmas</h1>
+          <h1 className="text-2xl font-bold text-foreground">{t('teacher.myGroups')}</h1>
           <p className="text-muted-foreground">Gerencie suas turmas e alunos</p>
         </div>
         <Button 
@@ -64,7 +66,7 @@ const ProfessorTurmas = () => {
           onClick={handleNovaTurma}
         >
           <Plus className="h-4 w-4 mr-2" />
-          Nova Turma
+          {t('teacher.createClass')}
         </Button>
       </div>
 

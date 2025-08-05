@@ -2,32 +2,35 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from "recharts";
 import { Users, GraduationCap, BookOpen, TrendingUp, Calendar, MessageSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const AdminDashboard = () => {
+  const { t } = useTranslation();
+  
   const stats = [
     {
-      title: "Total de Alunos",
+      title: t('common.totalStudents'),
       value: "248",
       change: "+12%",
       icon: Users,
       color: "text-primary"
     },
     {
-      title: "Professores Ativos",
+      title: t('common.activeTeachers'),
       value: "15",
       change: "+2",
       icon: GraduationCap,
       color: "text-education-green"
     },
     {
-      title: "Turmas",
+      title: t('common.classes'),
       value: "18",
       change: "+3",
       icon: BookOpen,
       color: "text-education-orange"
     },
     {
-      title: "Taxa de Aprovação",
+      title: t('common.approvalRate'),
       value: "94%",
       change: "+5%",
       icon: TrendingUp,
@@ -53,17 +56,17 @@ const AdminDashboard = () => {
   ];
 
   const atividades = [
-    { tipo: "Nova matrícula", aluno: "Pedro Silva", horario: "há 2 horas" },
-    { tipo: "Professor adicionado", professor: "Dr. Carlos Lima", horario: "há 3 horas" },
-    { tipo: "Comunicado enviado", detalhes: "Informações sobre férias", horario: "há 5 horas" },
-    { tipo: "Relatório gerado", detalhes: "Notas do 1º bimestre", horario: "há 1 dia" }
+    { tipo: t('common.newEnrollment'), aluno: "Pedro Silva", horario: `${t('common.hours')} 2 ${t('common.hour')}` },
+    { tipo: t('common.teacherAdded'), professor: "Dr. Carlos Lima", horario: `${t('common.hours')} 3 ${t('common.hour')}` },
+    { tipo: t('common.announcementSent'), detalhes: "Informações sobre férias", horario: `${t('common.hours')} 5 ${t('common.hour')}` },
+    { tipo: t('common.reportGenerated'), detalhes: "Notas do 1º bimestre", horario: `${t('common.hours')} 1 ${t('common.days')}` }
   ];
 
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Dashboard Administrativo</h1>
-        <p className="text-muted-foreground">Visão geral da escola virtual</p>
+        <h1 className="text-2xl font-bold text-foreground">{t('common.administrativeDashboard')}</h1>
+        <p className="text-muted-foreground">{t('common.virtualSchoolOverview')}</p>
       </div>
 
       {/* Cards de Estatísticas */}
@@ -76,7 +79,7 @@ const AdminDashboard = () => {
                   <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
                   <p className="text-2xl font-bold">{stat.value}</p>
                   <p className="text-xs text-education-green">
-                    {stat.change} este mês
+                    {stat.change} {t('common.thisMonth')}
                   </p>
                 </div>
                 <stat.icon className={`h-8 w-8 ${stat.color}`} />
@@ -90,7 +93,7 @@ const AdminDashboard = () => {
         {/* Ocupação das Turmas */}
         <Card>
           <CardHeader>
-            <CardTitle>Ocupação das Turmas</CardTitle>
+            <CardTitle>{t('common.classOccupancy')}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -98,7 +101,7 @@ const AdminDashboard = () => {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
                     <span>{turma.turma}</span>
-                    <span>{turma.alunos}/{turma.capacidade} alunos</span>
+                    <span>{turma.alunos}/{turma.capacidade} {t('common.studentsPerClass')}</span>
                   </div>
                   <Progress value={(turma.alunos / turma.capacidade) * 100} className="h-2" />
                 </div>
@@ -112,7 +115,7 @@ const AdminDashboard = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calendar className="h-5 w-5" />
-              Atividades Recentes
+              {t('common.recentActivities')}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -143,7 +146,7 @@ const AdminDashboard = () => {
       {/* Gráfico de Evolução */}
       <Card>
         <CardHeader>
-          <CardTitle>Evolução de Matrículas</CardTitle>
+          <CardTitle>{t('common.enrollmentEvolution')}</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={300}>
@@ -170,7 +173,7 @@ const AdminDashboard = () => {
           <CardContent className="p-6 text-center">
             <MessageSquare className="h-8 w-8 text-education-orange mx-auto mb-2" />
             <p className="text-2xl font-bold">47</p>
-            <p className="text-sm text-muted-foreground">Mensagens Pendentes</p>
+            <p className="text-sm text-muted-foreground">{t('common.pendingMessages')}</p>
           </CardContent>
         </Card>
 
@@ -178,7 +181,7 @@ const AdminDashboard = () => {
           <CardContent className="p-6 text-center">
             <BookOpen className="h-8 w-8 text-education-purple mx-auto mb-2" />
             <p className="text-2xl font-bold">156</p>
-            <p className="text-sm text-muted-foreground">Tarefas Enviadas</p>
+            <p className="text-sm text-muted-foreground">{t('common.sentTasks')}</p>
           </CardContent>
         </Card>
 
@@ -186,7 +189,7 @@ const AdminDashboard = () => {
           <CardContent className="p-6 text-center">
             <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
             <p className="text-2xl font-bold">8.4</p>
-            <p className="text-sm text-muted-foreground">Média Geral</p>
+            <p className="text-sm text-muted-foreground">{t('common.generalAverage')}</p>
           </CardContent>
         </Card>
       </div>

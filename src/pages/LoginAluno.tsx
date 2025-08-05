@@ -31,7 +31,7 @@ const LoginAluno = () => {
         <div className="flex justify-between items-center mb-8">
           <Link to="/" className="inline-flex items-center space-x-2 text-primary-foreground hover:text-education-orange transition-colors duration-300">
             <ArrowLeft className="h-5 w-5" />
-            <span>{t('errors.goHome')}</span>
+            <span>{t('common.backToSite')}</span>
           </Link>
           <LanguageSelector />
         </div>
@@ -54,12 +54,12 @@ const LoginAluno = () => {
               <div className="space-y-2">
                 <Label htmlFor="email" className="flex items-center gap-2 text-foreground">
                   <User className="h-4 w-4 text-primary" />
-                  E-mail ou RA
+                  {t('common.emailOrRA')}
                 </Label>
                 <Input
                   id="email"
                   type="text"
-                  placeholder="Digite seu e-mail ou RA"
+                  placeholder={t('common.enterEmailOrRA')}
                   value={credentials.email}
                   onChange={(e) => setCredentials({...credentials, email: e.target.value})}
                   required
@@ -70,12 +70,12 @@ const LoginAluno = () => {
               <div className="space-y-2">
                 <Label htmlFor="password" className="flex items-center gap-2 text-foreground">
                   <Lock className="h-4 w-4 text-primary" />
-                  Senha
+                  {t('auth.password')}
                 </Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Digite sua senha"
+                  placeholder={t('common.enterPassword')}
                   value={credentials.password}
                   onChange={(e) => setCredentials({...credentials, password: e.target.value})}
                   required
@@ -86,10 +86,10 @@ const LoginAluno = () => {
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center space-x-2 text-muted-foreground cursor-pointer">
                   <input type="checkbox" className="rounded border-border" />
-                  <span>Lembrar-me</span>
+                  <span>{t('common.rememberMe')}</span>
                 </label>
                 <Link to="#" className="text-primary hover:text-primary-glow transition-colors duration-300">
-                  Esqueceu a senha?
+                  {t('common.forgotPasswordQuestion')}
                 </Link>
               </div>
 
@@ -99,19 +99,19 @@ const LoginAluno = () => {
                 size="lg" 
                 disabled={isLoading}
               >
-                {isLoading ? "Entrando..." : "Entrar"}
+                {isLoading ? t('common.enteringLogin') : t('auth.signIn')}
               </Button>
             </form>
 
             <div className="mt-6 text-center text-sm text-muted-foreground">
-              <p>Primeiro acesso? Entre em contato com a secretaria para receber suas credenciais.</p>
+              <p>{t('common.firstAccess')}</p>
             </div>
 
             <div className="mt-4 text-center">
               <p className="text-sm text-muted-foreground">
-                Não é aluno?{" "}
+                {t('common.notStudent')}{" "}
                 <Link to="/login/professor" className="text-primary hover:text-primary-glow transition-colors duration-300">
-                  Acesse como Professor
+                  {t('common.accessAsTeacher')}
                 </Link>
               </p>
             </div>
@@ -120,7 +120,7 @@ const LoginAluno = () => {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-blue-200">
-            Para demonstração, use qualquer e-mail/senha
+            {t('common.forDemonstration')}
           </p>
         </div>
       </div>
