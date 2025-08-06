@@ -126,10 +126,10 @@ const AdminDashboard = () => {
                   <div className="flex-1">
                     <p className="text-sm font-medium">{atividade.tipo}</p>
                     {atividade.aluno && (
-                      <p className="text-xs text-muted-foreground">Aluno: {atividade.aluno}</p>
+                      <p className="text-xs text-muted-foreground">{t('student.student')}: {atividade.aluno}</p>
                     )}
                     {atividade.professor && (
-                      <p className="text-xs text-muted-foreground">Professor: {atividade.professor}</p>
+                      <p className="text-xs text-muted-foreground">{t('common.teacher')}: {atividade.professor}</p>
                     )}
                     {atividade.detalhes && (
                       <p className="text-xs text-muted-foreground">{atividade.detalhes}</p>

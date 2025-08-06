@@ -7,10 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Upload, FileText, Video, Link as LinkIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const ProfessorConteudo = () => {
   const [uploading, setUploading] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleUpload = () => {
     setUploading(true);
@@ -26,8 +28,8 @@ const ProfessorConteudo = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Enviar Conteúdo</h1>
-        <p className="text-muted-foreground">Compartilhe materiais e vídeos com suas turmas</p>
+        <h1 className="text-2xl font-bold text-foreground">{t('common.sendContent')}</h1>
+        <p className="text-muted-foreground">{t('common.shareContentWithClasses')}</p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">

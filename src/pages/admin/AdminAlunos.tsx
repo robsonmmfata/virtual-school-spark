@@ -9,11 +9,13 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, Plus, Edit, Trash2, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const AdminAlunos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const alunos = [
     {
@@ -100,38 +102,38 @@ const AdminAlunos = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-foreground">Gerenciar Alunos</h1>
-          <p className="text-muted-foreground">Cadastre e gerencie os alunos da escola</p>
+          <h1 className="text-2xl font-bold text-foreground">{t('common.manageStudents')}</h1>
+          <p className="text-muted-foreground">{t('common.registerManageStudents')}</p>
         </div>
         <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
           <DialogTrigger asChild>
             <Button className="bg-education-purple hover:bg-education-purple/90">
               <Plus className="h-4 w-4 mr-2" />
-              Novo Aluno
+              {t('common.newStudent')}
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-md">
             <DialogHeader>
-              <DialogTitle>Cadastrar Novo Aluno</DialogTitle>
+              <DialogTitle>{t('common.registerNewStudent')}</DialogTitle>
             </DialogHeader>
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label>Nome Completo</Label>
-                <Input placeholder="Ex: João Silva Santos" />
+                <Label>{t('common.fullName')}</Label>
+                <Input placeholder={t('common.fullNameExample')} />
               </div>
               <div className="space-y-2">
-                <Label>E-mail</Label>
+                <Label>{t('common.email')}</Label>
                 <Input type="email" placeholder="joao@email.com" />
               </div>
               <div className="space-y-2">
-                <Label>Telefone</Label>
+                <Label>{t('common.phone')}</Label>
                 <Input placeholder="(11) 99999-9999" />
               </div>
               <div className="space-y-2">
-                <Label>Turma</Label>
+                <Label>{t('common.class')}</Label>
                 <Select>
                   <SelectTrigger>
-                    <SelectValue placeholder="Selecione a turma" />
+                    <SelectValue placeholder={t('common.selectClass')} />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="1a">1º Ano A</SelectItem>
@@ -148,14 +150,14 @@ const AdminAlunos = () => {
                   onClick={handleAddAluno}
                   className="flex-1 bg-education-purple hover:bg-education-purple/90"
                 >
-                  Cadastrar
+                  {t('common.register')}
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={() => setIsAddDialogOpen(false)}
                   className="flex-1"
                 >
-                  Cancelar
+                  {t('common.cancel')}
                 </Button>
               </div>
             </div>

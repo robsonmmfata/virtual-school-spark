@@ -59,7 +59,7 @@ const ProfessorTurmas = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-foreground">{t('teacher.myGroups')}</h1>
-          <p className="text-muted-foreground">Gerencie suas turmas e alunos</p>
+          <p className="text-muted-foreground">{t('common.manageStudentsTeachers')}</p>
         </div>
         <Button 
           className="bg-education-green hover:bg-education-green/90"
@@ -77,18 +77,18 @@ const ProfessorTurmas = () => {
               <div className="flex justify-between items-start">
                 <CardTitle className="text-lg">{turma.nome}</CardTitle>
                 <Badge variant="outline" className="text-education-green border-education-green">
-                  {turma.status}
+                  {t('common.active')}
                 </Badge>
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center text-muted-foreground">
                 <Users className="h-4 w-4 mr-2" />
-                {turma.alunos} alunos
+                {turma.alunos} {t('common.studentsCount')}
               </div>
               
               <div className="text-sm">
-                <p className="text-muted-foreground">Próxima aula:</p>
+                <p className="text-muted-foreground">{t('common.nextClass')}:</p>
                 <p className="font-medium">{new Date(turma.proximaAula).toLocaleString('pt-BR')}</p>
               </div>
 
@@ -100,7 +100,7 @@ const ProfessorTurmas = () => {
                   onClick={() => handleVerAlunos(turma.nome)}
                 >
                   <Eye className="h-4 w-4 mr-2" />
-                  Ver Alunos
+                  {t('common.viewStudents')}
                 </Button>
                 <Button 
                   variant="outline" 
@@ -109,7 +109,7 @@ const ProfessorTurmas = () => {
                   onClick={() => handleChat(turma.nome)}
                 >
                   <MessageSquare className="h-4 w-4 mr-2" />
-                  Chat
+                  {t('common.chat')}
                 </Button>
               </div>
             </CardContent>
