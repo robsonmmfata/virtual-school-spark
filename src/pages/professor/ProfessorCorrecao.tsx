@@ -8,10 +8,12 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle, Clock, FileText, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 const ProfessorCorrecao = () => {
   const [selectedTask, setSelectedTask] = useState<number | null>(null);
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const tarefasPendentes = [
     {
@@ -64,8 +66,8 @@ const ProfessorCorrecao = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Corrigir Tarefas</h1>
-        <p className="text-muted-foreground">Avalie e corrija as atividades dos alunos</p>
+        <h1 className="text-2xl font-bold text-foreground">{t('common.correctTasks')}</h1>
+        <p className="text-muted-foreground">{t('common.evaluateStudentActivities')}</p>
       </div>
 
       <Tabs defaultValue="pendentes" className="space-y-4">

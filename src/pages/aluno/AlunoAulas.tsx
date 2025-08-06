@@ -109,7 +109,7 @@ const AlunoAulas = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold text-foreground">{t('student.myClasses')}</h1>
-          <p className="text-muted-foreground">Assista suas aulas ao vivo ou gravadas</p>
+          <p className="text-muted-foreground">{t('common.watchClasses')}</p>
         </div>
       </div>
 
@@ -118,7 +118,7 @@ const AlunoAulas = () => {
         <div className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-950/50 dark:to-red-900/50 p-6 rounded-lg border border-red-200 dark:border-red-800">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl font-semibold text-foreground mb-2">🔴 Aula Acontecendo Agora!</h2>
+              <h2 className="text-xl font-semibold text-foreground mb-2">{t('common.liveClassNow')}</h2>
               <p className="text-foreground/80">{aulas.find(aula => aula.status === "ao-vivo")?.titulo}</p>
             </div>
             <Button 
@@ -126,7 +126,7 @@ const AlunoAulas = () => {
               onClick={() => handleEntrarAula(aulas.find(aula => aula.status === "ao-vivo")?.titulo || "")}
             >
               <Play className="h-4 w-4 mr-2" />
-              Entrar na Aula
+              {t('common.enterClass')}
             </Button>
           </div>
         </div>
@@ -181,7 +181,7 @@ const AlunoAulas = () => {
                     onClick={() => handleEntrarAula(aula.titulo)}
                   >
                     <Play className="h-4 w-4 mr-2" />
-                    Entrar na Aula
+                    {t('common.enterClass')}
                   </Button>
                 )}
                 {aula.status === "agendado" && (
@@ -191,7 +191,7 @@ const AlunoAulas = () => {
                     onClick={() => handleLembrete(aula.titulo)}
                   >
                     <Clock className="h-4 w-4 mr-2" />
-                    Lembrar-me
+                    {t('common.remindMe')}
                   </Button>
                 )}
                 {aula.status === "gravado" && (
@@ -200,7 +200,7 @@ const AlunoAulas = () => {
                     onClick={() => handleAssistirGravacao(aula.titulo)}
                   >
                     <Play className="h-4 w-4 mr-2" />
-                    Assistir Gravação
+                    {t('common.watchRecording')}
                   </Button>
                 )}
                 <Button 
@@ -219,7 +219,7 @@ const AlunoAulas = () => {
       {/* Próximas Aulas */}
       <Card>
         <CardHeader>
-          <CardTitle>Próximas Aulas da Semana</CardTitle>
+          <CardTitle>{t('common.nextWeekClasses')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -240,7 +240,7 @@ const AlunoAulas = () => {
                     size="sm"
                     onClick={() => handleVerDetalhes(item.aula)}
                   >
-                    Ver detalhes
+                    {t('common.viewDetails')}
                   </Button>
                 </div>
               </div>
