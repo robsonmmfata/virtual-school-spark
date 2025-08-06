@@ -25,18 +25,21 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-card">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b border-border shadow-card py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-gradient-primary rounded-lg shadow-elegant group-hover:shadow-glow transition-all duration-300">
-              <GraduationCap className="h-6 w-6 text-primary-foreground" />
+            <div className="p-1">
+              <img 
+                src="/logoedit.png" 
+                alt="California International Academy Logo" 
+                className="h-24 w-auto object-contain"
+              />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">EduVirtual</h1>
-              <p className="text-xs text-muted-foreground">Escola Online</p>
-            </div>
+            <span className="text-lg font-semibold text-green-800 whitespace-nowrap">
+              California International Academy
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

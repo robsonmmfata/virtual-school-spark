@@ -21,7 +21,6 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import heroImage from "@/assets/hero-education.jpg";
-import virtualClassroomImage from "@/assets/virtual-classroom.jpg";
 import teacher1 from "@/assets/teacher-1.jpg";
 import teacher2 from "@/assets/teacher-2.jpg";
 import teacher3 from "@/assets/teacher-3.jpg";
@@ -162,9 +161,9 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src={virtualClassroomImage} 
-                alt={t('home.virtualClassroom')} 
+              <img
+                src="/saladeaula.jpg"
+                alt={t('home.virtualClassroom')}
                 className="rounded-lg shadow-elegant w-full"
               />
               <div className="absolute inset-0 bg-gradient-primary/10 rounded-lg"></div>
