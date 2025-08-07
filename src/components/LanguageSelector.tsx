@@ -13,6 +13,7 @@ const languages = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'en', name: 'English', flag: '🇺🇸' },
   { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
 ];
 
 export const LanguageSelector = () => {
@@ -28,9 +29,8 @@ export const LanguageSelector = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="gap-2">
-          <Globe className="h-4 w-4" />
-          <span className="hidden md:inline">{currentLanguage.flag} {currentLanguage.name}</span>
-          <span className="md:hidden">{currentLanguage.flag}</span>
+          <span className="text-lg">{currentLanguage.flag}</span>
+          <span className="hidden md:inline">{currentLanguage.name}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -42,7 +42,7 @@ export const LanguageSelector = () => {
               i18n.language === language.code ? 'bg-accent' : ''
             }`}
           >
-            <span className="mr-2">{language.flag}</span>
+            <span className="mr-2 text-lg">{language.flag}</span>
             {language.name}
           </DropdownMenuItem>
         ))}
