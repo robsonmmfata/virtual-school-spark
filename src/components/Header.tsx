@@ -63,13 +63,13 @@ const Header = () => {
               <Button variant="outline" className="group-hover:border-primary">
                 {t('navigation.login')}
               </Button>
-              <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-elegant opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="p-2">
                   {loginOptions.map((option) => (
                     <Link
                       key={option.name}
                       to={option.path}
-                      className="block px-3 py-2 text-sm text-foreground hover:bg-muted rounded-md transition-colors duration-200"
+                      className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
                     >
                       {option.name}
                     </Link>
@@ -90,26 +90,28 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background">
+          <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
             <nav className="flex flex-col py-4 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-muted transition-all duration-300"
+                  className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 py-2">
-                <LanguageSelector />
-                <p className="text-sm font-medium text-muted-foreground mb-2">{t('navigation.login')}</p>
+              <div className="px-4 py-2 border-t border-gray-200 dark:border-gray-700 mt-2 pt-4">
+                <div className="mb-4">
+                  <LanguageSelector />
+                </div>
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-400 mb-2">{t('navigation.login')}</p>
                 {loginOptions.map((option) => (
                   <Link
                     key={option.name}
                     to={option.path}
-                    className="block px-4 py-2 text-sm text-foreground hover:text-primary hover:bg-muted transition-all duration-300"
+                    className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 rounded-md"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {option.name}
