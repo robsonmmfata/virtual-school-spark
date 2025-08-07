@@ -107,7 +107,7 @@ const Footer = () => {
           <div className="border-t border-blue-600 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-blue-200 text-sm">
-                © 2025 California International Academy - Todos Direitos Reservados. {t('home.footer.allRightsReserved')}
+                {t('home.footer.copyright')} - {t('home.footer.allRightsReserved')}
               </p>
               <div className="flex space-x-6">
                 <Link to="#" className="text-blue-200 hover:text-white transition-colors duration-300 text-sm">

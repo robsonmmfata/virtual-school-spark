@@ -33,12 +33,12 @@ const Header = () => {
             <div className="p-1">
               <img 
                 src="/logoedit.png" 
-                alt="California International Academy Logo" 
+                alt={t('home.footer.schoolName')} 
                 className="h-24 w-auto object-contain"
               />
             </div>
             <span className="text-lg font-semibold text-green-800 whitespace-nowrap">
-              California International Academy
+              {t('home.footer.schoolName')}
             </span>
           </Link>
 
