@@ -5,11 +5,10 @@
     "features": "Features",
     "contact": "Contact",
     "login": "Login",
-    "dashboard": "Dashboard"
-  },
+  "dashboard": "Dashboard"
+},
   "auth": {
     "email": "Email",
-    "password": "Password",
     "signIn": "Sign In",
     "signUp": "Sign Up",
     "forgotPassword": "Forgot my password",
@@ -66,22 +65,22 @@
     "deleteContent": "Delete Content"
   },
   "admin": {
-    "manageStudents": "Manage Students",
-    "manageTeachers": "Manage Teachers",
-    "announcements": "Announcements",
-    "reports": "Reports",
-    "configurations": "Configurations",
-    "addStudent": "Add Student",
-    "editStudent": "Edit Student",
-    "removeStudent": "Remove Student",
-    "addTeacher": "Add Teacher",
-    "editTeacher": "Edit Teacher",
-    "removeTeacher": "Remove Teacher",
-    "sendAnnouncement": "Send Announcement",
-    "viewReport": "View Report",
-    "exportReport": "Export Report"
-  },
-  "common": {
+"admin": {
+  "manageStudents": "Manage Students",
+  "manageTeachers": "Manage Teachers",
+  "announcements": "Announcements",
+  "reports": "Reports",
+  "configurations": "Configurations",
+  "addStudent": "Add Student",
+  "editStudent": "Edit Student",
+  "removeStudent": "Remove Student",
+  "addTeacher": "Add Teacher",
+  "editTeacher": "Edit Teacher",
+  "removeTeacher": "Remove Teacher",
+  "sendAnnouncement": "Send Announcement",
+  "viewReport": "View Report",
+  "exportReport": "Export Report"
+},
     "save": "Save",
     "cancel": "Cancel",
     "edit": "Edit",
@@ -201,91 +200,107 @@
     "viewDetails": "View details",
     "shareContentWithClasses": "Share materials and videos with your classes",
     "evaluateStudentActivities": "Evaluate and correct student activities",
-    "manageStudents": "Manage Students"
-  },
-  "home": {
-    "title": "Educational Platform",
-    "subtitle": "Connect, learn and grow together",
-    "description": "A complete platform for online education with advanced features for students, teachers and administrators.",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More",
-    "aboutEduVirtual": "About EduVirtual",
-    "aboutDescription1": "We are a 100% virtual high school, committed to offering quality education through innovative technology. Our mission is to democratize access to knowledge, connecting students to the country's best teachers.",
-    "aboutDescription2": "With a unique methodology that combines live classes, exclusive materials and personalized support, we prepare our students not only for college entrance exams, but for future challenges.",
-    "studentsGraduated": "Graduated Students",
-    "approvalRate": "Approval Rate",
-    "teachingStructure": "Our Teaching Structure",
-    "teachingStructureDesc": "Innovative methodology that combines cutting-edge technology with the expertise of the country's best educators.",
-    "pedagogicalTeam": "Our Pedagogical Team",
-    "pedagogicalTeamDesc": "Specialist teachers and masters in their areas, dedicated to your academic success.",
-    "contact": "Contact Us",
-    "contactDesc": "Have questions? Our team is ready to help you start your educational journey.",
-    "fullName": "Full Name",
-    "fullNamePlaceholder": "Your full name",
-    "emailPlaceholder": "your@email.com",
-    "subject": "Subject",
-    "subjectPlaceholder": "What is the subject of your message?",
-    "message": "Message",
-    "messagePlaceholder": "Write your message here...",
-    "sendMessage": "Send Message",
-    "virtualEducation": "Virtual Education",
-    "virtualClassroom": "Virtual Classroom",
-    "teachers": {
-      "ana": {
-        "name": "Prof. Ana Silva",
-        "specialty": "Mathematics and Physics",
-        "experience": "15 years of experience"
-      },
-      "carlos": {
-        "name": "Prof. Carlos Santos",
-        "specialty": "Portuguese Language and Literature",
-        "experience": "12 years of experience"
-      },
-      "marina": {
-        "name": "Prof. Marina Costa",
-        "specialty": "Biology and Chemistry",
-        "experience": "18 years of experience"
-      }
+  "evaluateStudentActivities": "Evaluate and correct student activities",
+  "manageStudents": "Manage Students"
+},
+"home": {
+  "subtitle": "Connect, learn and grow together",
+  "description": "A complete platform for online education with advanced features for students, teachers and administrators.",
+  "getStarted": "Get Started",
+  "learnMore": "Learn More",
+  "aboutEduVirtual": "About EduVirtual",
+  "aboutDescription1": "We are a 100% virtual high school, committed to offering quality education through innovative technology. Our mission is to democratize access to knowledge, connecting students to the country's best teachers.",
+  "aboutDescription2": "With a unique methodology that combines live classes, exclusive materials and personalized support, we prepare our students not only for college entrance exams, but for future challenges.",
+  "studentsGraduated": "Graduated Students",
+  "approvalRate": "Approval Rate",
+  "teachingStructure": "Our Teaching Structure",
+  "teachingStructureDesc": "Innovative methodology that combines cutting-edge technology with the expertise of the country's best educators.",
+  "pedagogicalTeam": "Our Pedagogical Team",
+  "pedagogicalTeamDesc": "Specialist teachers and masters in their areas, dedicated to your academic success.",
+  "contact": "Contact Us",
+  "contactDesc": "Have questions? Our team is ready to help you start your educational journey.",
+  "fullName": "Full Name",
+  "fullNamePlaceholder": "Your full name",
+  "emailPlaceholder": "your@email.com",
+  "subject": "Subject",
+  "subjectPlaceholder": "What is the subject of your message?",
+  "message": "Message",
+  "messagePlaceholder": "Write your message here...",
+  "sendMessage": "Send Message",
+  "virtualEducation": "Virtual Education",
+  "virtualClassroom": "Virtual Classroom",
+  "teachers": {
+    "teacher1": {
+      "name": "Flavia Catarina",
+      "specialty": "Secretary",
+      "experience": "Experience in school management"
     },
-    "features": {
-      "title": "Main Features",
-      "virtualClassroom": "Virtual Classroom",
-      "virtualClassroomDesc": "Interactive environment for online learning",
-      "materialManagement": "Material Management",
-      "materialManagementDesc": "Organize and share educational content",
-      "progressTracking": "Progress Tracking",
-      "progressTrackingDesc": "Monitor student development"
+    "teacher2": {
+      "name": "Mr. Wartha",
+      "specialty": "Head of Mathematics",
+      "experience": "Experience in sciences"
     },
-    "footer": {
-      "company": "Company",
-      "about": "About Us",
-      "careers": "Careers",
-      "contact": "Contact",
-      "support": "Support",
-      "help": "Help",
-      "privacy": "Privacy",
-      "terms": "Terms",
-      "legal": "Legal",
-      "followUs": "Follow us",
-      "allRightsReserved": "All rights reserved",
-      "schoolName": "California International Academy",
-      "copyright": "© 2025 California International Academy"
+    "teacher3": {
+      "name": "Dr. Alcaraz",
+      "specialty": "Head of Sciences",
+      "experience": "Experience in school management"
+    },
+    "teacher4": {
+      "name": "Ms. Paula",
+      "specialty": "University Guidance",
+      "experience": "Experience in school management"
+    },
+    "teacher5": {
+      "name": "Ms. Jin",
+      "specialty": "Head of Humanities",
+      "experience": "Experience in school management"
+    },
+    "teacher6": {
+      "name": "Dr. Chi",
+      "specialty": "Head of World Languages",
+      "experience": "Experience in school management"
     }
   },
+  "features": {
+    "title": "Main Features",
+    "virtualClassroom": "Virtual Classroom",
+    "virtualClassroomDesc": "Interactive environment for online learning",
+    "materialManagement": "Material Management",
+    "materialManagementDesc": "Organize and share educational content",
+    "progressTracking": "Progress Tracking",
+    "progressTrackingDesc": "Monitor student development"
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "support": "Support",
+    "help": "Help",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "legal": "Legal",
+    "followUs": "Follow us",
+    "allRightsReserved": "All rights reserved",
+    "schoolName": "California International Academy",
+    "copyright": "© 2025 California International Academy"
+  }
+},
+    
   "errors": {
     "pageNotFound": "Page not found",
-    "goHome": "Go home",
+    "goHome": "Go back home",
     "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again",
+    "tryAgain": "Please try again",
     "networkError": "Network error",
     "serverError": "Server error",
     "unauthorized": "Unauthorized",
     "forbidden": "Access denied",
-    "notFound": "Not found",
+    "notFound": "Not Found",
     "validationError": "Validation error",
     "requiredField": "Required field",
-    "invalidEmail": "Invalid email",
-    "passwordTooShort": "Password too short",
+    "invalidEmail": "Invalid email address",
+    "passwordTooShort": "Password is too short",
     "passwordsDoNotMatch": "Passwords do not match"
   },
   "notifications": {

@@ -24,6 +24,9 @@ import heroImage from "@/assets/hero-education.jpg";
 import teacher1 from "@/assets/teacher-1.jpg";
 import teacher2 from "@/assets/teacher-2.jpg";
 import teacher3 from "@/assets/teacher-3.jpg";
+import teacher4 from "@/assets/asiatica.jpg";
+import teacher5 from "@/assets/asiatico.jpg";
+import teacher6 from "@/assets/brasileira.jpg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -75,23 +78,43 @@ const Home = () => {
 
   const professores = [
     {
-      name: t('home.teachers.ana.name'),
-      specialty: t('home.teachers.ana.specialty'),
-      experience: t('home.teachers.ana.experience'),
+      name: "Flavia Catarina",
+      specialty: "Secretary",
+      experience: "Experiência em gestão escolar",
       image: teacher1
     },
+    
     {
-      name: t('home.teachers.carlos.name'),
-      specialty: t('home.teachers.carlos.specialty'),
-      experience: t('home.teachers.carlos.experience'),
+      name: " Mr. Wartha",
+      specialty: "Head of Math",
+      experience: "Experiência em ciências",
       image: teacher2
+    },      
+    {
+      name: "Dr. Alcaraz ",
+      specialty: "Head of Science",
+      experience: "Experiência em gestão escolar",
+      image: teacher6
     },
     {
-      name: t('home.teachers.marina.name'),
-      specialty: t('home.teachers.marina.specialty'),
-      experience: t('home.teachers.marina.experience'),
+      name: "Mrs. Paula ",
+      specialty: "University Guidance ",
+      experience: "Experiência em gestão escolar",
       image: teacher3
-    }
+    },
+     {
+      name: "Mrs. Jin ",
+      specialty: "Head of Humanities ",
+      experience: "Experiência em gestão escolar",
+      image: teacher4
+    },
+{
+      name: "Dr. Chi ",
+      specialty: " Head of World Languages ",
+      experience: "Experiência em gestão escolar",
+      image: teacher5
+    },
+
   ];
 
   return (
@@ -141,7 +164,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-                {t('home.aboutEduVirtual')}
+                
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('home.aboutDescription1')}

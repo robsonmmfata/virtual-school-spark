@@ -13,8 +13,7 @@ const Header = () => {
   const navItems = [
     { name: t('navigation.home'), path: "/" },
     { name: t('navigation.about'), path: "/#sobre" },
-    { name: t('navigation.features'), path: "/#estrutura" },
-    { name: t('home.footer.about'), path: "/#equipe" },
+    { name: t('common.team'), path: "/#equipe" },
     { name: t('navigation.contact'), path: "/#contato" },
   ];
 

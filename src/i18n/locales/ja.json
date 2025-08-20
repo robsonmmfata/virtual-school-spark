@@ -360,20 +360,35 @@
     "virtualEducation": "バーチャル教育",
     "virtualClassroom": "バーチャル教室",
     "teachers": {
-      "ana": {
-        "name": "アナ・シルバ先生",
-        "specialty": "数学と物理",
-        "experience": "15年の経験"
+      "teacher1": {
+        "name": "フラビア・カタリナ",
+        "specialty": "事務局長",
+        "experience": "学校管理経験あり"
       },
-      "carlos": {
-        "name": "カルロス・サントス先生",
-        "specialty": "ポルトガル語と文学",
-        "experience": "12年の経験"
+      "teacher2": {
+        "name": "ワーサ氏",
+        "specialty": "数学部長",
+        "experience": "理学経験あり"
       },
-      "marina": {
-        "name": "マリーナ・コスタ先生",
-        "specialty": "生物学と化学",
-        "experience": "18年の経験"
+      "teacher3": {
+        "name": "アルカラズ博士",
+        "specialty": "科学部長",
+        "experience": "学校管理経験あり"
+      },
+      "teacher4": {
+        "name": "ポーラさん",
+        "specialty": "大学進学アドバイザー",
+        "experience": "学校管理経験あり"
+      },
+      "teacher5": {
+        "name": "ジンさん",
+        "specialty": "人文科学部長",
+        "experience": "学校管理経験あり"
+      },
+      "teacher6": {
+        "name": "チー博士",
+        "specialty": "世界言語部長",
+        "experience": "学校管理経験あり"
       }
     },
     "features": {
