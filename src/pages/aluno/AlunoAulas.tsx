@@ -69,11 +69,24 @@ const AlunoAulas = () => {
     }
   };
 
-  const handleEntrarAula = (titulo: string) => {
-    toast({
-      title: "Entrando na aula...",
-      description: `Conectando à aula: ${titulo}`,
-    });
+  const handleEntrarAula = async (titulo: string) => {
+    try {
+      // Simular entrada na aula (implementar integração com sistema de videoconferência)
+      toast({
+        title: "Entrando na aula...",
+        description: `Conectando à aula: ${titulo}`,
+      });
+      
+      // Aqui você pode implementar integração com Zoom, Meet, etc.
+      // window.open('https://meet.google.com/xxx-xxxx-xxx', '_blank');
+      
+    } catch (error) {
+      toast({
+        title: "Erro ao entrar na aula",
+        description: "Não foi possível conectar à aula no momento",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleLembrete = (titulo: string) => {

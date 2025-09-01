@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, Plus, Edit, Trash2, Eye, Users, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { professoresAPI } from "@/lib/api.js";
 
 const AdminProfessores = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -68,12 +69,33 @@ const AdminProfessores = () => {
     professor.disciplina.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleAddProfessor = () => {
-    toast({
-      title: "Professor adicionado!",
-      description: "O novo professor foi cadastrado com sucesso.",
-    });
-    setIsAddDialogOpen(false);
+  const handleAddProfessor = async () => {
+    try {
+      const formData = new FormData(document.querySelector('form') as HTMLFormElement);
+      const dados = {
+        nome: formData.get('nome') as string,
+        email: formData.get('email') as string,
+        telefone: formData.get('telefone') as string,
+        disciplina: formData.get('disciplina') as string,
+        formacao: formData.get('formacao') as string,
+        turmas: [] // Pode ser configurado posteriormente
+      };
+
+      await professoresAPI.cadastrar(dados);
+      
+      toast({
+        title: "Professor adicionado!",
+        description: `${dados.nome} foi cadastrado com sucesso.`,
+      });
+      setIsAddDialogOpen(false);
+      window.location.reload();
+    } catch (error) {
+      toast({
+        title: "Erro ao cadastrar professor",
+        description: error instanceof Error ? error.message : "Erro desconhecido",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleViewProfessor = (id: number, nome: string) => {

@@ -14,15 +14,38 @@ const ProfessorConteudo = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
 
-  const handleUpload = () => {
+  const handleUpload = async (tipo: 'video' | 'material' | 'link') => {
     setUploading(true);
-    setTimeout(() => {
-      setUploading(false);
+    
+    try {
+      // Simular upload (implementar integração real com serviço de storage)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      const messages = {
+        video: "Vídeo da aula foi enviado com sucesso!",
+        material: "Material de apoio foi compartilhado!",
+        link: "Link externo foi compartilhado com a turma!"
+      };
+      
       toast({
         title: "Conteúdo enviado!",
-        description: "O material foi compartilhado com a turma.",
+        description: messages[tipo],
       });
-    }, 2000);
+      
+      // Aqui você implementaria o envio real:
+      // - Upload para AWS S3, Google Cloud Storage, etc.
+      // - Registro no banco de dados
+      // - Notificação para os alunos
+      
+    } catch (error) {
+      toast({
+        title: "Erro no envio",
+        description: "Não foi possível enviar o conteúdo no momento",
+        variant: "destructive"
+      });
+    } finally {
+      setUploading(false);
+    }
   };
 
   return (
@@ -83,7 +106,7 @@ const ProfessorConteudo = () => {
             </div>
 
             <Button 
-              onClick={handleUpload} 
+              onClick={() => handleUpload('video')} 
               disabled={uploading}
               className="w-full bg-education-green hover:bg-education-green/90"
             >
@@ -137,7 +160,7 @@ const ProfessorConteudo = () => {
             </div>
 
             <Button 
-              onClick={handleUpload} 
+              onClick={() => handleUpload('material')} 
               disabled={uploading}
               className="w-full bg-education-green hover:bg-education-green/90"
             >
@@ -182,10 +205,8 @@ const ProfessorConteudo = () => {
 
           <Button 
             className="bg-education-green hover:bg-education-green/90"
-            onClick={() => toast({
-              title: "Link compartilhado!",
-              description: "O link foi enviado para a turma selecionada.",
-            })}
+            onClick={() => handleUpload('link')}
+            disabled={uploading}
           >
             Compartilhar Link
           </Button>

@@ -99,18 +99,53 @@ const AlunoTarefas = () => {
     "Química": "bg-orange-100 text-orange-800"
   };
 
-  const handleIniciarTarefa = (titulo: string) => {
-    toast({
-      title: "Tarefa iniciada!",
-      description: `Você começou a trabalhar na tarefa: ${titulo}`,
-    });
+  const handleIniciarTarefa = async (titulo: string) => {
+    try {
+      // Aqui você implementaria a lógica para marcar tarefa como iniciada no backend
+      toast({
+        title: "Tarefa iniciada!",
+        description: `Você começou a trabalhar na tarefa: ${titulo}`,
+      });
+      
+      // Atualizar status da tarefa no estado local
+      // setTarefas(prev => prev.map(t => t.titulo === titulo ? {...t, status: 'em-andamento'} : t))
+      
+    } catch (error) {
+      toast({
+        title: "Erro ao iniciar tarefa",
+        description: "Não foi possível iniciar a tarefa no momento",
+        variant: "destructive"
+      });
+    }
   };
 
-  const handleEnviarTarefa = (titulo: string) => {
-    toast({
-      title: "Tarefa enviada!",
-      description: `A tarefa "${titulo}" foi enviada com sucesso.`,
-    });
+  const handleEnviarTarefa = async (titulo: string) => {
+    try {
+      // Implementar upload do arquivo da tarefa
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.pdf,.doc,.docx,.txt';
+      
+      input.onchange = async (e) => {
+        const file = (e.target as HTMLInputElement).files?.[0];
+        if (file) {
+          // Aqui você implementaria o upload real do arquivo
+          toast({
+            title: "Tarefa enviada!",
+            description: `A tarefa "${titulo}" foi enviada com sucesso.`,
+          });
+        }
+      };
+      
+      input.click();
+      
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar tarefa",
+        description: "Não foi possível enviar a tarefa no momento",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleVerDetalhes = (titulo: string) => {

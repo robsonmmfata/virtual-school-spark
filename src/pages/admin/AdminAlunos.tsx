@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Plus, Edit, Trash2, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import { alunosAPI } from "@/lib/api.js";
 
 const AdminAlunos = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,35 +67,78 @@ const AdminAlunos = () => {
     aluno.matricula.includes(searchTerm)
   );
 
-  const handleAddAluno = () => {
-    toast({
-      title: "Aluno adicionado!",
-      description: "O novo aluno foi cadastrado com sucesso.",
-    });
-    setIsAddDialogOpen(false);
+  const handleAddAluno = async () => {
+    try {
+      const formData = new FormData(document.querySelector('form') as HTMLFormElement);
+      const dados = {
+        nome: formData.get('nome') as string,
+        email: formData.get('email') as string,
+        telefone: formData.get('telefone') as string,
+        matricula: `2024${String(alunos.length + 1).padStart(3, '0')}`,
+        turma_id: formData.get('turma') as string
+      };
+
+      const novoAluno = await alunosAPI.cadastrar(dados);
+      
+      toast({
+        title: "Aluno adicionado!",
+        description: `${dados.nome} foi cadastrado com sucesso.`,
+      });
+      setIsAddDialogOpen(false);
+      // Recarregar lista de alunos
+      window.location.reload();
+    } catch (error) {
+      toast({
+        title: "Erro ao cadastrar aluno",
+        description: error instanceof Error ? error.message : "Erro desconhecido",
+        variant: "destructive"
+      });
+    }
   };
 
-  const handleViewAluno = (id: number, nome: string) => {
-    toast({
-      title: "Visualizando aluno",
-      description: `Abrindo perfil detalhado de: ${nome}`,
-    });
+  const handleViewAluno = async (id: number, nome: string) => {
+    try {
+      const alunoDetalhes = await alunosAPI.buscarPorId(id);
+      toast({
+        title: "Perfil do aluno",
+        description: `Visualizando: ${alunoDetalhes.nome}`,
+      });
+      // Aqui você pode abrir um modal ou navegar para uma página de detalhes
+    } catch (error) {
+      toast({
+        title: "Erro ao carregar perfil",
+        description: "Não foi possível carregar os dados do aluno",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleEditAluno = (id: number, nome: string) => {
+    // Implementar modal de edição ou navegação
     toast({
-      title: "Editando aluno",
-      description: `Abrindo formulário de edição para: ${nome}`,
+      title: "Função em desenvolvimento",
+      description: `Edição de ${nome} será implementada em breve`,
     });
   };
 
-  const handleDeleteAluno = (id: number, nome: string) => {
+  const handleDeleteAluno = async (id: number, nome: string) => {
     if (confirm(`Tem certeza que deseja excluir o aluno ${nome}?`)) {
-      toast({
-        title: "Aluno removido!",
-        description: `${nome} foi removido do sistema.`,
-        variant: "destructive"
-      });
+      try {
+        await alunosAPI.excluir(id);
+        toast({
+          title: "Aluno removido!",
+          description: `${nome} foi removido do sistema.`,
+          variant: "destructive"
+        });
+        // Recarregar lista
+        window.location.reload();
+      } catch (error) {
+        toast({
+          title: "Erro ao remover aluno",
+          description: "Não foi possível remover o aluno do sistema",
+          variant: "destructive"
+        });
+      }
     }
   };
 
@@ -116,37 +160,38 @@ const AdminAlunos = () => {
             <DialogHeader>
               <DialogTitle>{t('common.registerNewStudent')}</DialogTitle>
             </DialogHeader>
-            <div className="space-y-4">
+            <form className="space-y-4">
               <div className="space-y-2">
                 <Label>{t('common.fullName')}</Label>
-                <Input placeholder={t('common.fullNameExample')} />
+                <Input name="nome" placeholder={t('common.fullNameExample')} required />
               </div>
               <div className="space-y-2">
                 <Label>{t('common.email')}</Label>
-                <Input type="email" placeholder="joao@email.com" />
+                <Input name="email" type="email" placeholder="joao@email.com" required />
               </div>
               <div className="space-y-2">
                 <Label>{t('common.phone')}</Label>
-                <Input placeholder="(11) 99999-9999" />
+                <Input name="telefone" placeholder="(11) 99999-9999" />
               </div>
               <div className="space-y-2">
                 <Label>{t('common.class')}</Label>
-                <Select>
+                <Select name="turma">
                   <SelectTrigger>
                     <SelectValue placeholder={t('common.selectClass')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="1a">1º Ano A</SelectItem>
-                    <SelectItem value="1b">1º Ano B</SelectItem>
-                    <SelectItem value="2a">2º Ano A</SelectItem>
-                    <SelectItem value="2b">2º Ano B</SelectItem>
-                    <SelectItem value="3a">3º Ano A</SelectItem>
-                    <SelectItem value="3b">3º Ano B</SelectItem>
+                    <SelectItem value="1">1º Ano A</SelectItem>
+                    <SelectItem value="2">1º Ano B</SelectItem>
+                    <SelectItem value="3">2º Ano A</SelectItem>
+                    <SelectItem value="4">2º Ano B</SelectItem>
+                    <SelectItem value="5">3º Ano A</SelectItem>
+                    <SelectItem value="6">3º Ano B</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
               <div className="flex gap-2">
                 <Button 
+                  type="submit"
                   onClick={handleAddAluno}
                   className="flex-1 bg-education-purple hover:bg-education-purple/90"
                 >
@@ -160,7 +205,7 @@ const AdminAlunos = () => {
                   {t('common.cancel')}
                 </Button>
               </div>
-            </div>
+            </form>
           </DialogContent>
         </Dialog>
       </div>
