@@ -46,22 +46,25 @@ const AlunoMensagensAPI = () => {
   const carregarDados = async () => {
     try {
       setLoading(true);
-      // Usar dados mockados para professores
-      const professoresMock = [
-        { id: 1, nome: "Prof. Ana Silva", disciplina: "Matemática" },
-        { id: 2, nome: "Prof. Carlos Santos", disciplina: "Física" },
-        { id: 3, nome: "Prof. Marina Costa", disciplina: "Literatura" }
-      ];
+      console.log('Carregando dados do aluno, user.id:', user.id);
+      
+      const [conversasData, professoresData] = await Promise.all([
+        mensagensAPI.listarConversas(user.id),
+        professoresAPI.listar()
+      ]);
 
-      const conversasData = await mensagensAPI.listarConversas(user.id);
+      console.log('Conversas carregadas:', conversasData);
+      console.log('Professores carregados:', professoresData);
+      
       setConversas(conversasData);
-      setProfessores(professoresMock);
+      setProfessores(professoresData);
 
       // Selecionar primeira conversa se existir
       if (conversasData.length > 0) {
         setConversaSelecionada(conversasData[0].outro_usuario_id);
       }
     } catch (error) {
+      console.error('Erro ao carregar dados:', error);
       toast({
         title: "Erro ao carregar dados",
         description: error.message,
@@ -89,11 +92,19 @@ const AlunoMensagensAPI = () => {
     if (!novaMensagem.trim() || !conversaSelecionada) return;
 
     try {
-      await mensagensAPI.enviar({
+      console.log('Enviando mensagem:', {
         remetente_id: user.id,
         destinatario_id: conversaSelecionada,
         conteudo: novaMensagem.trim()
       });
+
+      const response = await mensagensAPI.enviar({
+        remetente_id: user.id,
+        destinatario_id: conversaSelecionada,
+        conteudo: novaMensagem.trim()
+      });
+
+      console.log('Resposta do envio:', response);
 
       toast({
         title: "Mensagem enviada!",
@@ -103,9 +114,10 @@ const AlunoMensagensAPI = () => {
       setNovaMensagem("");
 
       // Recarregar mensagens
-      carregarMensagens(conversaSelecionada);
-      carregarDados(); // Para atualizar a lista de conversas
+      await carregarMensagens(conversaSelecionada);
+      await carregarDados(); // Para atualizar a lista de conversas
     } catch (error) {
+      console.error('Erro detalhado ao enviar mensagem:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: error.message,

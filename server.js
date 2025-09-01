@@ -297,30 +297,43 @@ app.post('/api/comunicados', async (req, res) => {
 app.get('/api/mensagens/conversas/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
+    console.log('Buscando conversas para usuário:', userId);
 
     const result = await query(`
-      SELECT DISTINCT
-        CASE
-          WHEN m.remetente_id = $1 THEN m.destinatario_id
-          ELSE m.remetente_id
-        END as outro_usuario_id,
+      WITH conversas_usuarios AS (
+        SELECT DISTINCT
+          CASE
+            WHEN m.remetente_id = $1 THEN m.destinatario_id
+            ELSE m.remetente_id
+          END as outro_usuario_id,
+          MAX(m.data_envio) as ultima_data,
+          MAX(m.conteudo) as ultima_mensagem_conteudo
+        FROM mensagens m
+        WHERE m.remetente_id = $1 OR m.destinatario_id = $1
+        GROUP BY outro_usuario_id
+      )
+      SELECT 
+        cu.outro_usuario_id,
         u.nome as outro_usuario_nome,
         u.tipo as outro_usuario_tipo,
-        MAX(m.data_envio) as ultima_mensagem
-      FROM mensagens m
-      JOIN usuarios u ON (
-        CASE
-          WHEN m.remetente_id = $1 THEN m.destinatario_id = u.id
-          ELSE m.remetente_id = u.id
-        END
+        cu.ultima_data as ultima_mensagem,
+        cu.ultima_mensagem_conteudo,
+        COUNT(m_nao_lidas.id) as nao_lidas
+      FROM conversas_usuarios cu
+      JOIN usuarios u ON cu.outro_usuario_id = u.id
+      LEFT JOIN mensagens m_nao_lidas ON (
+        m_nao_lidas.destinatario_id = $1 
+        AND m_nao_lidas.remetente_id = cu.outro_usuario_id 
+        AND m_nao_lidas.lida = false
       )
-      WHERE m.remetente_id = $1 OR m.destinatario_id = $1
-      GROUP BY outro_usuario_id, u.nome, u.tipo
-      ORDER BY ultima_mensagem DESC
+      GROUP BY cu.outro_usuario_id, u.nome, u.tipo, cu.ultima_data, cu.ultima_mensagem_conteudo
+      ORDER BY cu.ultima_data DESC
     `, [userId]);
 
+    console.log('Conversas encontradas:', result.rows.length);
     res.json(result.rows);
   } catch (error) {
+    console.error('Erro ao buscar conversas:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -350,14 +363,28 @@ app.get('/api/mensagens/:userId/:otherUserId', async (req, res) => {
 app.post('/api/mensagens', async (req, res) => {
   try {
     const { remetente_id, destinatario_id, conteudo } = req.body;
+    console.log('Enviando mensagem:', { remetente_id, destinatario_id, conteudo: conteudo.substring(0, 50) + '...' });
+
+    // Verificar se os usuários existem
+    const usuariosCheck = await query(
+      'SELECT id, nome, tipo FROM usuarios WHERE id IN ($1, $2)',
+      [remetente_id, destinatario_id]
+    );
+
+    if (usuariosCheck.rows.length < 2) {
+      console.error('Usuários não encontrados:', usuariosCheck.rows);
+      return res.status(400).json({ error: 'Usuário remetente ou destinatário não encontrado' });
+    }
 
     const result = await query(
-      'INSERT INTO mensagens (remetente_id, destinatario_id, conteudo) VALUES ($1, $2, $3) RETURNING *',
+      'INSERT INTO mensagens (remetente_id, destinatario_id, conteudo, lida, data_envio) VALUES ($1, $2, $3, false, CURRENT_TIMESTAMP) RETURNING *',
       [remetente_id, destinatario_id, conteudo]
     );
 
+    console.log('Mensagem criada com sucesso:', result.rows[0].id);
     res.status(201).json(result.rows[0]);
   } catch (error) {
+    console.error('Erro ao enviar mensagem:', error);
     res.status(500).json({ error: error.message });
   }
 });

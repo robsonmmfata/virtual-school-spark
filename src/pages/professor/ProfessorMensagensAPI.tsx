@@ -86,11 +86,19 @@ const ProfessorMensagensAPI = () => {
     if (!novaMensagem.trim() || !conversaSelecionada) return;
 
     try {
-      await mensagensAPI.enviar({
+      console.log('Professor enviando mensagem:', {
         remetente_id: user.id,
         destinatario_id: conversaSelecionada,
         conteudo: novaMensagem.trim()
       });
+
+      const response = await mensagensAPI.enviar({
+        remetente_id: user.id,
+        destinatario_id: conversaSelecionada,
+        conteudo: novaMensagem.trim()
+      });
+
+      console.log('Resposta do envio do professor:', response);
 
       toast({
         title: "Mensagem enviada!",
@@ -100,9 +108,10 @@ const ProfessorMensagensAPI = () => {
       setNovaMensagem("");
 
       // Recarregar mensagens
-      carregarMensagens(conversaSelecionada);
-      carregarDados(); // Para atualizar a lista de conversas
+      await carregarMensagens(conversaSelecionada);
+      await carregarDados(); // Para atualizar a lista de conversas
     } catch (error) {
+      console.error('Erro detalhado do professor ao enviar mensagem:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: error.message,
