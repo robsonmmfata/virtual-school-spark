@@ -28,6 +28,8 @@ import AdminComunicados from "./pages/admin/AdminComunicados";
 import AdminRelatorios from "./pages/admin/AdminRelatorios";
 import AdminConfiguracoes from "./pages/admin/AdminConfiguracoes";
 import NotFound from "./pages/NotFound";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const queryClient = new QueryClient();
 

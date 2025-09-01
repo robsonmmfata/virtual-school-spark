@@ -1,23 +1,215 @@
 {
   "navigation": {
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
     "features": "Features",
     "contact": "Contact",
     "login": "Login",
-  "dashboard": "Dashboard"
-},
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "title": "Educational Platform",
+    "subtitle": "Connect, Learn, Grow Together",
+    "description": "A complete online educational platform with advanced resources for students, teachers, and administrators.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "aboutEduVirtual": "About California International Academy",
+    "aboutDescription1": "We are a 100% virtual high school committed to providing quality education through innovative technology. Our mission is to democratize access to knowledge, connecting students with the best teachers in the country.",
+    "aboutDescription2": "With a unique methodology that combines live classes, exclusive materials, and individualized support, we prepare our students not only for university entrance exams but also for the challenges of the future.",
+    "studentsGraduated": "Students Graduated",
+    "approvalRate": "Approval Rate",
+    "teachingStructure": "Our Teaching Structure",
+    "teachingStructureDesc": "An innovative methodology that combines cutting-edge technology with the expertise of the best educators in the country.",
+    "pedagogicalTeam": "Our Pedagogical Team",
+    "pedagogicalTeamDesc": "Professionals and masters in their fields, dedicated to your academic success.",
+    "contact": "Contact Us",
+    "contactDesc": "Have a question? Our team is ready to help you start your educational journey.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What is the subject of your message?",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "sendMessage": "Send Message",
+    "virtualEducation": "Virtual Education",
+    "virtualClassroom": "Virtual Classroom",
+    "teachers": {
+      "teacher1": {
+        "name": "Flavia Catarina",
+        "specialty": "Head of Secretariat",
+        "experience": "Experienced in school management"
+      },
+      "teacher2": {
+        "name": "Mr. Warsa",
+        "specialty": "Head of Mathematics Department",
+        "experience": "Experienced in Science"
+      },
+      "teacher3": {
+        "name": "Dr. Alcaraz",
+        "specialty": "Head of Science Department",
+        "experience": "Experienced in school management"
+      },
+      "teacher4": {
+        "name": "Mrs. Paula",
+        "specialty": "College Career Advisor",
+        "experience": "Experienced in school management"
+      },
+      "teacher5": {
+        "name": "Mr. Jin",
+        "specialty": "Head of Humanities Department",
+        "experience": "Experienced in school management"
+      },
+      "teacher6": {
+        "name": "Dr. Chi",
+        "specialty": "Head of Global Languages Department",
+        "experience": "Experienced in school management"
+      }
+    },
+    "features": {
+      "title": "Main Features",
+      "virtualClassroom": "Virtual Classroom",
+      "virtualClassroomDesc": "Interactive environment for online classes",
+      "materialManagement": "Material Management",
+      "materialManagementDesc": "Organization and sharing of educational content",
+      "progressTracking": "Progress Tracking",
+      "progressTrackingDesc": "Monitoring student performance and progress"
+    },
+    "footer": {
+      "company": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "support": "Support",
+      "help": "Help",
+      "privacy": "Privacy",
+      "terms": "Terms of Use",
+      "legal": "Legal",
+      "followUs": "Follow Us",
+      "allRightsReserved": "All rights reserved",
+      "schoolName": "California International Academy",
+      "copyright": "© 2025 California International Academy"
+    },
+    "missionVisionValuesTitle": "Mission, Vision & Values",
+    "mission": {
+      "title": "Mission",
+      "desc": "At California International Academy, we are committed to providing students with access to a high-quality, globally-minded education where their unique experiences, cultures, and backgrounds are celebrated. We empower students through hands-on, project-based learning that inspires creativity, critical thinking, and real-world problem-solving, preparing them for success in higher education and beyond."
+    },
+    "vision": {
+      "title": "Vision",
+      "desc": "Our vision is to be a vibrant and inclusive learning community where students feel valued, supported, and inspired to reach their full potential, academically, socially, and personally, while developing the skills and confidence needed to thrive in an interconnected world."
+    },
+    "values": {
+      "title": "Values",
+      "desc": "We value diversity, inclusion, and academic excellence, fostering a learning environment that respects and celebrates individual differences."
+    },
+    "accreditation": {
+      "title": "The Credibility of California International Academy",
+      "subtitle": "Commitment to Academic Excellence",
+      "description": "Our priority is to offer an excellent educational experience. Therefore, we are actively pursuing **regional and national accreditation** to ensure our programs meet the highest quality standards, recognized by universities, colleges, and companies worldwide. This rigorous process demonstrates our commitment to continuous improvement and academic quality."
+    },
+    "academics": {
+      "title": "Our Academic Programs",
+      "subtitle": "Discover our academic programs and find the ideal one for you.",
+      "programs": {
+        "fundamental": {
+          "title": "Fundamental Education",
+          "desc": "A foundational curriculum for young learners, building essential skills in a supportive and engaging environment."
+        },
+        "middle": {
+          "title": "Middle Education",
+          "desc": "A transitional program that fosters independence, critical thinking, and a deeper understanding of various subjects."
+        },
+        "highSchool": {
+          "title": "High School Education",
+          "desc": "A comprehensive curriculum that prepares students for higher education and future careers, with a focus on advanced subjects and university preparation."
+        }
+      },
+      "curriculum": {
+        "grade9": {
+          "title": "9th Grade",
+          "courses": [
+            "English 9",
+            "Algebra 1 or Integrated Math 1",
+            "Science Course 1 (Biology, Chemistry, Environmental Science, Anatomy)",
+            "Physical Education",
+            "Spanish 1 (or another elective)"
+          ]
+        },
+        "grade10": {
+          "title": "10th Grade",
+          "courses": [
+            "English 10",
+            "Geometry or Integrated Math 2",
+            "Science Course 2 (Biology, Chemistry, Environmental Science, Anatomy)",
+            "World History",
+            "Physical Education",
+            "Spanish 2 (or another elective)"
+          ]
+        },
+        "grade11": {
+          "title": "11th Grade",
+          "courses": [
+            "English 11",
+            "Algebra 2 or Integrated Math 3",
+            "Science Course 3 (Biology, Chemistry, Environmental Science, Anatomy) if you want to pursue a Biology career (Pre-Med, Biology)",
+            "US History",
+            "IT & Computer Technology",
+            "Introduction to Programming (or another elective)"
+          ]
+        },
+        "grade12": {
+          "title": "12th Grade",
+          "courses": [
+            "Personal Finance",
+            "American Government",
+            "Economics",
+            "Spanish 3 (or another elective)",
+            "Health"
+          ]
+        }
+      },
+      "summerCourses": {
+        "title": "Summer Courses Abroad",
+        "locations": [
+          "USA",
+          "Canada",
+          "London"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What people say",
+    "subtitle": "Some feedback from our students, parents, and teachers.",
+    "student1": {
+      "name": "Sophia C.",
+      "role": "3rd Year Student",
+      "feedback": "The platform is amazing! The classes are super interactive and the teachers' support is excellent. I love the experience."
+    },
+    "student2": {
+      "name": "Carlos G.",
+      "role": "Parent",
+      "feedback": "My son's school performance has improved so much since he enrolled in California International Academy. The tracking system is very comprehensive."
+    },
+    "student3": {
+      "name": "Anna R.",
+      "role": "History Teacher",
+      "feedback": "As a teacher, I see how much the platform facilitates content organization and interaction with students. It's a powerful tool for teaching."
+    }
+  },
   "auth": {
     "email": "Email",
+    "password": "Password",
     "signIn": "Sign In",
     "signUp": "Sign Up",
-    "forgotPassword": "Forgot my password",
-    "loginAsStudent": "Student Login",
-    "loginAsTeacher": "Teacher Login",
-    "loginAsAdmin": "Admin Login",
+    "forgotPassword": "Forgot Password?",
+    "loginAsStudent": "Login as Student",
+    "loginAsTeacher": "Login as Teacher",
+    "loginAsAdmin": "Login as Admin",
     "welcome": "Welcome",
-    "welcomeBack": "Welcome back",
-    "enterCredentials": "Enter your credentials to access",
+    "welcomeBack": "Welcome Back",
+    "enterCredentials": "Please enter your credentials to access",
     "noAccount": "Don't have an account?",
     "hasAccount": "Already have an account?"
   },
@@ -65,22 +257,22 @@
     "deleteContent": "Delete Content"
   },
   "admin": {
-"admin": {
-  "manageStudents": "Manage Students",
-  "manageTeachers": "Manage Teachers",
-  "announcements": "Announcements",
-  "reports": "Reports",
-  "configurations": "Configurations",
-  "addStudent": "Add Student",
-  "editStudent": "Edit Student",
-  "removeStudent": "Remove Student",
-  "addTeacher": "Add Teacher",
-  "editTeacher": "Edit Teacher",
-  "removeTeacher": "Remove Teacher",
-  "sendAnnouncement": "Send Announcement",
-  "viewReport": "View Report",
-  "exportReport": "Export Report"
-},
+    "manageStudents": "Manage Students",
+    "manageTeachers": "Manage Teachers",
+    "announcements": "Announcements",
+    "reports": "Reports",
+    "configurations": "Configurations",
+    "addStudent": "Add Student",
+    "editStudent": "Edit Student",
+    "removeStudent": "Remove Student",
+    "addTeacher": "Add Teacher",
+    "editTeacher": "Edit Teacher",
+    "removeTeacher": "Remove Teacher",
+    "sendAnnouncement": "Send Announcement",
+    "viewReport": "View Report",
+    "exportReport": "Export Report"
+  },
+  "common": {
     "save": "Save",
     "cancel": "Cancel",
     "edit": "Edit",
@@ -96,7 +288,7 @@
     "error": "Error",
     "success": "Success",
     "warning": "Warning",
-    "info": "Information",
+    "info": "Info",
     "confirm": "Confirm",
     "yes": "Yes",
     "no": "No",
@@ -126,32 +318,32 @@
     "help": "Help",
     "exit": "Exit",
     "rememberMe": "Remember me",
-    "forgotPasswordQuestion": "Forgot password?",
+    "forgotPasswordQuestion": "Forgot your password?",
     "isStudent": "Are you a student?",
-    "accessStudentPortal": "Access Student Portal",
-    "restrictedAccess": "Access restricted to institution teachers",
+    "accessStudentPortal": "Access student portal",
+    "restrictedAccess": "Access restricted to institutional teachers",
     "forDemonstration": "For demonstration, use any email/password",
     "institutionalEmail": "Institutional Email",
     "administrativeEmail": "Administrative Email",
     "administrativePanel": "Administrative Panel",
-    "restrictedAdminAccess": "Access restricted to administration",
+    "restrictedAdminAccess": "Access restricted to administrators",
     "teacherPortal": "Teacher Portal",
-    "accessTeachingArea": "Access your teaching area",
-    "otherAccess": "Other access",
+    "accessTeachingArea": "Access teaching area",
+    "otherAccess": "Other accesses",
     "teacher": "Teacher",
-    "secretaryArea": "Restricted area for administrators and secretariat",
+    "secretaryArea": "Area restricted to administrators and secretariat",
     "enteringLogin": "Logging in...",
     "portals": "Portals",
     "language": "Language",
     "team": "Team",
     "student": "Student",
     "administrator": "Administrator",
-    "emailOrRA": "Email or ID",
-    "enterEmailOrRA": "Enter your email or ID",
-    "enterPassword": "Enter your password",
-    "firstAccess": "First access? Contact the secretariat to receive your credentials.",
+    "emailOrRA": "Email or RA",
+    "enterEmailOrRA": "Enter email or RA",
+    "enterPassword": "Enter password",
+    "firstAccess": "First access? Contact the secretariat to get your credentials.",
     "notStudent": "Not a student?",
-    "accessAsTeacher": "Access as Teacher",
+    "accessAsTeacher": "Access as a teacher",
     "totalStudents": "Total Students",
     "activeTeachers": "Active Teachers",
     "classes": "Classes",
@@ -164,139 +356,182 @@
     "sentTasks": "Sent Tasks",
     "generalAverage": "General Average",
     "administrativeDashboard": "Administrative Dashboard",
-    "virtualSchoolOverview": "Virtual school overview",
-    "studentsPerClass": "students",
-    "newEnrollment": "New enrollment",
-    "teacherAdded": "Teacher added",
-    "announcementSent": "Announcement sent",
-    "reportGenerated": "Report generated",
+    "virtualSchoolOverview": "Virtual School Overview",
+    "studentsPerClass": "Students per Class",
+    "newEnrollment": "New Enrollment",
+    "teacherAdded": "Teacher Added",
+    "announcementSent": "Announcement Sent",
+    "reportGenerated": "Report Generated",
     "hours": "hours",
-    "days": "day",
+    "days": "days",
     "hour": "hour",
     "minute": "minute",
-    "thisMonth": "this month",
-    "certificate": "Certification",
-    "certificateDesc": "MEC recognized certificate valid throughout the national territory",
+    "thisMonth": "This Month",
+    "certificate": "Certificate",
+    "certificateDesc": "Certificate recognized by the MEC and valid throughout the national territory.",
     "flexibility": "Flexibility",
-    "flexibilityDesc": "Study at your own pace, when and where you want, with 24/7 platform access",
+    "flexibilityDesc": "Study at your own pace, from anywhere, anytime, with 24/7 access to the platform.",
     "globalPlatform": "Global Platform",
-    "globalPlatformDesc": "Cutting-edge technology that connects students from all over Brazil in a secure virtual environment",
+    "globalPlatformDesc": "Cutting-edge technology that connects students from all over Brazil in a secure virtual environment.",
     "manageStudentsTeachers": "Manage your classes and students",
     "studentsCount": "students",
-    "nextClass": "Next class",
-    "active": "Active",
+    "nextClass": "Next Class",
+    "active": "active",
     "viewStudents": "View Students",
     "chat": "Chat",
     "sendContent": "Send Content",
     "correctTasks": "Correct Tasks",
     "performance": "Performance",
-    "performanceAnalysis": "Analysis of your classes' performance",
-    "watchClasses": "Watch your live or recorded classes",
-    "liveClassNow": "🔴 Class Happening Now!",
+    "performanceAnalysis": "Class Performance Analysis",
+    "watchClasses": "Watch live or recorded classes",
+    "liveClassNow": "🔴 Live Class Now!",
     "enterClass": "Enter Class",
     "remindMe": "Remind Me",
-    "watchRecording": "Watch Recording",
+    "watchRecording": "Watch recording",
     "nextWeekClasses": "Next Week's Classes",
     "viewDetails": "View details",
     "shareContentWithClasses": "Share materials and videos with your classes",
-    "evaluateStudentActivities": "Evaluate and correct student activities",
-  "evaluateStudentActivities": "Evaluate and correct student activities",
-  "manageStudents": "Manage Students"
-},
-"home": {
-  "subtitle": "Connect, learn and grow together",
-  "description": "A complete platform for online education with advanced features for students, teachers and administrators.",
-  "getStarted": "Get Started",
-  "learnMore": "Learn More",
-  "aboutEduVirtual": "About EduVirtual",
-  "aboutDescription1": "We are a 100% virtual high school, committed to offering quality education through innovative technology. Our mission is to democratize access to knowledge, connecting students to the country's best teachers.",
-  "aboutDescription2": "With a unique methodology that combines live classes, exclusive materials and personalized support, we prepare our students not only for college entrance exams, but for future challenges.",
-  "studentsGraduated": "Graduated Students",
-  "approvalRate": "Approval Rate",
-  "teachingStructure": "Our Teaching Structure",
-  "teachingStructureDesc": "Innovative methodology that combines cutting-edge technology with the expertise of the country's best educators.",
-  "pedagogicalTeam": "Our Pedagogical Team",
-  "pedagogicalTeamDesc": "Specialist teachers and masters in their areas, dedicated to your academic success.",
-  "contact": "Contact Us",
-  "contactDesc": "Have questions? Our team is ready to help you start your educational journey.",
-  "fullName": "Full Name",
-  "fullNamePlaceholder": "Your full name",
-  "emailPlaceholder": "your@email.com",
-  "subject": "Subject",
-  "subjectPlaceholder": "What is the subject of your message?",
-  "message": "Message",
-  "messagePlaceholder": "Write your message here...",
-  "sendMessage": "Send Message",
-  "virtualEducation": "Virtual Education",
-  "virtualClassroom": "Virtual Classroom",
-  "teachers": {
-    "teacher1": {
-      "name": "Flavia Catarina",
-      "specialty": "Secretary",
-      "experience": "Experience in school management"
-    },
-    "teacher2": {
-      "name": "Mr. Wartha",
-      "specialty": "Head of Mathematics",
-      "experience": "Experience in sciences"
-    },
-    "teacher3": {
-      "name": "Dr. Alcaraz",
-      "specialty": "Head of Sciences",
-      "experience": "Experience in school management"
-    },
-    "teacher4": {
-      "name": "Ms. Paula",
-      "specialty": "University Guidance",
-      "experience": "Experience in school management"
-    },
-    "teacher5": {
-      "name": "Ms. Jin",
-      "specialty": "Head of Humanities",
-      "experience": "Experience in school management"
-    },
-    "teacher6": {
-      "name": "Dr. Chi",
-      "specialty": "Head of World Languages",
-      "experience": "Experience in school management"
-    }
+    "evaluateStudentActivities": "Evaluate and grade student tasks",
+    "manageStudents": "Manage Students",
+    "registerManageStudents": "Register and manage students from your school",
+    "newStudent": "New Student",
+    "registerNewStudent": "Register a new student",
+    "fullNameExample": "Ex: John Doe",
+    "selectClass": "Select a class",
+    "register": "Register",
+    "studentList": "Student List",
+    "searchByName": "Search by name, email or RA...",
+    "enrollment": "Enrollment",
+    "class": "Class",
+    "actions": "Actions",
+    "active": "Active",
+    "suspended": "Suspended",
+    "totalStudents": "Total Students",
+    "activeStudents": "Active Students",
+    "activeClasses": "Active Classes",
+    "manageTeachers": "Manage Teachers",
+    "registerManageTeachers": "Register and manage teachers from your school",
+    "newTeacher": "New Teacher",
+    "registerNewTeacher": "Register a new teacher",
+    "teacherNameExample": "Ex: Dr. Peter",
+    "institutionalEmail": "Institutional Email",
+    "institutionalEmailExample": "maria@eduvirtual.com.br",
+    "selectSubject": "Select a subject",
+    "mathematics": "Mathematics",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "biology": "Biology",
+    "history": "History",
+    "geography": "Geography",
+    "portuguese": "Portuguese",
+    "english": "English",
+    "formation": "Formation",
+    "formationExample": "Ex: Master in Mathematics",
+    "teacherList": "Teacher List",
+    "searchByNameEmailSubject": "Search by name, email or subject...",
+    "subject": "Subject",
+    "classes": "Classes",
+    "totalTeachers": "Total Teachers",
+    "activeTeachers": "Active Teachers",
+    "onVacation": "On Vacation",
+    "subjects": "Subjects",
+    "teachersBySubject": "Teachers by Subject",
+    "announcements": "Announcements",
+    "sendNotificationsCommunity": "Send announcements and notifications to the school community",
+    "newAnnouncement": "New Announcement",
+    "createNewAnnouncement": "Create New Announcement",
+    "type": "Type",
+    "selectType": "Select type",
+    "generalNotice": "General Notice",
+    "convocation": "Convocation",
+    "event": "Event",
+    "maintenance": "Maintenance",
+    "emergency": "Emergency",
+    "recipients": "Recipients",
+    "allStudents": "All Students",
+    "allTeachers": "All Teachers",
+    "allGuardians": "All Guardians",
+    "allUsers": "All Users",
+    "administrators": "Administrators",
+    "sendingOptions": "Sending Options",
+    "sendImmediately": "Send Immediately",
+    "scheduleDelivery": "Schedule Delivery",
+    "saveAsDraft": "Save as draft",
+    "sendNow": "Send Now",
+    "schedule": "Schedule",
+    "totalAnnouncements": "Total Announcements",
+    "sent": "Sent",
+    "scheduled": "Scheduled",
+    "views": "Views",
+    "all": "All",
+    "drafts": "Drafts",
+    "recipients": "Recipients",
+    "sentOn": "Sent On",
+    "scheduledForDelivery": "Scheduled for delivery",
+    "continueEditing": "Continue Editing",
+    "myTasks": "My Tasks",
+    "trackSchoolActivities": "Track the status of your school activities",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "delivered": "Delivered",
+    "late": "Late",
+    "deadline": "Deadline",
+    "score": "Score",
+    "grade": "Grade",
+    "startTask": "Start Task",
+    "submitTask": "Submit Task",
+    "viewSubmission": "View Submission",
+    "viewFeedback": "View Feedback",
+    "nextDeliveries": "Upcoming Deliveries",
+    "studyMaterials": "Study Materials",
+    "accessDownloadMaterials": "Access and download materials for all subjects",
+    "searchMaterials": "Search materials...",
+    "filterBySubject": "Filter by subject",
+    "date": "Date",
+    "totalMaterials": "Total Materials",
+    "disciplines": "Subjects",
+    "downloads": "Downloads",
+    "newThisWeek": "New this week",
+    "download": "Download",
+    "view": "View",
+    "recentlyAddedMaterials": "Recently Added Materials",
+    "correctedTasks": "Corrected Tasks",
+    "taughtClasses": "Taught Classes",
+    "generalAverage": "General Average",
+    "byClass": "By Class",
+    "evolution": "Evolution",
+    "distribution": "Distribution",
+    "averageGrade": "Average Grade",
+    "approvalRate": "Approval Rate",
+    "students": "Students",
+    "classAverage": "Class Average",
+    "averageEvolution": "Average Evolution",
+    "gradeDistribution": "Grade Distribution",
+    "messages": "Messages",
+    "communicationStudentsAnnouncements": "Communicate with students and send announcements",
+    "conversations": "Conversations",
+    "searchStudent": "Search student...",
+    "online": "Online",
+    "selectConversation": "Select a conversation to start",
+    "typeMessage": "Type your message...",
+    "newAnnouncement": "New Announcement",
+    "messageTitle": "Message Title",
+    "importantNoticeExample": "Ex: Important notice about exams",
+    "message": "Message",
+    "typeAnnouncementContent": "Write the content of the announcement...",
+    "sendAnnouncement": "Send Announcement",
+    "sentAnnouncements": "Sent Announcements"
   },
-  "features": {
-    "title": "Main Features",
-    "virtualClassroom": "Virtual Classroom",
-    "virtualClassroomDesc": "Interactive environment for online learning",
-    "materialManagement": "Material Management",
-    "materialManagementDesc": "Organize and share educational content",
-    "progressTracking": "Progress Tracking",
-    "progressTrackingDesc": "Monitor student development"
-  },
-  "footer": {
-    "company": "Company",
-    "about": "About Us",
-    "careers": "Careers",
-    "contact": "Contact",
-    "support": "Support",
-    "help": "Help",
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "legal": "Legal",
-    "followUs": "Follow us",
-    "allRightsReserved": "All rights reserved",
-    "schoolName": "California International Academy",
-    "copyright": "© 2025 California International Academy"
-  }
-},
-    
   "errors": {
     "pageNotFound": "Page not found",
-    "goHome": "Go back home",
+    "goHome": "Go back to home page",
     "somethingWentWrong": "Something went wrong",
     "tryAgain": "Please try again",
     "networkError": "Network error",
     "serverError": "Server error",
     "unauthorized": "Unauthorized",
-    "forbidden": "Access denied",
-    "notFound": "Not Found",
+    "forbidden": "Forbidden",
+    "notFound": "Not found",
     "validationError": "Validation error",
     "requiredField": "Required field",
     "invalidEmail": "Invalid email address",
@@ -310,9 +545,9 @@
     "saveSuccess": "Saved successfully",
     "deleteSuccess": "Deleted successfully",
     "updateSuccess": "Updated successfully",
-    "uploadSuccess": "Upload successful",
-    "downloadSuccess": "Download successful",
-    "messagesSent": "Message sent",
+    "uploadSuccess": "Upload complete",
+    "downloadSuccess": "Download complete",
+    "messagesSent": "Messages sent",
     "taskSubmitted": "Task submitted",
     "gradeUpdated": "Grade updated",
     "attendanceMarked": "Attendance marked",
@@ -322,5 +557,111 @@
     "userRemoved": "User removed",
     "announcementSent": "Announcement sent",
     "reportGenerated": "Report generated"
+  },
+  "admissions": {
+    "title": "Admissions",
+    "gettingStarted": {
+      "title": "Getting Started",
+      "subtitle": "Learn on your schedule — with live support when you want it",
+      "description1": "The flexibility of asynchronous learning at California International Academy",
+      "description2": "At California International Academy, we combine the freedom of asynchronous learning with the connection of live instruction. Students enjoy the flexibility to study at their own pace while having the option to join live weekend classes and after-school support sessions for deeper learning, collaboration, and one-on-one help.",
+      "accessAnytime": {
+        "title": "Access Learning Anytime, Anywhere",
+        "desc": "Our online platform is available 24/7, so students can learn from anywhere in the world on their schedule. The coursework is self-paced, allowing for personalized progress and flexibility to balance school with other commitments."
+      },
+      "liveWeekendClasses": {
+        "title": "Live Weekend Classes for Global Connection",
+        "desc": "Each weekend, students can join live virtual classes led by our certified teachers. These interactive sessions bring peers together for discussions, project collaboration, and hands-on activities that enrich the online learning experience."
+      },
+      "afterSchoolSupport": {
+        "title": "After-School Support for Student Success",
+        "desc": "Our dedicated after-school sessions provide extra academic help, tutoring, and guidance. Whether students need clarification on assignments, test preparation, or feedback on projects, our teachers are available to ensure no one is left behind."
+      },
+      "rigorousCurriculum": {
+        "title": "Rigorous Curriculum with Global Standards",
+        "desc": "Our courses are designed by education professionals and aligned with U.S. standards, ensuring academic excellence that is recognized worldwide. Project-based learning encourages creativity, problem-solving, and real-world application."
+      },
+      "balancedApproach": {
+        "title": "A Balanced Approach — Independence with Support",
+        "desc": "We give students the freedom to shape their learning while providing a strong support network when they need it. From self-paced coursework to live weekend classes and after-school help, every student has the resources to thrive."
+      }
+    },
+    "costAndTuition": {
+      "title": "Cost & Tuition",
+      "desc": "Affordable education for all."
+    },
+    "technicalRequirements": {
+      "title": "Technical Requirements",
+      "subtitle": "The tools you need to succeed.",
+      "desc": "To make the most of your learning experience at California International Academy, students must have access to the following:",
+      "list": {
+        "computer": {
+          "title": "1. Computer or Laptop",
+          "desc": "A reliable device with a modern operating system:",
+          "specs": [
+            "Windows 10 or newer",
+            "Mac OS 11 or newer",
+            "At least 8 GB of RAM and 120 GB of storage are recommended"
+          ]
+        },
+        "internet": {
+          "title": "2. Stable Internet Connection",
+          "specs": [
+            "Minimum speed: 5 Mbps download / 2 Mbps upload",
+            "Recommended speed: 10 Mbps or higher for video conferencing and streaming course content"
+          ]
+        },
+        "webcam": {
+          "title": "3. Webcam and Microphone",
+          "specs": [
+            "Built-in or external webcam for live classes and meetings",
+            "Clear microphone or headset for communication during live sessions"
+          ]
+        },
+        "browser": {
+          "title": "4. Updated Web Browser",
+          "specs": [
+            "Google Chrome (recommended)",
+            "Mozilla Firefox, Microsoft Edge, or Safari (latest version)"
+          ]
+        },
+        "software": {
+          "title": "5. Productivity Software",
+          "specs": [
+            "Access to Google Workspace (Docs, Slides, Sheets, Drive) – provided by the school",
+            "PDF Reader (e.g., Adobe Acrobat Reader)"
+          ]
+        },
+        "platformAccess": {
+          "title": "6. Learning Platform Access",
+          "specs": [
+            "Login credentials for the California International Academy online learning system (provided upon enrollment)"
+          ]
+        },
+        "supplies": {
+          "title": "7. Additional Supplies for Hands-On Projects (varies by course)",
+          "specs": [
+            "Basic school supplies (notebooks, pens, markers)",
+            "Project-specific kits or materials (either provided or listed in the course syllabus)"
+          ]
+        }
+      }
+    },
+    "applicationPaths": {
+      "title": "Application Paths",
+      "creditTransfer": {
+        "title": "Transcript & Credit Transfer",
+        "desc": "Easily transfer credits to Excel."
+      },
+      "homeschoolTransfer": {
+        "title": "Homeschool Transfer",
+        "desc": "Seamlessly transition to online schooling."
+      }
+    },
+    "graduationRequirements": {
+      "title": "Graduation Requirements",
+      "desc1": "To graduate from California International Academy, you must meet the graduation requirements.",
+      "desc2": "California sets minimum requirements for graduation, and local school districts add their own set of requirements."
+    }
   }
 }

@@ -7,27 +7,218 @@
     "login": "Login",
     "dashboard": "Painel"
   },
+  "home": {
+    "title": "Plataforma Educacional",
+    "subtitle": "Conecte, Aprenda, Cresça Juntos",
+    "description": "Uma plataforma educacional online completa, com recursos avançados para estudantes, professores e administradores.",
+    "getStarted": "Começar",
+    "learnMore": "Saiba mais",
+    "aboutEduVirtual": "Sobre a Academia Internacional de California",
+    "aboutDescription1": "Somos uma escola de ensino médio 100% virtual, comprometida em fornecer educação de qualidade através de tecnologia inovadora. Nossa missão é democratizar o acesso ao conhecimento, conectando estudantes aos melhores professores do país.",
+    "aboutDescription2": "Com uma metodologia única, que combina aulas ao vivo, materiais exclusivos e suporte individualizado, preparamos nossos alunos não apenas para os exames vestibulares, mas também para os desafios do futuro.",
+    "studentsGraduated": "Estudantes Formados",
+    "approvalRate": "Taxa de Aprovação",
+    "teachingStructure": "Nossa Estrutura de Ensino",
+    "teachingStructureDesc": "Uma metodologia inovadora que combina tecnologia de ponta com a experiência dos melhores educadores do país.",
+    "pedagogicalTeam": "Nosso Time Pedagógico",
+    "pedagogicalTeamDesc": "Profissionais e mestres em suas áreas, dedicados ao seu sucesso acadêmico.",
+    "contact": "Fale Conosco",
+    "contactDesc": "Tem alguma pergunta? Nossa equipe está pronta para ajudar você a começar sua jornada educacional.",
+    "fullName": "Nome Completo",
+    "fullNamePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "seu@email.com",
+    "subject": "Assunto",
+    "subjectPlaceholder": "Qual o assunto da sua mensagem?",
+    "message": "Mensagem",
+    "messagePlaceholder": "Escreva sua mensagem aqui...",
+    "sendMessage": "Enviar Mensagem",
+    "virtualEducation": "Educação Virtual",
+    "virtualClassroom": "Sala de Aula Virtual",
+    "teachers": {
+      "teacher1": {
+        "name": "Flavia Catarina",
+        "specialty": "Chefe de Secretaria",
+        "experience": "Com experiência em gestão escolar"
+      },
+      "teacher2": {
+        "name": "Sr. Warsa",
+        "specialty": "Chefe do Departamento de Matemática",
+        "experience": "Com experiência em ciência"
+      },
+      "teacher3": {
+        "name": "Dr. Alcaraz",
+        "specialty": "Chefe do Departamento de Ciências",
+        "experience": "Com experiência em gestão escolar"
+      },
+      "teacher4": {
+        "name": "Sra. Paula",
+        "specialty": "Conselheira de Carreira Universitária",
+        "experience": "Com experiência em gestão escolar"
+      },
+      "teacher5": {
+        "name": "Sr. Jin",
+        "specialty": "Chefe do Departamento de Humanidades",
+        "experience": "Com experiência em gestão escolar"
+      },
+      "teacher6": {
+        "name": "Dr. Chi",
+        "specialty": "Chefe do Departamento de Idiomas Globais",
+        "experience": "Com experiência em gestão escolar"
+      }
+    },
+    "features": {
+      "title": "Principais Funcionalidades",
+      "virtualClassroom": "Sala de Aula Virtual",
+      "virtualClassroomDesc": "Ambiente interativo para aulas online",
+      "materialManagement": "Gestão de Materiais",
+      "materialManagementDesc": "Organização e compartilhamento de conteúdo educacional",
+      "progressTracking": "Acompanhamento de Progresso",
+      "progressTrackingDesc": "Monitoramento do desempenho e avanço do aluno"
+    },
+    "footer": {
+      "company": "Empresa",
+      "about": "Sobre Nós",
+      "careers": "Carreiras",
+      "contact": "Contato",
+      "support": "Suporte",
+      "help": "Ajuda",
+      "privacy": "Privacidade",
+      "terms": "Termos de Uso",
+      "legal": "Legal",
+      "followUs": "Siga-nos",
+      "allRightsReserved": "Todos os direitos reservados",
+      "schoolName": "Academia Internacional de California",
+      "copyright": "© 2025 Academia Internacional de California"
+    },
+    "missionVisionValuesTitle": "Missão, Visão e Valores",
+    "mission": {
+      "title": "Missão",
+      "desc": "Na Academia Internacional de California, temos o compromisso de fornecer aos alunos acesso a uma educação de alta qualidade e com mentalidade global, onde suas experiências, culturas e origens únicas são celebradas. Capacitamos os alunos por meio de aprendizagem prática baseada em projetos que inspira criatividade, pensamento crítico e resolução de problemas do mundo real, preparando-os para o sucesso no ensino superior e além."
+    },
+    "vision": {
+      "title": "Visão",
+      "desc": "Nossa visão é ser uma comunidade de aprendizagem vibrante e inclusiva, onde os alunos se sintam valorizados, apoiados e inspirados para alcançar seu potencial máximo - acadêmica, social e pessoalmente - enquanto desenvolvem as habilidades e a confiança necessárias para prosperar em um mundo interconectado."
+    },
+    "values": {
+      "title": "Valores",
+      "desc": "Valorizamos a diversidade, a inclusão e a excelência acadêmica, promovendo um ambiente de aprendizagem que respeita e celebra as diferenças individuais."
+    },
+    "accreditation": {
+      "title": "A Credibilidade da California International Academy",
+      "subtitle": "Compromisso com a Excelência Acadêmica",
+      "description": "Nossa prioridade é oferecer uma experiência educacional de excelência. Por isso, estamos buscando ativamente a **acreditação regional e nacional** para garantir que nossos programas atendam aos mais altos padrões de qualidade, reconhecidos por universidades, faculdades e empresas em todo o mundo. Este rigoroso processo demonstra nosso compromisso com a melhoria contínua e a qualidade acadêmica."
+    },
+    "academics": {
+      "title": "Nossos Programas Acadêmicos",
+      "subtitle": "Descubra nossos programas acadêmicos e encontre o ideal para você.",
+      "programs": {
+        "fundamental": {
+          "title": "Ensino Fundamental",
+          "desc": "Currículo fundamental para jovens estudantes, construindo habilidades essenciais em um ambiente de apoio e envolvente."
+        },
+        "middle": {
+          "title": "Ensino Médio",
+          "desc": "Programa de transição que fomenta independência, pensamento crítico e uma compreensão mais profunda de diversas matérias."
+        },
+        "highSchool": {
+          "title": "Ensino Secundário",
+          "desc": "Currículo abrangente que prepara os alunos para o ensino superior e futuras carreiras, com foco em matérias avançadas e preparação universitária."
+        }
+      },
+      "curriculum": {
+        "grade9": {
+          "title": "9º Ano",
+          "courses": [
+            "Inglês 9",
+            "Álgebra 1 ou Matemática Integrada 1",
+            "Curso de Ciências 1 (Biologia, Química, Ciências Ambientais, Anatomia)",
+            "Educação física",
+            "Espanhol 1 (ou outra eletiva)"
+          ]
+        },
+        "grade10": {
+          "title": "10º Ano",
+          "courses": [
+            "Inglês 10",
+            "Geometria ou Matemática Integrada 2",
+            "Curso de Ciências 2 (Biologia, Química, Ciências Ambientais, Anatomia)",
+            "História Mundial",
+            "Educação física",
+            "Espanhol 2 (ou outra eletiva)"
+          ]
+        },
+        "grade11": {
+          "title": "11º Ano",
+          "courses": [
+            "Inglês 11",
+            "Álgebra 2 ou Matemática Integrada 3",
+            "Curso de Ciências 3 (Biologia, Química, Ciências Ambientais, Anatomia) se você deseja cursar Biologia (Pré-Med, Biologia)",
+            "História dos EUA",
+            "Computadores e Tecnologia da Informação",
+            "Introdução à Programação (ou outra eletiva)"
+          ]
+        },
+        "grade12": {
+          "title": "12º Ano",
+          "courses": [
+            "Finanças Pessoais",
+            "Governo Americano",
+            "Economia",
+            "Espanhol 3 (ou outra eletiva)",
+            "Saúde"
+          ]
+        }
+      },
+      "summerCourses": {
+        "title": "Aulas de verão no exterior",
+        "locations": [
+          "EUA",
+          "Canadá",
+          "Londres"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "O que as pessoas dizem",
+    "subtitle": "Alguns comentários de nossos estudantes, pais e professores.",
+    "student1": {
+      "name": "Sofia C.",
+      "role": "Estudante do 3º ano",
+      "feedback": "A plataforma é incrível! As aulas são super interativas e o suporte dos professores é excelente. Estou adorando a experiência."
+    },
+    "student2": {
+      "name": "Carlos G.",
+      "role": "Pai",
+      "feedback": "A performance escolar do meu filho melhorou muito desde que ele se matriculou na Academia Internacional de California. O sistema de acompanhamento é muito completo."
+    },
+    "student3": {
+      "name": "Ana R.",
+      "role": "Professora de História",
+      "feedback": "Como professora, vejo o quanto a plataforma facilita a organização do conteúdo e a interação com os alunos. É uma ferramenta poderosa para o ensino."
+    }
+  },
   "auth": {
-    "email": "Endereço de e-mail",
+    "email": "Endereço de E-mail",
     "password": "Senha",
     "signIn": "Entrar",
-    "signUp": "Cadastrar",
-    "forgotPassword": "Esqueceu a senha",
-    "loginAsStudent": "Entrar como estudante",
-    "loginAsTeacher": "Entrar como professor",
-    "loginAsAdmin": "Entrar como administrador",
+    "signUp": "Cadastre-se",
+    "forgotPassword": "Esqueci a Senha",
+    "loginAsStudent": "Entrar como Estudante",
+    "loginAsTeacher": "Entrar como Professor",
+    "loginAsAdmin": "Entrar como Administrador",
     "welcome": "Bem-vindo",
     "welcomeBack": "Bem-vindo de volta",
-    "enterCredentials": "Insira suas credenciais para acessar",
-    "noAccount": "Não tem uma conta",
-    "hasAccount": "Já tem uma conta"
+    "enterCredentials": "Por favor, insira suas credenciais para acessar",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?"
   },
   "dashboard": {
     "overview": "Visão Geral",
     "classes": "Turmas",
     "materials": "Materiais",
     "tasks": "Tarefas",
-    "schedule": "Horários",
+    "schedule": "Agenda",
     "messages": "Mensagens",
     "grades": "Notas",
     "attendance": "Frequência",
@@ -38,13 +229,13 @@
   },
   "student": {
     "myClasses": "Minhas Turmas",
-    "homework": "Tarefas",
+    "homework": "Lição de Casa",
     "calendar": "Calendário",
     "progress": "Progresso",
     "viewClass": "Ver Turma",
     "downloadMaterial": "Baixar Material",
-    "submitTask": "Enviar Tarefa",
-    "viewSchedule": "Ver Horário",
+    "submitTask": "Entregar Tarefa",
+    "viewSchedule": "Ver Agenda",
     "sendMessage": "Enviar Mensagem",
     "joinClass": "Entrar na Turma",
     "completed": "Concluído",
@@ -68,7 +259,7 @@
   "admin": {
     "manageStudents": "Gerenciar Alunos",
     "manageTeachers": "Gerenciar Professores",
-    "announcements": "Comunicados",
+    "announcements": "Anúncios",
     "reports": "Relatórios",
     "configurations": "Configurações",
     "addStudent": "Adicionar Aluno",
@@ -77,7 +268,7 @@
     "addTeacher": "Adicionar Professor",
     "editTeacher": "Editar Professor",
     "removeTeacher": "Remover Professor",
-    "sendAnnouncement": "Enviar Comunicado",
+    "sendAnnouncement": "Enviar Anúncio",
     "viewReport": "Ver Relatório",
     "exportReport": "Exportar Relatório"
   },
@@ -85,11 +276,11 @@
     "save": "Salvar",
     "cancel": "Cancelar",
     "edit": "Editar",
-    "delete": "Deletar",
+    "delete": "Excluir",
     "add": "Adicionar",
     "view": "Ver",
     "download": "Baixar",
-    "upload": "Carregar",
+    "upload": "Fazer Upload",
     "search": "Buscar",
     "filter": "Filtrar",
     "sort": "Ordenar",
@@ -123,22 +314,22 @@
     "video": "Vídeo",
     "audio": "Áudio",
     "document": "Documento",
-    "backToSite": "Voltar para o Site",
+    "backToSite": "Voltar ao site",
     "help": "Ajuda",
     "exit": "Sair",
     "rememberMe": "Lembrar de mim",
     "forgotPasswordQuestion": "Esqueceu a senha?",
-    "isStudent": "É estudante?",
-    "accessStudentPortal": "Acessar Portal do Estudante",
+    "isStudent": "É um estudante?",
+    "accessStudentPortal": "Acessar portal do aluno",
     "restrictedAccess": "Acesso restrito para professores da instituição",
     "forDemonstration": "Para demonstração, use qualquer e-mail/senha",
-    "institutionalEmail": "E-mail Institucional",
-    "administrativeEmail": "E-mail Administrativo",
-    "administrativePanel": "Painel Administrativo",
-    "restrictedAdminAccess": "Acesso restrito para administradores",
-    "teacherPortal": "Portal do Professor",
-    "accessTeachingArea": "Acessar Área de Ensino",
-    "otherAccess": "Outros Acessos",
+    "institutionalEmail": "E-mail institucional",
+    "administrativeEmail": "E-mail administrativo",
+    "administrativePanel": "Painel administrativo",
+    "restrictedAdminAccess": "Acesso restrito a administradores",
+    "teacherPortal": "Portal do professor",
+    "accessTeachingArea": "Acessar área de ensino",
+    "otherAccess": "Outros acessos",
     "teacher": "Professor",
     "secretaryArea": "Área restrita a administradores e secretaria",
     "enteringLogin": "Entrando no login...",
@@ -148,10 +339,10 @@
     "student": "Estudante",
     "administrator": "Administrador",
     "emailOrRA": "E-mail ou RA",
-    "enterEmailOrRA": "Digite o e-mail ou RA",
-    "enterPassword": "Digite a senha",
-    "firstAccess": "Primeiro acesso? Entre em contato com a secretaria para receber suas credenciais.",
-    "notStudent": "Não é estudante?",
+    "enterEmailOrRA": "Insira e-mail ou RA",
+    "enterPassword": "Insira a senha",
+    "firstAccess": "Primeiro acesso? Entre em contato com a secretaria para obter suas credenciais.",
+    "notStudent": "Não é um estudante?",
     "accessAsTeacher": "Acessar como professor",
     "totalStudents": "Total de Estudantes",
     "activeTeachers": "Professores Ativos",
@@ -159,7 +350,7 @@
     "approvalRate": "Taxa de Aprovação",
     "classOccupancy": "Ocupação das Turmas",
     "recentActivities": "Atividades Recentes",
-    "enrollmentEvolution": "Evolução das Matrículas",
+    "enrollmentEvolution": "Evolução de Matrículas",
     "quickSummary": "Resumo Rápido",
     "pendingMessages": "Mensagens Pendentes",
     "sentTasks": "Tarefas Enviadas",
@@ -169,7 +360,7 @@
     "studentsPerClass": "Estudantes por Turma",
     "newEnrollment": "Nova Matrícula",
     "teacherAdded": "Professor Adicionado",
-    "announcementSent": "Comunicado Enviado",
+    "announcementSent": "Anúncio Enviado",
     "reportGenerated": "Relatório Gerado",
     "hours": "horas",
     "days": "dias",
@@ -177,15 +368,15 @@
     "minute": "minuto",
     "thisMonth": "Este Mês",
     "certificate": "Certificado",
-    "certificateDesc": "Certificado reconhecido pelo MEC e válido em todo território nacional.",
+    "certificateDesc": "Certificado reconhecido pelo MEC e válido em todo o território nacional.",
     "flexibility": "Flexibilidade",
-    "flexibilityDesc": "Estude no seu ritmo, a qualquer hora e em qualquer lugar, com acesso 24/7 à plataforma.",
+    "flexibilityDesc": "Estude no seu próprio ritmo, de onde estiver e quando quiser, com acesso 24/7 à plataforma.",
     "globalPlatform": "Plataforma Global",
     "globalPlatformDesc": "Tecnologia de ponta que conecta estudantes de todo o Brasil em um ambiente virtual seguro.",
     "manageStudentsTeachers": "Gerencie suas turmas e alunos",
-    "studentsCount": "Alunos",
-    "nextClass": "Próxima Turma",
-    "active": "Ativo",
+    "studentsCount": "estudantes",
+    "nextClass": "Próxima Aula",
+    "active": "ativo",
     "viewStudents": "Ver Alunos",
     "chat": "Chat",
     "sendContent": "Enviar Conteúdo",
@@ -195,19 +386,18 @@
     "watchClasses": "Assista às aulas ao vivo ou gravadas",
     "liveClassNow": "🔴 Aula ao vivo agora!",
     "enterClass": "Entrar na Aula",
-    "remindMe": "Lembrar-me",
-    "watchRecording": "Assistir Gravação",
+    "remindMe": "Lembre-me",
+    "watchRecording": "Assistir gravação",
     "nextWeekClasses": "Aulas da Próxima Semana",
-    "viewDetails": "Ver Detalhes",
+    "viewDetails": "Ver detalhes",
     "shareContentWithClasses": "Compartilhe materiais e vídeos com suas turmas",
     "evaluateStudentActivities": "Avalie e dê notas para as atividades dos alunos",
     "manageStudents": "Gerenciar Alunos",
     "registerManageStudents": "Cadastre e gerencie os alunos da sua escola",
     "newStudent": "Novo Aluno",
     "registerNewStudent": "Cadastrar novo aluno",
-    "fullName": "Nome Completo",
-    "fullNameExample": "Ex: João da Silva",
-    "selectClass": "Selecionar Turma",
+    "fullNameExample": "Ex: João Silva",
+    "selectClass": "Selecionar turma",
     "register": "Cadastrar",
     "studentList": "Lista de Alunos",
     "searchByName": "Buscar por nome, e-mail ou RA...",
@@ -216,17 +406,17 @@
     "actions": "Ações",
     "active": "Ativo",
     "suspended": "Suspenso",
-    "totalStudents": "Total de Alunos",
+    "totalStudents": "Total de Estudantes",
     "activeStudents": "Alunos Ativos",
     "activeClasses": "Turmas Ativas",
     "manageTeachers": "Gerenciar Professores",
     "registerManageTeachers": "Cadastre e gerencie os professores da sua escola",
     "newTeacher": "Novo Professor",
     "registerNewTeacher": "Cadastrar novo professor",
-    "teacherNameExample": "Ex: Dra. Maria Santos",
-    "institutionalEmail": "E-mail Institucional",
+    "teacherNameExample": "Ex: Dr. Pedro",
+    "institutionalEmail": "E-mail institucional",
     "institutionalEmailExample": "maria@eduvirtual.com.br",
-    "selectSubject": "Selecionar Matéria",
+    "selectSubject": "Selecionar disciplina",
     "mathematics": "Matemática",
     "physics": "Física",
     "chemistry": "Química",
@@ -238,20 +428,20 @@
     "formation": "Formação",
     "formationExample": "Ex: Mestre em Matemática",
     "teacherList": "Lista de Professores",
-    "searchByNameEmailSubject": "Buscar por nome, e-mail ou matéria...",
-    "subject": "Matéria",
+    "searchByNameEmailSubject": "Buscar por nome, e-mail ou disciplina...",
+    "subject": "Disciplina",
     "classes": "Turmas",
     "totalTeachers": "Total de Professores",
     "activeTeachers": "Professores Ativos",
-    "onVacation": "Em Férias",
-    "subjects": "Matérias",
-    "teachersBySubject": "Professores por Matéria",
-    "announcements": "Comunicados",
-    "sendNotificationsCommunity": "Envie comunicados e avisos para a comunidade escolar",
-    "newAnnouncement": "Novo Comunicado",
-    "createNewAnnouncement": "Criar novo comunicado",
+    "onVacation": "De Férias",
+    "subjects": "Disciplinas",
+    "teachersBySubject": "Professores por Disciplina",
+    "announcements": "Anúncios",
+    "sendNotificationsCommunity": "Envie anúncios e notificações para a comunidade escolar",
+    "newAnnouncement": "Novo Anúncio",
+    "createNewAnnouncement": "Criar Novo Anúncio",
     "type": "Tipo",
-    "selectType": "Selecionar Tipo",
+    "selectType": "Selecionar tipo",
     "generalNotice": "Aviso Geral",
     "convocation": "Convocação",
     "event": "Evento",
@@ -265,156 +455,72 @@
     "administrators": "Administradores",
     "sendingOptions": "Opções de Envio",
     "sendImmediately": "Enviar Imediatamente",
-    "scheduleDelivery": "Agendar Entrega",
+    "scheduleDelivery": "Agendar Envio",
     "saveAsDraft": "Salvar como rascunho",
     "sendNow": "Enviar Agora",
     "schedule": "Agendar",
-    "totalAnnouncements": "Total de Comunicados",
-    "sent": "Enviados",
-    "scheduled": "Agendados",
+    "totalAnnouncements": "Total de Anúncios",
+    "sent": "Enviado",
+    "scheduled": "Agendado",
     "views": "Visualizações",
     "all": "Todos",
     "drafts": "Rascunhos",
     "recipients": "Destinatários",
     "sentOn": "Enviado em",
-    "scheduledForDelivery": "Agendado para Entrega",
+    "scheduledForDelivery": "Agendado para Envio",
     "continueEditing": "Continuar Editando",
     "myTasks": "Minhas Tarefas",
-    "trackSchoolActivities": "Acompanhe o status das atividades escolares",
+    "trackSchoolActivities": "Acompanhe o status das suas atividades escolares",
     "pending": "Pendente",
-    "inProgress": "Em Andamento",
+    "inProgress": "Em Progresso",
     "delivered": "Entregue",
     "late": "Atrasado",
-    "deadline": "Prazo",
+    "deadline": "Prazo de Entrega",
     "score": "Pontuação",
     "grade": "Nota",
-    "startTask": "Iniciar Tarefa",
-    "submitTask": "Enviar Tarefa",
-    "viewSubmission": "Ver Envio",
+    "startTask": "Começar Tarefa",
+    "submitTask": "Entregar Tarefa",
+    "viewSubmission": "Ver Entrega",
     "viewFeedback": "Ver Feedback",
     "nextDeliveries": "Próximas Entregas",
     "studyMaterials": "Materiais de Estudo",
-    "accessDownloadMaterials": "Acesse e baixe todos os materiais das suas matérias",
+    "accessDownloadMaterials": "Acesse e baixe os materiais de todas as disciplinas",
     "searchMaterials": "Buscar materiais...",
-    "filterBySubject": "Filtrar por Matéria",
+    "filterBySubject": "Filtrar por disciplina",
     "date": "Data",
     "totalMaterials": "Total de Materiais",
     "disciplines": "Disciplinas",
     "downloads": "Downloads",
-    "newThisWeek": "Novos nesta semana",
+    "newThisWeek": "Novos esta semana",
     "download": "Baixar",
     "view": "Ver",
-    "recentlyAddedMaterials": "Materiais Adicionados Recentemente",
+    "recentlyAddedMaterials": "Materiais adicionados recentemente",
     "correctedTasks": "Tarefas Corrigidas",
-    "taughtClasses": "Turmas Lecionadas",
+    "taughtClasses": "Aulas Ministradas",
     "generalAverage": "Média Geral",
     "byClass": "Por Turma",
     "evolution": "Evolução",
     "distribution": "Distribuição",
     "averageGrade": "Nota Média",
     "approvalRate": "Taxa de Aprovação",
-    "students": "Estudantes",
+    "students": "Alunos",
     "classAverage": "Média da Turma",
     "averageEvolution": "Evolução da Média",
     "gradeDistribution": "Distribuição de Notas",
     "messages": "Mensagens",
-    "communicationStudentsAnnouncements": "Comunique-se com os alunos e envie comunicados",
+    "communicationStudentsAnnouncements": "Comunique-se com alunos e envie anúncios",
     "conversations": "Conversas",
     "searchStudent": "Buscar aluno...",
     "online": "Online",
     "selectConversation": "Selecione uma conversa para começar",
     "typeMessage": "Digite sua mensagem...",
-    "newAnnouncement": "Novo Comunicado",
+    "newAnnouncement": "Novo Anúncio",
     "messageTitle": "Título da Mensagem",
     "importantNoticeExample": "Ex: Aviso importante sobre as provas",
     "message": "Mensagem",
-    "typeAnnouncementContent": "Digite o conteúdo do comunicado...",
-    "sendAnnouncement": "Enviar Comunicado",
-    "sentAnnouncements": "Comunicados Enviados"
-  },
-  "home": {
-    "title": "Plataforma de Educação",
-    "subtitle": "Conecte-se, Aprenda, Cresça Juntos",
-    "description": "Uma plataforma de educação online completa, com recursos avançados para estudantes, professores e administradores.",
-    "getStarted": "Começar",
-    "learnMore": "Saiba Mais",
-    "aboutEduVirtual": "Sobre a EduVirtual",
-    "aboutDescription1": "Somos uma escola de ensino médio 100% virtual, comprometida em oferecer educação de alta qualidade através de tecnologia inovadora. Nossa missão é democratizar o acesso ao conhecimento, conectando estudantes aos melhores professores do país.",
-    "aboutDescription2": "Com uma metodologia única que combina aulas ao vivo, materiais exclusivos e suporte individualizado, preparamos os estudantes não apenas para os exames vestibulares, mas para os desafios do futuro.",
-    "studentsGraduated": "Estudantes Formados",
-    "approvalRate": "Taxa de Aprovação",
-    "teachingStructure": "Nossa Estrutura de Ensino",
-    "teachingStructureDesc": "Uma metodologia inovadora que combina tecnologia de ponta com a expertise dos melhores educadores do país.",
-    "pedagogicalTeam": "Nossa Equipe Pedagógica",
-    "pedagogicalTeamDesc": "Profissionais especializados e mestres em suas respectivas áreas, dedicados ao seu sucesso acadêmico.",
-    "contact": "Contato",
-    "contactDesc": "Tem alguma pergunta? Nossa equipe está pronta para te ajudar a iniciar sua jornada educacional.",
-    "fullName": "Nome Completo",
-    "fullNamePlaceholder": "Seu nome completo",
-    "emailPlaceholder": "seu@email.com",
-    "subject": "Assunto",
-    "subjectPlaceholder": "Qual o assunto da sua mensagem?",
-    "message": "Mensagem",
-    "messagePlaceholder": "Escreva sua mensagem aqui...",
-    "sendMessage": "Enviar Mensagem",
-    "virtualEducation": "Educação Virtual",
-    "virtualClassroom": "Sala de Aula Virtual",
-    "teachers": {
-      "teacher1": {
-        "name": "Flavia Catarina",
-        "specialty": "Diretora da Secretaria",
-        "experience": "Com experiência em gestão escolar"
-      },
-      "teacher2": {
-        "name": "Sr. Warsa",
-        "specialty": "Chefe do Departamento de Matemática",
-        "experience": "Com experiência em ciências"
-      },
-      "teacher3": {
-        "name": "Dr. Alcaraz",
-        "specialty": "Chefe do Departamento de Ciências",
-        "experience": "Com experiência em gestão escolar"
-      },
-      "teacher4": {
-        "name": "Sra. Paula",
-        "specialty": "Orientadora de Carreiras Universitárias",
-        "experience": "Com experiência em gestão escolar"
-      },
-      "teacher5": {
-        "name": "Sr. Jin",
-        "specialty": "Chefe do Departamento de Humanidades",
-        "experience": "Com experiência em gestão escolar"
-      },
-      "teacher6": {
-        "name": "Dr. Chi",
-        "specialty": "Chefe do Departamento de Línguas Globais",
-        "experience": "Com experiência em gestão escolar"
-      }
-    },
-    "features": {
-      "title": "Funcionalidades Principais",
-      "virtualClassroom": "Sala de Aula Virtual",
-      "virtualClassroomDesc": "Ambiente interativo para aulas online",
-      "materialManagement": "Gestão de Materiais",
-      "materialManagementDesc": "Organização e compartilhamento de conteúdo educacional",
-      "progressTracking": "Acompanhamento de Progresso",
-      "progressTrackingDesc": "Monitoramento do desempenho e evolução do aluno"
-    },
-    "footer": {
-      "company": "Empresa",
-      "about": "Sobre nós",
-      "careers": "Carreiras",
-      "contact": "Contato",
-      "support": "Suporte",
-      "help": "Ajuda",
-      "privacy": "Privacidade",
-      "terms": "Termos de Uso",
-      "legal": "Legal",
-      "followUs": "Siga-nos",
-      "allRightsReserved": "Todos os direitos reservados",
-      "schoolName": "Academia Internacional da Califórnia",
-      "copyright": "© 2025 Academia Internacional da Califórnia"
-    }
+    "typeAnnouncementContent": "Digite o conteúdo do anúncio...",
+    "sendAnnouncement": "Enviar Anúncio",
+    "sentAnnouncements": "Anúncios Enviados"
   },
   "errors": {
     "pageNotFound": "Página não encontrada",
@@ -424,7 +530,7 @@
     "networkError": "Erro de rede",
     "serverError": "Erro do servidor",
     "unauthorized": "Não autorizado",
-    "forbidden": "Acesso proibido",
+    "forbidden": "Proibido",
     "notFound": "Não encontrado",
     "validationError": "Erro de validação",
     "requiredField": "Campo obrigatório",
@@ -434,22 +540,128 @@
   },
   "notifications": {
     "welcome": "Bem-vindo à plataforma!",
-    "loginSuccess": "Login realizado com sucesso",
-    "logoutSuccess": "Logout realizado com sucesso",
+    "loginSuccess": "Login bem-sucedido",
+    "logoutSuccess": "Logout bem-sucedido",
     "saveSuccess": "Salvo com sucesso",
-    "deleteSuccess": "Deletado com sucesso",
+    "deleteSuccess": "Excluído com sucesso",
     "updateSuccess": "Atualizado com sucesso",
     "uploadSuccess": "Upload concluído",
     "downloadSuccess": "Download concluído",
-    "messagesSent": "Mensagem(ns) enviada(s)",
+    "messagesSent": "Mensagens enviadas",
     "taskSubmitted": "Tarefa enviada",
     "gradeUpdated": "Nota atualizada",
-    "attendanceMarked": "Frequência registrada",
+    "attendanceMarked": "Presença registrada",
     "contentAdded": "Conteúdo adicionado",
     "userAdded": "Usuário adicionado",
     "userUpdated": "Usuário atualizado",
     "userRemoved": "Usuário removido",
-    "announcementSent": "Comunicado enviado",
+    "announcementSent": "Anúncio enviado",
     "reportGenerated": "Relatório gerado"
+  },
+  "admissions": {
+    "title": "Admissões",
+    "gettingStarted": {
+      "title": "Começando",
+      "subtitle": "Aprenda de acordo com sua programação – com suporte ao vivo quando você quiser",
+      "description1": "A flexibilidade da aprendizagem assíncrona na California International Academy",
+      "description2": "Na California International Academy, combinamos a liberdade do aprendizado assíncrono com a conexão do ensino ao vivo. Os alunos desfrutam da flexibilidade de estudar em seu próprio ritmo, ao mesmo tempo que têm a opção de participar de aulas ao vivo nos finais de semana e sessões de suporte após as aulas para aprendizado mais profundo, colaboração e ajuda individual.",
+      "accessAnytime": {
+        "title": "Acesse o aprendizado a qualquer hora, em qualquer lugar",
+        "desc": "Nossa plataforma online está disponível 24 horas por dia, 7 dias por semana, para que os alunos possam aprender em qualquer lugar do mundo, de acordo com sua programação. O curso é individualizado, permitindo progresso personalizado e flexibilidade para equilibrar a escola com outros compromissos."
+      },
+      "liveWeekendClasses": {
+        "title": "Aulas de fim de semana ao vivo para conexão global",
+        "desc": "Todo fim de semana, os alunos podem participar de aulas virtuais ao vivo ministradas por nossos professores certificados. Essas sessões interativas reúnem colegas para discussões, colaboração em projetos e atividades práticas que enriquecem a experiência de aprendizagem on-line."
+      },
+      "afterSchoolSupport": {
+        "title": "Apoio pós-escola para o sucesso do aluno",
+        "desc": "Nossas sessões pós-escola dedicadas fornecem ajuda acadêmica extra, aulas particulares e orientação. Quer os alunos precisem de esclarecimentos sobre tarefas, preparação para testes ou feedback sobre projetos, nossos professores estão disponíveis para garantir que ninguém fique para trás."
+      },
+      "rigorousCurriculum": {
+        "title": "Currículo rigoroso com padrões globais",
+        "desc": "Nossos cursos são elaborados por profissionais da educação e alinhados aos padrões dos EUA, garantindo excelência acadêmica reconhecida mundialmente. A aprendizagem baseada em projetos incentiva a criatividade, a resolução de problemas e a aplicação no mundo real."
+      },
+      "balancedApproach": {
+        "title": "Uma abordagem equilibrada – Independência com apoio",
+        "desc": "Damos aos alunos a liberdade de moldar a sua aprendizagem, ao mesmo tempo que oferecemos uma forte rede de apoio quando precisam. Desde aulas assíncronas até aulas ao vivo nos finais de semana e ajuda depois das aulas, cada aluno tem os recursos para prosperar."
+      }
+    },
+    "costAndTuition": {
+      "title": "Custo da mensalidade e do programa",
+      "desc": "Educação acessível para todos."
+    },
+    "technicalRequirements": {
+      "title": "Requisitos Técnicos",
+      "subtitle": "Ferramentas que você precisa para ter sucesso.",
+      "desc": "Para aproveitar ao máximo sua experiência de aprendizado na California International Academy, os alunos devem ter acesso ao seguinte:",
+      "list": {
+        "computer": {
+          "title": "1. Computador ou laptop",
+          "desc": "Um dispositivo confiável com um sistema operacional moderno:",
+          "specs": [
+            "Windows 10 ou mais recente",
+            "Mac OS 11 ou mais recente",
+            "Recomenda-se pelo menos 8 GB de RAM e 120 GB de armazenamento"
+          ]
+        },
+        "internet": {
+          "title": "2. Conexão estável com a Internet",
+          "specs": [
+            "Velocidade mínima: download de 5 Mbps / upload de 2 Mbps",
+            "Velocidade recomendada: 10 Mbps ou superior para videoconferência e streaming de conteúdo do curso"
+          ]
+        },
+        "webcam": {
+          "title": "3. Webcam e microfone",
+          "specs": [
+            "Webcam integrada ou externa para aulas e reuniões ao vivo",
+            "Limpe o microfone ou fone de ouvido para comunicação durante sessões ao vivo"
+          ]
+        },
+        "browser": {
+          "title": "4. Navegador atualizado",
+          "specs": [
+            "Google Chrome (recomendado)",
+            "Mozilla Firefox, Microsoft Edge ou Safari (versão mais recente)"
+          ]
+        },
+        "software": {
+          "title": "5. Software de produtividade",
+          "specs": [
+            "Acesso ao Google Workspace (Documentos, Apresentações, Planilhas, Drive) – fornecido pela escola",
+            "Leitor de PDF (por exemplo, Adobe Acrobat Reader)"
+          ]
+        },
+        "platformAccess": {
+          "title": "6. Acesso à plataforma de aprendizagem",
+          "specs": [
+            "Credenciais de login para o sistema de aprendizagem on-line da California International Academy (fornecidas no momento da inscrição)"
+          ]
+        },
+        "supplies": {
+          "title": "7. Suprimentos adicionais para projetos práticos (varia de acordo com o curso)",
+          "specs": [
+            "Material escolar básico (cadernos, canetas, marcadores)",
+            "Kits ou materiais específicos do projeto (fornecidos ou listados no plano de estudos do curso)"
+          ]
+        }
+      }
+    },
+    "applicationPaths": {
+      "title": "Caminhos de inscrição",
+      "creditTransfer": {
+        "title": "Transcrição e transferência de crédito",
+        "desc": "Transfira créditos facilmente para o Excel."
+      },
+      "homeschoolTransfer": {
+        "title": "Transferência de ensino doméstico",
+        "desc": "Faça uma transição perfeita para a escola on-line."
+      }
+    },
+    "graduationRequirements": {
+      "title": "Requisitos de graduação",
+      "desc1": "Para se formar na California International Academy, você deve atender aos requisitos de graduação.",
+      "desc2": "A Califórnia estabelece requisitos mínimos para graduação e os distritos escolares locais adicionam seu próprio conjunto de requisitos."
+    }
   }
 }

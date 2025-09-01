@@ -1,26 +1,217 @@
 {
   "navigation": {
     "home": "ホーム",
-    "about": "私たちについて",
-    "features": "機能",
+    "about": "当校について",
+    "features": "特徴",
     "contact": "お問い合わせ",
     "login": "ログイン",
     "dashboard": "ダッシュボード"
   },
+  "home": {
+    "title": "教育プラットフォーム",
+    "subtitle": "つながり、学び、共に成長する",
+    "description": "生徒、教師、管理者のための高度なリソースを備えた、包括的なオンライン教育プラットフォームです。",
+    "getStarted": "始める",
+    "learnMore": "さらに詳しく",
+    "aboutEduVirtual": "カリフォルニア国際アカデミーについて",
+    "aboutDescription1": "当校は100%バーチャルな高校で、革新的な技術を通じて質の高い教育を提供することに専念しています。私たちの使命は、学生と国内最高の教師をつなぐことで、知識へのアクセスを民主化することです。",
+    "aboutDescription2": "ライブ授業、独占的な教材、個別サポートを組み合わせたユニークな方法論により、生徒を大学入試だけでなく、将来の課題にも備えさせます。",
+    "studentsGraduated": "卒業生数",
+    "approvalRate": "合格率",
+    "teachingStructure": "私たちの教育構造",
+    "teachingStructureDesc": "最先端の技術と国内最高の教育者の経験を組み合わせた革新的な方法論です。",
+    "pedagogicalTeam": "私たちの教育チーム",
+    "pedagogicalTeamDesc": "あなたの学業成功に専念する専門家と修士たち。",
+    "contact": "お問い合わせ",
+    "contactDesc": "質問がありますか？私たちのチームがあなたの教育の旅を始めるお手伝いをします。",
+    "fullName": "フルネーム",
+    "fullNamePlaceholder": "あなたのフルネーム",
+    "emailPlaceholder": "あなたの@メール.com",
+    "subject": "件名",
+    "subjectPlaceholder": "メッセージの件名は何ですか？",
+    "message": "メッセージ",
+    "messagePlaceholder": "ここにあなたのメッセージを書いてください...",
+    "sendMessage": "メッセージを送信",
+    "virtualEducation": "バーチャル教育",
+    "virtualClassroom": "仮想教室",
+    "teachers": {
+      "teacher1": {
+        "name": "Flavia Catarina",
+        "specialty": "書記長",
+        "experience": "学校運営の経験を持つ"
+      },
+      "teacher2": {
+        "name": "Warsa先生",
+        "specialty": "数学科長",
+        "experience": "科学の経験を持つ"
+      },
+      "teacher3": {
+        "name": "Alcaraz博士",
+        "specialty": "科学科長",
+        "experience": "学校運営の経験を持つ"
+      },
+      "teacher4": {
+        "name": "Paula先生",
+        "specialty": "大学進路アドバイザー",
+        "experience": "学校運営の経験を持つ"
+      },
+      "teacher5": {
+        "name": "Jin先生",
+        "specialty": "人文科学科長",
+        "experience": "学校運営の経験を持つ"
+      },
+      "teacher6": {
+        "name": "Chi博士",
+        "specialty": "グローバル言語科長",
+        "experience": "学校運営の経験を持つ"
+      }
+    },
+    "features": {
+      "title": "主な特徴",
+      "virtualClassroom": "仮想教室",
+      "virtualClassroomDesc": "オンライン授業のためのインタラクティブな環境",
+      "materialManagement": "教材管理",
+      "materialManagementDesc": "教育コンテンツの整理と共有",
+      "progressTracking": "進捗追跡",
+      "progressTrackingDesc": "生徒の成績と進捗のモニタリング"
+    },
+    "footer": {
+      "company": "会社概要",
+      "about": "当校について",
+      "careers": "キャリア",
+      "contact": "お問い合わせ",
+      "support": "サポート",
+      "help": "ヘルプ",
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "legal": "法的事項",
+      "followUs": "フォローする",
+      "allRightsReserved": "全著作権所有",
+      "schoolName": "カリフォルニア国際アカデミー",
+      "copyright": "© 2025 カリフォルニア国際アカデミー"
+    },
+    "missionVisionValuesTitle": "ミッション、ビジョン、バリュー",
+    "mission": {
+      "title": "ミッション",
+      "desc": "カリフォルニア国際アカデミーでは、生徒たちが持つ独自の経験、文化、背景が尊重される、グローバルな視点を持つ質の高い教育へのアクセスを提供することに尽力しています。私たちは、創造性、批判的思考、そして現実世界の問題解決を促す実践的でプロジェクトベースの学習を通じて、生徒たちが高等教育やその先で成功するための準備を整えます。"
+    },
+    "vision": {
+      "title": "ビジョン",
+      "desc": "私たちのビジョンは、生徒たちが学業、社会生活、そして個人的に最大限の可能性を達成するために、価値を感じ、サポートされ、インスピレーションを受けるような、活気に満ちた包括的な学習コミュニティとなることです。同時に、相互につながった世界で成功するために必要なスキルと自信を育みます。"
+    },
+    "values": {
+      "title": "バリュー",
+      "desc": "私たちは多様性、包括性、そして学術的卓越性を重視し、個々の違いを尊重し、称賛する学習環境を促進します。"
+    },
+    "accreditation": {
+      "title": "カリフォルニア国際アカデミーの信頼性",
+      "subtitle": "学術的卓越性へのコミットメント",
+      "description": "私たちの最優先事項は、優れた教育体験を提供することです。そのため、私たちは**地域および全国的な認定**を積極的に求めており、プログラムが世界中の大学、カレッジ、企業に認められる最高の品質基準を満たしていることを保証します。この厳格なプロセスは、継続的な改善と学術的品質に対する私たちのコミットメントを示しています。"
+    },
+    "academics": {
+      "title": "私たちの学術プログラム",
+      "subtitle": "当校の学術プログラムを発見し、あなたに最適なものを見つけてください。",
+      "programs": {
+        "fundamental": {
+          "title": "初等教育",
+          "desc": "支援的で魅力的な環境で不可欠なスキルを構築する、若い学習者のための基礎カリキュラム。"
+        },
+        "middle": {
+          "title": "中等教育",
+          "desc": "独立性、批判的思考、および多様な科目に対するより深い理解を育む移行プログラム。"
+        },
+        "highSchool": {
+          "title": "高等教育",
+          "desc": "高等教育と将来のキャリアのために生徒を準備する包括的なカリキュラムで、上級科目と大学準備に焦点を当てています。"
+        }
+      },
+      "curriculum": {
+        "grade9": {
+          "title": "9年生",
+          "courses": [
+            "英語9",
+            "代数学1または統合数学1",
+            "科学コース1（生物学、化学、環境科学、解剖学）",
+            "体育",
+            "スペイン語1（またはその他の選択科目）"
+          ]
+        },
+        "grade10": {
+          "title": "10年生",
+          "courses": [
+            "英語10",
+            "幾何学または統合数学2",
+            "科学コース2（生物学、化学、環境科学、解剖学）",
+            "世界史",
+            "体育",
+            "スペイン語2（またはその他の選択科目）"
+          ]
+        },
+        "grade11": {
+          "title": "11年生",
+          "courses": [
+            "英語11",
+            "代数学2または統合数学3",
+            "科学コース3（生物学、化学、環境科学、解剖学）生物学を追求したい場合（医学部準備、生物学）",
+            "米国史",
+            "コンピューターおよび情報技術",
+            "プログラミング入門（またはその他の選択科目）"
+          ]
+        },
+        "grade12": {
+          "title": "12年生",
+          "courses": [
+            "個人金融",
+            "米国政府",
+            "経済学",
+            "スペイン語3（またはその他の選択科目）",
+            "健康"
+          ]
+        }
+      },
+      "summerCourses": {
+        "title": "海外の夏期講習",
+        "locations": [
+          "米国",
+          "カナダ",
+          "ロンドン"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "人々が語ること",
+    "subtitle": "私たちの生徒、保護者、教師からのコメント。",
+    "student1": {
+      "name": "ソフィア・C",
+      "role": "3年生",
+      "feedback": "このプラットフォームは素晴らしいです！授業は非常にインタラクティブで、先生方のサポートも素晴らしいです。この経験をとても楽しんでいます。"
+    },
+    "student2": {
+      "name": "カルロス・G",
+      "role": "父",
+      "feedback": "息子がカリフォルニア国際アカデミーに入学して以来、学業成績が大幅に向上しました。追跡システムは非常に包括的です。"
+    },
+    "student3": {
+      "name": "アナ・R",
+      "role": "歴史教師",
+      "feedback": "教師として、このプラットフォームがいかにコンテンツの整理や生徒との交流を容易にするかを感じています。教育にとって強力なツールです。"
+    }
+  },
   "auth": {
     "email": "メールアドレス",
     "password": "パスワード",
-    "signIn": "サインイン",
+    "signIn": "ログイン",
     "signUp": "サインアップ",
-    "forgotPassword": "パスワードを忘れました",
-    "loginAsStudent": "学生としてログイン",
+    "forgotPassword": "パスワードを忘れた場合",
+    "loginAsStudent": "生徒としてログイン",
     "loginAsTeacher": "教師としてログイン",
     "loginAsAdmin": "管理者としてログイン",
     "welcome": "ようこそ",
     "welcomeBack": "おかえりなさい",
-    "enterCredentials": "アクセスするために認証情報を入力してください",
-    "noAccount": "アカウントをお持ちでない方",
-    "hasAccount": "すでにアカウントをお持ちの方"
+    "enterCredentials": "アクセスするために資格情報を入力してください",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "hasAccount": "すでにアカウントをお持ちですか？"
   },
   "dashboard": {
     "overview": "概要",
@@ -37,48 +228,48 @@
     "notifications": "通知"
   },
   "student": {
-    "myClasses": "私のクラス",
+    "myClasses": "マイクラス",
     "homework": "宿題",
     "calendar": "カレンダー",
     "progress": "進捗",
-    "viewClass": "クラスを見る",
+    "viewClass": "クラスを表示",
     "downloadMaterial": "教材をダウンロード",
     "submitTask": "課題を提出",
-    "viewSchedule": "スケジュールを見る",
+    "viewSchedule": "スケジュールを表示",
     "sendMessage": "メッセージを送信",
     "joinClass": "クラスに参加",
-    "completed": "完了",
+    "completed": "完了済み",
     "pending": "保留中",
-    "overdue": "期限切れ"
+    "overdue": "期限超過"
   },
   "teacher": {
     "myGroups": "私のグループ",
     "sendContent": "コンテンツを送信",
     "correctTasks": "課題を採点",
-    "performance": "パフォーマンス",
+    "performance": "成績",
     "createClass": "クラスを作成",
     "uploadMaterial": "教材をアップロード",
     "correctTask": "課題を採点",
-    "viewPerformance": "パフォーマンスを見る",
+    "viewPerformance": "成績を表示",
     "replyMessage": "メッセージに返信",
     "addContent": "コンテンツを追加",
     "editContent": "コンテンツを編集",
     "deleteContent": "コンテンツを削除"
   },
   "admin": {
-    "manageStudents": "学生管理",
-    "manageTeachers": "教師管理",
+    "manageStudents": "生徒を管理",
+    "manageTeachers": "教師を管理",
     "announcements": "お知らせ",
     "reports": "レポート",
     "configurations": "設定",
-    "addStudent": "学生を追加",
-    "editStudent": "学生を編集",
-    "removeStudent": "学生を削除",
+    "addStudent": "生徒を追加",
+    "editStudent": "生徒を編集",
+    "removeStudent": "生徒を削除",
     "addTeacher": "教師を追加",
     "editTeacher": "教師を編集",
     "removeTeacher": "教師を削除",
     "sendAnnouncement": "お知らせを送信",
-    "viewReport": "レポートを見る",
+    "viewReport": "レポートを表示",
     "exportReport": "レポートをエクスポート"
   },
   "common": {
@@ -91,8 +282,8 @@
     "download": "ダウンロード",
     "upload": "アップロード",
     "search": "検索",
-    "filter": "フィルター",
-    "sort": "並び替え",
+    "filter": "フィルタ",
+    "sort": "並べ替え",
     "loading": "読み込み中...",
     "error": "エラー",
     "success": "成功",
@@ -108,13 +299,13 @@
     "first": "最初",
     "last": "最後",
     "name": "名前",
-    "email": "メールアドレス",
-    "phone": "電話番号",
+    "email": "メール",
+    "phone": "電話",
     "address": "住所",
     "date": "日付",
     "time": "時間",
     "status": "ステータス",
-    "actions": "アクション",
+    "actions": "操作",
     "description": "説明",
     "title": "タイトル",
     "content": "コンテンツ",
@@ -126,305 +317,221 @@
     "backToSite": "サイトに戻る",
     "help": "ヘルプ",
     "exit": "終了",
-    "rememberMe": "ログイン状態を保持",
+    "rememberMe": "私を記憶する",
     "forgotPasswordQuestion": "パスワードを忘れましたか？",
     "isStudent": "学生ですか？",
     "accessStudentPortal": "学生ポータルにアクセス",
-    "restrictedAccess": "機関の教師に限定されたアクセス",
-    "forDemonstration": "デモンストレーション用として、任意のメール/パスワードを使用してください",
-    "institutionalEmail": "機関メール",
-    "administrativeEmail": "管理メール",
+    "restrictedAccess": "学校の教師にアクセス制限",
+    "forDemonstration": "デモンストレーション用、任意のメール/パスワードを使用",
+    "institutionalEmail": "学校のメール",
+    "administrativeEmail": "管理用メール",
     "administrativePanel": "管理パネル",
-    "restrictedAdminAccess": "管理者に限定されたアクセス",
+    "restrictedAdminAccess": "管理者のみアクセス可能",
     "teacherPortal": "教師ポータル",
     "accessTeachingArea": "教育エリアにアクセス",
     "otherAccess": "その他のアクセス",
     "teacher": "教師",
-    "secretaryArea": "管理者と事務局の制限エリア",
+    "secretaryArea": "管理者および書記局にアクセス制限",
     "enteringLogin": "ログイン中...",
     "portals": "ポータル",
     "language": "言語",
     "team": "チーム",
     "student": "学生",
     "administrator": "管理者",
-    "emailOrRA": "メールまたはID",
-    "enterEmailOrRA": "メールまたはIDを入力してください",
-    "enterPassword": "パスワードを入力してください",
-    "firstAccess": "初回アクセス？事務局に連絡して認証情報を受け取ってください。",
+    "emailOrRA": "メールまたは RA",
+    "enterEmailOrRA": "メールまたは RA を入力",
+    "enterPassword": "パスワードを入力",
+    "firstAccess": "初回アクセスですか？資格情報を得るには書記局に連絡してください。",
     "notStudent": "学生ではありませんか？",
     "accessAsTeacher": "教師としてアクセス",
-    "totalStudents": "総学生数",
+    "totalStudents": "生徒総数",
     "activeTeachers": "アクティブな教師",
     "classes": "クラス",
-    "approvalRate": "承認率",
-    "classOccupancy": "クラス占有率",
-    "recentActivities": "最近のアクティビティ",
-    "enrollmentEvolution": "入学者数の推移",
+    "approvalRate": "合格率",
+    "classOccupancy": "クラスの占有率",
+    "recentActivities": "最近の活動",
+    "enrollmentEvolution": "入学の進化",
     "quickSummary": "クイックサマリー",
     "pendingMessages": "保留中のメッセージ",
     "sentTasks": "送信済み課題",
     "generalAverage": "全体平均",
     "administrativeDashboard": "管理ダッシュボード",
-    "virtualSchoolOverview": "バーチャルスクールの概要",
-    "studentsPerClass": "学生",
+    "virtualSchoolOverview": "仮想学校の概要",
+    "studentsPerClass": "クラスごとの生徒数",
     "newEnrollment": "新規入学",
-    "teacherAdded": "教師追加",
-    "announcementSent": "お知らせ送信",
-    "reportGenerated": "レポート生成",
+    "teacherAdded": "教師が追加されました",
+    "announcementSent": "お知らせが送信されました",
+    "reportGenerated": "レポートが生成されました",
     "hours": "時間",
     "days": "日",
     "hour": "時間",
     "minute": "分",
     "thisMonth": "今月",
-    "certificate": "認定",
-    "certificateDesc": "全国で有効なMEC認定証明書",
+    "certificate": "証明書",
+    "certificateDesc": "MECによって認められ、全国で有効な証明書です。",
     "flexibility": "柔軟性",
-    "flexibilityDesc": "いつでもどこでも自分のペースで学習、プラットフォームに24時間365日アクセス",
+    "flexibilityDesc": "プラットフォームに24時間365日アクセスして、いつでもどこでも自分のペースで学習できます。",
     "globalPlatform": "グローバルプラットフォーム",
-    "globalPlatformDesc": "ブラジル全土の学生を安全な仮想環境で結ぶ最先端技術",
-    "manageStudentsTeachers": "クラスと学生を管理",
-    "studentsCount": "学生",
-    "nextClass": "次のクラス",
+    "globalPlatformDesc": "ブラジル中の学生を安全な仮想環境でつなぐ最先端技術です。",
+    "manageStudentsTeachers": "クラスと生徒を管理する",
+    "studentsCount": "生徒",
+    "nextClass": "次の授業",
     "active": "アクティブ",
-    "viewStudents": "学生を見る",
+    "viewStudents": "生徒を表示",
     "chat": "チャット",
     "sendContent": "コンテンツを送信",
     "correctTasks": "課題を採点",
-    "performance": "パフォーマンス",
-    "performanceAnalysis": "クラスのパフォーマンス分析",
-    "watchClasses": "ライブまたは録画された授業を視聴",
-    "liveClassNow": "🔴 授業が今行われています！",
+    "performance": "成績",
+    "performanceAnalysis": "クラス成績分析",
+    "watchClasses": "ライブまたは録画された授業を見る",
+    "liveClassNow": "🔴 ライブ授業中！",
     "enterClass": "クラスに入る",
-    "remindMe": "リマインド",
-    "watchRecording": "録画を視聴",
-    "nextWeekClasses": "来週のクラス",
+    "remindMe": "リマインダー",
+    "watchRecording": "録画を見る",
+    "nextWeekClasses": "来週の授業",
     "viewDetails": "詳細を見る",
-    "shareContentWithClasses": "あなたのクラスと教材や動画を共有",
-    "evaluateStudentActivities": "学生の活動を評価し、採点",
-    "manageStudents": "学生管理",
-    "registerManageStudents": "学校の学生を登録・管理",
-    "newStudent": "新しい学生",
-    "registerNewStudent": "新しい学生を登録",
+    "shareContentWithClasses": "クラスと教材やビデオを共有する",
+    "evaluateStudentActivities": "生徒の活動を評価し、採点する",
+    "manageStudents": "生徒を管理",
+    "registerManageStudents": "学校の生徒を登録・管理する",
+    "newStudent": "新しい生徒",
+    "registerNewStudent": "新しい生徒を登録する",
     "fullName": "フルネーム",
-    "fullNameExample": "例: 田中太郎",
+    "fullNameExample": "例：山田太郎",
     "selectClass": "クラスを選択",
     "register": "登録",
-    "studentList": "学生リスト",
-    "searchByName": "名前、メール、学籍番号で検索...",
-    "enrollment": "学籍番号",
+    "studentList": "生徒リスト",
+    "searchByName": "名前、メール、またはRAで検索...",
+    "enrollment": "入学",
     "class": "クラス",
-    "actions": "アクション",
+    "actions": "操作",
     "active": "アクティブ",
     "suspended": "停学",
-    "totalStudents": "総学生数",
-    "activeStudents": "アクティブな学生",
+    "totalStudents": "生徒総数",
+    "activeStudents": "アクティブな生徒",
     "activeClasses": "アクティブなクラス",
-    "manageTeachers": "教師管理",
-    "registerManageTeachers": "学校の教師を登録・管理",
+    "manageTeachers": "教師を管理",
+    "registerManageTeachers": "学校の教師を登録・管理する",
     "newTeacher": "新しい教師",
-    "registerNewTeacher": "新しい教師を登録",
-    "teacherNameExample": "例: 佐藤博士",
-    "institutionalEmail": "機関メール",
-    "institutionalEmailExample": "taro@eduvirtual.com.br",
-    "selectSubject": "科目を選択",
+    "registerNewTeacher": "新しい教師を登録する",
+    "teacherNameExample": "例：田中先生",
+    "institutionalEmail": "学校のメール",
+    "institutionalEmailExample": "maria@eduvirtual.com.br",
+    "selectSubject": "科目を検索",
     "mathematics": "数学",
     "physics": "物理",
     "chemistry": "化学",
-    "biology": "生物",
+    "biology": "生物学",
     "history": "歴史",
     "geography": "地理",
     "portuguese": "ポルトガル語",
     "english": "英語",
     "formation": "学歴",
-    "formationExample": "例: 数学修士",
+    "formationExample": "例：数学の修士",
     "teacherList": "教師リスト",
-    "searchByNameEmailSubject": "名前、メール、科目で検索...",
+    "searchByNameEmailSubject": "名前、メール、または科目で検索...",
     "subject": "科目",
     "classes": "クラス",
-    "totalTeachers": "総教師数",
+    "totalTeachers": "教師総数",
     "activeTeachers": "アクティブな教師",
     "onVacation": "休暇中",
     "subjects": "科目",
-    "teachersBySubject": "科目別教師",
+    "teachersBySubject": "科目ごとの教師",
     "announcements": "お知らせ",
-    "sendNotificationsCommunity": "学校コミュニティにお知らせと連絡を送信",
+    "sendNotificationsCommunity": "学校コミュニティに通知やお知らせを送信",
     "newAnnouncement": "新しいお知らせ",
     "createNewAnnouncement": "新しいお知らせを作成",
     "type": "タイプ",
     "selectType": "タイプを選択",
     "generalNotice": "一般通知",
-    "convocation": "招集",
+    "convocation": "召集",
     "event": "イベント",
     "maintenance": "メンテナンス",
     "emergency": "緊急",
     "recipients": "受信者",
-    "allStudents": "全学生",
+    "allStudents": "全生徒",
     "allTeachers": "全教師",
     "allGuardians": "全保護者",
     "allUsers": "全ユーザー",
     "administrators": "管理者",
     "sendingOptions": "送信オプション",
     "sendImmediately": "すぐに送信",
-    "scheduleDelivery": "配信をスケジュール",
+    "scheduleDelivery": "送信をスケジュール",
     "saveAsDraft": "下書きとして保存",
     "sendNow": "今すぐ送信",
     "schedule": "スケジュール",
-    "totalAnnouncements": "総お知らせ数",
+    "totalAnnouncements": "お知らせ総数",
     "sent": "送信済み",
     "scheduled": "スケジュール済み",
     "views": "閲覧数",
     "all": "すべて",
     "drafts": "下書き",
     "recipients": "受信者",
-    "sentOn": "送信日",
-    "scheduledForDelivery": "配信予定",
+    "sentOn": "送信日時",
+    "scheduledForDelivery": "送信予定日時",
     "continueEditing": "編集を続ける",
     "myTasks": "私の課題",
-    "trackSchoolActivities": "学校活動のステータスを追跡",
+    "trackSchoolActivities": "学校の活動状況を追跡",
     "pending": "保留中",
     "inProgress": "進行中",
     "delivered": "提出済み",
     "late": "遅延",
-    "deadline": "締切",
-    "score": "スコア",
+    "deadline": "提出期限",
+    "score": "点数",
     "grade": "成績",
     "startTask": "課題を開始",
     "submitTask": "課題を提出",
-    "viewSubmission": "提出を見る",
-    "viewFeedback": "フィードバックを見る",
-    "nextDeliveries": "次の提出",
+    "viewSubmission": "提出物を表示",
+    "viewFeedback": "フィードバックを表示",
+    "nextDeliveries": "次回の提出物",
     "studyMaterials": "学習教材",
-    "accessDownloadMaterials": "科目のすべての教材にアクセスしてダウンロード",
+    "accessDownloadMaterials": "すべての科目の教材にアクセスしてダウンロード",
     "searchMaterials": "教材を検索...",
-    "filterBySubject": "科目でフィルター",
+    "filterBySubject": "科目でフィルタ",
     "date": "日付",
-    "totalMaterials": "総教材数",
-    "disciplines": "学科",
-    "downloads": "ダウンロード",
+    "totalMaterials": "教材総数",
+    "disciplines": "科目",
+    "downloads": "ダウンロード数",
     "newThisWeek": "今週の新着",
     "download": "ダウンロード",
     "view": "表示",
     "recentlyAddedMaterials": "最近追加された教材",
     "correctedTasks": "採点済み課題",
-    "taughtClasses": "担当クラス",
+    "taughtClasses": "担当授業",
     "generalAverage": "全体平均",
     "byClass": "クラス別",
-    "evolution": "推移",
+    "evolution": "変化",
     "distribution": "分布",
-    "averageGrade": "平均",
+    "averageGrade": "平均成績",
     "approvalRate": "合格率",
-    "students": "学生",
+    "students": "生徒",
     "classAverage": "クラス平均",
-    "averageEvolution": "平均の推移",
+    "averageEvolution": "平均成績の変化",
     "gradeDistribution": "成績分布",
     "messages": "メッセージ",
-    "communicationStudentsAnnouncements": "学生との連絡とお知らせの送信",
+    "communicationStudentsAnnouncements": "生徒とコミュニケーションをとり、お知らせを送信",
     "conversations": "会話",
-    "searchStudent": "学生を検索...",
+    "searchStudent": "生徒を検索...",
     "online": "オンライン",
     "selectConversation": "会話を選択して開始",
     "typeMessage": "メッセージを入力...",
     "newAnnouncement": "新しいお知らせ",
-    "messageTitle": "タイトル",
-    "importantNoticeExample": "例: 試験に関する重要なお知らせ",
+    "messageTitle": "メッセージのタイトル",
+    "importantNoticeExample": "例：試験に関する重要なお知らせ",
     "message": "メッセージ",
     "typeAnnouncementContent": "お知らせの内容を入力...",
     "sendAnnouncement": "お知らせを送信",
-    "sentAnnouncements": "送信済みお知らせ"
-  },
-  "home": {
-    "title": "教育プラットフォーム",
-    "subtitle": "つながり、学び、共に成長する",
-    "description": "学生、教師、管理者向けの高度な機能を備えた完全なオンライン教育プラットフォーム。",
-    "getStarted": "始める",
-    "learnMore": "詳しく見る",
-    "aboutEduVirtual": "EduVirtualについて",
-    "aboutDescription1": "私たちは100%バーチャルな高等学校で、革新的な技術を通じて質の高い教育を提供することにコミットしています。私たちの使命は知識へのアクセスを民主化し、学生を国内最高の教師と結びつけることです。",
-    "aboutDescription2": "ライブクラス、独占教材、個人指導を組み合わせたユニークな方法論で、大学入試だけでなく、将来の課題に向けて学生を準備します。",
-    "studentsGraduated": "卒業生",
-    "approvalRate": "承認率",
-    "teachingStructure": "私たちの教育構造",
-    "teachingStructureDesc": "最先端技術と国内最高の教育者の専門知識を組み合わせた革新的な方法論。",
-    "pedagogicalTeam": "私たちの教育チーム",
-    "pedagogicalTeamDesc": "各分野の専門家と修士号取得者で、あなたの学業成功に専念しています。",
-    "contact": "お問い合わせ",
-    "contactDesc": "質問がありますか？私たちのチームがあなたの教育の旅を始めるお手伝いをします。",
-    "fullName": "フルネーム",
-    "fullNamePlaceholder": "あなたのフルネーム",
-    "emailPlaceholder": "your@email.com",
-    "subject": "件名",
-    "subjectPlaceholder": "メッセージの件名は何ですか？",
-    "message": "メッセージ",
-    "messagePlaceholder": "ここにメッセージを書いてください...",
-    "sendMessage": "メッセージを送信",
-    "virtualEducation": "バーチャル教育",
-    "virtualClassroom": "バーチャル教室",
-    "teachers": {
-      "teacher1": {
-        "name": "フラビア・カタリナ",
-        "specialty": "事務局長",
-        "experience": "学校管理経験あり"
-      },
-      "teacher2": {
-        "name": "ワーサ氏",
-        "specialty": "数学部長",
-        "experience": "理学経験あり"
-      },
-      "teacher3": {
-        "name": "アルカラズ博士",
-        "specialty": "科学部長",
-        "experience": "学校管理経験あり"
-      },
-      "teacher4": {
-        "name": "ポーラさん",
-        "specialty": "大学進学アドバイザー",
-        "experience": "学校管理経験あり"
-      },
-      "teacher5": {
-        "name": "ジンさん",
-        "specialty": "人文科学部長",
-        "experience": "学校管理経験あり"
-      },
-      "teacher6": {
-        "name": "チー博士",
-        "specialty": "世界言語部長",
-        "experience": "学校管理経験あり"
-      }
-    },
-    "features": {
-      "title": "主な機能",
-      "virtualClassroom": "バーチャル教室",
-      "virtualClassroomDesc": "オンライン学習のためのインタラクティブ環境",
-      "materialManagement": "教材管理",
-      "materialManagementDesc": "教育コンテンツの整理と共有",
-      "progressTracking": "進捗追跡",
-      "progressTrackingDesc": "学生の発達をモニタリング"
-    },
-    "footer": {
-      "company": "会社",
-      "about": "私たちについて",
-      "careers": "キャリア",
-      "contact": "お問い合わせ",
-      "support": "サポート",
-      "help": "ヘルプ",
-      "privacy": "プライバシー",
-      "terms": "利用規約",
-      "legal": "法的事項",
-      "followUs": "フォローしてください",
-      "allRightsReserved": "すべての権利予約済み",
-      "schoolName": "カリフォルニア国際アカデミー",
-      "copyright": "© 2025 カリフォルニア国際アカデミー"
-    }
+    "sentAnnouncements": "送信済みのお知らせ"
   },
   "errors": {
     "pageNotFound": "ページが見つかりません",
     "goHome": "ホームに戻る",
-    "somethingWentWrong": "何かが間違っています",
-    "tryAgain": "もう一度試してください",
+    "somethingWentWrong": "問題が発生しました",
+    "tryAgain": "もう一度お試しください",
     "networkError": "ネットワークエラー",
     "serverError": "サーバーエラー",
     "unauthorized": "認証されていません",
-    "forbidden": "アクセス拒否",
+    "forbidden": "アクセスが禁止されています",
     "notFound": "見つかりません",
     "validationError": "検証エラー",
     "requiredField": "必須フィールド",
@@ -436,20 +543,126 @@
     "welcome": "プラットフォームへようこそ！",
     "loginSuccess": "ログイン成功",
     "logoutSuccess": "ログアウト成功",
-    "saveSuccess": "正常に保存されました",
-    "deleteSuccess": "正常に削除されました",
-    "updateSuccess": "正常に更新されました",
-    "uploadSuccess": "アップロード成功",
-    "downloadSuccess": "ダウンロード成功",
-    "messagesSent": "メッセージが送信されました",
-    "taskSubmitted": "課題が提出されました",
-    "gradeUpdated": "成績が更新されました",
-    "attendanceMarked": "出席がマークされました",
-    "contentAdded": "コンテンツが追加されました",
-    "userAdded": "ユーザーが追加されました",
-    "userUpdated": "ユーザーが更新されました",
-    "userRemoved": "ユーザーが削除されました",
-    "announcementSent": "お知らせが送信されました",
-    "reportGenerated": "レポートが生成されました"
+    "saveSuccess": "保存成功",
+    "deleteSuccess": "削除成功",
+    "updateSuccess": "更新成功",
+    "uploadSuccess": "アップロード完了",
+    "downloadSuccess": "ダウンロード完了",
+    "messagesSent": "メッセージ送信済み",
+    "taskSubmitted": "課題提出済み",
+    "gradeUpdated": "成績更新済み",
+    "attendanceMarked": "出席記録済み",
+    "contentAdded": "コンテンツ追加済み",
+    "userAdded": "ユーザー追加済み",
+    "userUpdated": "ユーザー更新済み",
+    "userRemoved": "ユーザー削除済み",
+    "announcementSent": "お知らせ送信済み",
+    "reportGenerated": "レポート生成済み"
+  },
+  "admissions": {
+    "title": "入学手続き",
+    "gettingStarted": {
+      "title": "始め方",
+      "subtitle": "あなたのペースで学ぶ — 必要なときにライブサポートも",
+      "description1": "カリフォルニア国際アカデミーにおける非同期学習の柔軟性",
+      "description2": "カリフォルニア国際アカデミーでは、非同期学習の自由とライブ授業のつながりを組み合わせています。生徒は自分のペースで学習する柔軟性を楽しみながら、週末のライブ授業や放課後のサポートセッションに参加して、より深い学習、協力、個別の支援を得ることができます。",
+      "accessAnytime": {
+        "title": "いつでもどこでも学習にアクセス",
+        "desc": "私たちのオンラインプラットフォームは24時間365日利用可能で、生徒は世界中のどこからでも自分のスケジュールで学習できます。コースワークは自己ペースで進められるため、個別の進捗が可能となり、学業と他の活動を両立させる柔軟性が生まれます。"
+      },
+      "liveWeekendClasses": {
+        "title": "週末のライブ授業でグローバルなつながりを",
+        "desc": "毎週週末、生徒は資格を持つ教師が主導するライブバーチャル授業に参加できます。これらのインタラクティブなセッションは、仲間たちと集まり、議論、プロジェクト協力、実践的な活動を通じてオンライン学習体験を豊かにします。"
+      },
+      "afterSchoolSupport": {
+        "title": "生徒の成功のための放課後サポート",
+        "desc": "私たちの専用の放課後セッションは、追加の学術支援、個別指導、ガイダンスを提供します。生徒が課題の明確化、試験準備、またはプロジェクトのフィードバックを必要とする場合、私たちの教師は誰も置き去りにされないように利用可能です。"
+      },
+      "rigorousCurriculum": {
+        "title": "グローバル基準の厳格なカリキュラム",
+        "desc": "私たちのコースは、教育専門家によって設計され、米国基準に準拠しており、世界中で認められる学術的卓越性を保証します。プロジェクトベースの学習は、創造性、問題解決、および現実世界への応用を育みます。"
+      },
+      "balancedApproach": {
+        "title": "バランスの取れたアプローチ — 支援を伴う独立",
+        "desc": "私たちは生徒に学習を形作る自由を与えながら、必要なときに強固なサポートネットワークを提供します。自己ペースのコースワークから週末のライブ授業、そして放課後支援まで、すべての生徒が成功するためのリソースを持っています。"
+      }
+    },
+    "costAndTuition": {
+      "title": "費用と授業料",
+      "desc": "すべての人に手頃な価格の教育を。"
+    },
+    "technicalRequirements": {
+      "title": "技術要件",
+      "subtitle": "成功するために必要なツール。",
+      "desc": "カリフォルニア国際アカデミーでの学習体験を最大限に活用するために、生徒は以下にアクセスできる必要があります。",
+      "list": {
+        "computer": {
+          "title": "1. デスクトップまたはノートパソコン",
+          "desc": "最新のオペレーティングシステムを備えた信頼できるデバイス：",
+          "specs": [
+            "Windows 10以上",
+            "Mac OS 11以上",
+            "最低8GBのRAMと120GBのストレージが推奨されます"
+          ]
+        },
+        "internet": {
+          "title": "2. 安定したインターネット接続",
+          "specs": [
+            "最低速度：ダウンロード5 Mbps / アップロード2 Mbps",
+            "推奨速度：ビデオ会議およびコースコンテンツのストリーミングには10 Mbps以上"
+          ]
+        },
+        "webcam": {
+          "title": "3. ウェブカメラとマイク",
+          "specs": [
+            "ライブ授業や会議用の内蔵または外部ウェブカメラ",
+            "ライブセッション中のコミュニケーションのためのクリアなマイクまたはヘッドセット"
+          ]
+        },
+        "browser": {
+          "title": "4. 最新のウェブブラウザ",
+          "specs": [
+            "Google Chrome（推奨）",
+            "Mozilla Firefox、Microsoft Edge、またはSafari（最新バージョン）"
+          ]
+        },
+        "software": {
+          "title": "5. 生産性ソフトウェア",
+          "specs": [
+            "Google Workspace（Docs, Slides, Sheets, Drive）へのアクセス – 学校から提供されます",
+            "PDFリーダー（例：Adobe Acrobat Reader）"
+          ]
+        },
+        "platformAccess": {
+          "title": "6. 学習プラットフォームへのアクセス",
+          "specs": [
+            "カリフォルニア国際アカデミーのオンライン学習システムへのログイン資格情報（入学時に提供されます）"
+          ]
+        },
+        "supplies": {
+          "title": "7. 実践的なプロジェクトのための追加用品（コースによって異なります）",
+          "specs": [
+            "基本的な学校用品（ノート、ペン、マーカー）",
+            "プロジェクト固有のキットや材料（提供されるか、コースのシラバスに記載されます）"
+          ]
+        }
+      }
+    },
+    "applicationPaths": {
+      "title": "出願経路",
+      "creditTransfer": {
+        "title": "成績証明書と単位移行",
+        "desc": "Excelに簡単に単位を移行できます。"
+      },
+      "homeschoolTransfer": {
+        "title": "ホームスクールからの編入",
+        "desc": "オンライン教育へのスムーズな移行。"
+      }
+    },
+    "graduationRequirements": {
+      "title": "卒業要件",
+      "desc1": "カリフォルニア国際アカデミーを卒業するには、卒業要件を満たす必要があります。",
+      "desc2": "カリフォルニア州は卒業のための最低要件を定めており、各地の学区が独自の要件を追加しています。"
+    }
   }
 }
