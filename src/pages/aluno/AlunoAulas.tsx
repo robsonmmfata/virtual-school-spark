@@ -1,13 +1,23 @@
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Play, Clock, Users, Star } from "lucide-react";
+import { Play, Clock, Users, Star, Bell, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 
 const AlunoAulas = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
+  const [aulasFavoritadas, setAulasFavoritadas] = useState<number[]>([]);
+  const [lembretes, setLembretes] = useState<number[]>([]);
+
+  // Solicitar permissão de notificação no carregamento
+  React.useEffect(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
+  }, []);
   
   const aulas = [
     {
@@ -71,14 +81,22 @@ const AlunoAulas = () => {
 
   const handleEntrarAula = async (titulo: string) => {
     try {
-      // Simular entrada na aula (implementar integração com sistema de videoconferência)
+      // Simulação de sala de aula online
+      const salaUrl = `https://meet.google.com/${Math.random().toString(36).substring(7)}`;
+      
       toast({
         title: "Entrando na aula...",
-        description: `Conectando à aula: ${titulo}`,
+        description: `Abrindo sala virtual: ${titulo}`,
       });
       
-      // Aqui você pode implementar integração com Zoom, Meet, etc.
-      // window.open('https://meet.google.com/xxx-xxxx-xxx', '_blank');
+      // Simular abertura da aula em nova aba
+      setTimeout(() => {
+        window.open(salaUrl, '_blank');
+        toast({
+          title: "Aula aberta!",
+          description: "A sala de aula virtual foi aberta em uma nova aba",
+        });
+      }, 1500);
       
     } catch (error) {
       toast({
@@ -89,11 +107,37 @@ const AlunoAulas = () => {
     }
   };
 
-  const handleLembrete = (titulo: string) => {
-    toast({
-      title: "Lembrete ativado!",
-      description: `Você será notificado antes da aula: ${titulo}`,
-    });
+  const handleLembrete = (aulaId: number, titulo: string) => {
+    const jaTemLembrete = lembretes.includes(aulaId);
+    
+    if (jaTemLembrete) {
+      setLembretes(prev => prev.filter(id => id !== aulaId));
+      toast({
+        title: "Lembrete removido",
+        description: `Lembrete desativado para: ${titulo}`,
+      });
+    } else {
+      setLembretes(prev => [...prev, aulaId]);
+      
+      // Simular agendamento de notificação
+      const agora = new Date();
+      const dataAula = new Date(agora.getTime() + (2 * 60 * 60 * 1000)); // 2 horas no futuro
+      
+      toast({
+        title: "Lembrete ativado!",
+        description: `Você será notificado 30 min antes da aula: ${titulo}`,
+      });
+      
+      // Em uma implementação real, você usaria uma API de notificações
+      setTimeout(() => {
+        if (Notification.permission === 'granted') {
+          new Notification(`Aula em 30 minutos: ${titulo}`, {
+            body: 'Prepare-se para sua aula!',
+            icon: '/favicon.ico'
+          });
+        }
+      }, 5000); // Demo: notifica em 5 segundos
+    }
   };
 
   const handleAssistirGravacao = (titulo: string) => {
@@ -103,18 +147,28 @@ const AlunoAulas = () => {
     });
   };
 
-  const handleFavoritar = (titulo: string) => {
-    toast({
-      title: "Adicionado aos favoritos!",
-      description: `Aula salva: ${titulo}`,
-    });
+  const handleFavoritar = (aulaId: number, titulo: string) => {
+    const jaFavoritada = aulasFavoritadas.includes(aulaId);
+    
+    if (jaFavoritada) {
+      setAulasFavoritadas(prev => prev.filter(id => id !== aulaId));
+      toast({
+        title: "Removido dos favoritos",
+        description: `${titulo} foi removido dos favoritos`,
+      });
+    } else {
+      setAulasFavoritadas(prev => [...prev, aulaId]);
+      toast({
+        title: "Adicionado aos favoritos!",
+        description: `${titulo} foi salvo nos favoritos`,
+      });
+    }
   };
 
   const handleVerDetalhes = (titulo: string) => {
-    toast({
-      title: "Detalhes da aula",
-      description: `Visualizando informações de: ${titulo}`,
-    });
+    const detalhes = `Detalhes da Aula: ${titulo}\n\nDescrição: Aula completa sobre o tema proposto\nDuração: 1h30min\nMaterial necessário: Caderno e calculadora\nPré-requisitos: Conceitos básicos da matéria\nObjetivos: Compreender e aplicar os conceitos apresentados\n\nEsta aula será ministrada de forma interativa com exercícios práticos.`;
+    
+    alert(detalhes);
   };
 
   return (
@@ -199,12 +253,12 @@ const AlunoAulas = () => {
                 )}
                 {aula.status === "agendado" && (
                   <Button 
-                    variant="outline" 
+                    variant={lembretes.includes(aula.id) ? "default" : "outline"}
                     className="flex-1"
-                    onClick={() => handleLembrete(aula.titulo)}
+                    onClick={() => handleLembrete(aula.id, aula.titulo)}
                   >
-                    <Clock className="h-4 w-4 mr-2" />
-                    {t('common.remindMe')}
+                    <Bell className="h-4 w-4 mr-2" />
+                    {lembretes.includes(aula.id) ? "Lembrete Ativo" : t('common.remindMe')}
                   </Button>
                 )}
                 {aula.status === "gravado" && (
@@ -219,9 +273,9 @@ const AlunoAulas = () => {
                 <Button 
                   variant="outline" 
                   size="icon"
-                  onClick={() => handleFavoritar(aula.titulo)}
+                  onClick={() => handleFavoritar(aula.id, aula.titulo)}
                 >
-                  <Star className="h-4 w-4" />
+                  <Star className={`h-4 w-4 ${aulasFavoritadas.includes(aula.id) ? 'fill-yellow-400 text-yellow-400' : ''}`} />
                 </Button>
               </div>
             </CardContent>

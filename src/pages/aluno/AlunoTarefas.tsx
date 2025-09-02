@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,12 +8,17 @@ import {
   AlertTriangle, 
   FileText, 
   Upload,
-  Calendar
+  Calendar,
+  Eye,
+  MessageSquare
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ExercicioModal from "@/components/modals/ExercicioModal";
 
 const AlunoTarefas = () => {
   const { toast } = useToast();
+  const [exercicioAberto, setExercicioAberto] = useState(false);
+  const [tarefaSelecionada, setTarefaSelecionada] = useState("");
   
   const tarefas = [
     {
@@ -100,23 +106,8 @@ const AlunoTarefas = () => {
   };
 
   const handleIniciarTarefa = async (titulo: string) => {
-    try {
-      // Aqui você implementaria a lógica para marcar tarefa como iniciada no backend
-      toast({
-        title: "Tarefa iniciada!",
-        description: `Você começou a trabalhar na tarefa: ${titulo}`,
-      });
-      
-      // Atualizar status da tarefa no estado local
-      // setTarefas(prev => prev.map(t => t.titulo === titulo ? {...t, status: 'em-andamento'} : t))
-      
-    } catch (error) {
-      toast({
-        title: "Erro ao iniciar tarefa",
-        description: "Não foi possível iniciar a tarefa no momento",
-        variant: "destructive"
-      });
-    }
+    setTarefaSelecionada(titulo);
+    setExercicioAberto(true);
   };
 
   const handleEnviarTarefa = async (titulo: string) => {
@@ -149,31 +140,32 @@ const AlunoTarefas = () => {
   };
 
   const handleVerDetalhes = (titulo: string) => {
-    toast({
-      title: "Detalhes da tarefa",
-      description: `Visualizando informações detalhadas de: ${titulo}`,
-    });
+    const tarefa = tarefas.find(t => t.titulo === titulo);
+    if (tarefa) {
+      alert(`Detalhes da Tarefa:\n\nTítulo: ${tarefa.titulo}\nProfessor: ${tarefa.professor}\nMatéria: ${tarefa.materia}\nDescrição: ${tarefa.descricao}\nPrazo: ${tarefa.prazo}\nPontuação: ${tarefa.pontuacao} pontos\nStatus: ${tarefa.status}`);
+    }
   };
 
   const handleVerSubmissao = (titulo: string) => {
+    // Simular abertura do arquivo PDF da submissão
+    const link = document.createElement('a');
+    link.href = 'data:application/pdf;base64,JVBERi0xLjQKJcOkw7zDtsKgwoLCs...'; // PDF base64 fake
+    link.download = `${titulo}_submissao.pdf`;
+    link.click();
+    
     toast({
-      title: "Visualizando submissão",
-      description: `Abrindo arquivo enviado para: ${titulo}`,
+      title: "Download iniciado",
+      description: `Baixando sua submissão de: ${titulo}`,
     });
   };
 
   const handleVerFeedback = (titulo: string) => {
-    toast({
-      title: "Feedback do professor",
-      description: `Visualizando correção e comentários de: ${titulo}`,
-    });
+    const feedback = "Excelente trabalho! Você demonstrou boa compreensão dos conceitos de funções quadráticas. Pontos a melhorar: organize melhor os cálculos intermediários. Nota: 9,5/10";
+    alert(`Feedback do Professor:\n\n${feedback}`);
   };
 
   const handleVerDetalhesProximas = (titulo: string) => {
-    toast({
-      title: "Próximas entregas",
-      description: `Visualizando detalhes da tarefa: ${titulo}`,
-    });
+    alert(`Próxima Entrega:\n\nTarefa: ${titulo}\nDescrição: Tarefa programada para ser disponibilizada em breve.\nPrazo estimado: A ser definido pelo professor.\nPontuação: A ser definida.`);
   };
 
   return (
@@ -297,6 +289,7 @@ const AlunoTarefas = () => {
                           variant="outline"
                           onClick={() => handleVerFeedback(tarefa.titulo)}
                         >
+                          <MessageSquare className="h-4 w-4 mr-2" />
                           Ver Feedback
                         </Button>
                       </div>
@@ -308,6 +301,13 @@ const AlunoTarefas = () => {
           </Card>
         ))}
       </div>
+
+      {/* Modal de Exercício */}
+      <ExercicioModal 
+        isOpen={exercicioAberto}
+        onClose={() => setExercicioAberto(false)}
+        tarefaTitulo={tarefaSelecionada}
+      />
 
       {/* Próximas Entregas */}
       <Card>

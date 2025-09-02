@@ -11,14 +11,19 @@ import {
   MessageSquare, 
   Clock,
   User,
-  CheckCircle2
+  CheckCircle2,
+  HelpCircle
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import NovaConversaModal from "@/components/modals/NovaConversaModal";
+import PerfilProfessorModal from "@/components/modals/PerfilProfessorModal";
 
 const AlunoMensagens = () => {
   const { toast } = useToast();
   const [novaMensagem, setNovaMensagem] = useState("");
   const [conversaSelecionada, setConversaSelecionada] = useState(1);
+  const [novaConversaAberta, setNovaConversaAberta] = useState(false);
+  const [perfilProfessorAberto, setPerfilProfessorAberto] = useState(false);
 
   const conversas = [
     {
@@ -108,17 +113,26 @@ const AlunoMensagens = () => {
   };
 
   const handleNovaConversa = () => {
-    toast({
-      title: "Nova conversa",
-      description: "Iniciando uma nova conversa com um professor.",
-    });
+    setNovaConversaAberta(true);
   };
 
   const handleVerPerfil = () => {
+    setPerfilProfessorAberto(true);
+  };
+
+  const handleAjuda = () => {
     toast({
-      title: "Perfil do professor",
-      description: "Visualizando informações do professor.",
+      title: "Central de Ajuda",
+      description: "Para suporte técnico, entre em contato com: suporte@escola.edu.br",
     });
+  };
+
+  const onConversaCriada = () => {
+    toast({
+      title: "Conversa criada com sucesso!",
+      description: "Você pode começar a conversar agora",
+    });
+    // Aqui você recarregaria a lista de conversas
   };
 
   return (
@@ -128,10 +142,16 @@ const AlunoMensagens = () => {
           <h1 className="text-3xl font-bold text-foreground">Mensagens</h1>
           <p className="text-muted-foreground">Converse com seus professores e tire suas dúvidas</p>
         </div>
-        <Button onClick={handleNovaConversa}>
-          <Plus className="h-4 w-4 mr-2" />
-          Nova Conversa
-        </Button>
+        <div className="flex space-x-2">
+          <Button variant="outline" onClick={handleAjuda}>
+            <HelpCircle className="h-4 w-4 mr-2" />
+            Ajuda
+          </Button>
+          <Button onClick={handleNovaConversa}>
+            <Plus className="h-4 w-4 mr-2" />
+            Nova Conversa
+          </Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[600px]">
@@ -269,6 +289,17 @@ const AlunoMensagens = () => {
           </div>
         </Card>
       </div>
+
+      {/* Modals */}
+      <NovaConversaModal 
+        isOpen={novaConversaAberta}
+        onClose={() => setNovaConversaAberta(false)}
+        onSuccess={onConversaCriada}
+      />
+      <PerfilProfessorModal 
+        isOpen={perfilProfessorAberto}
+        onClose={() => setPerfilProfessorAberto(false)}
+      />
 
       {/* Estatísticas de Mensagens */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

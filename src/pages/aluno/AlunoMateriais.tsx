@@ -94,15 +94,51 @@ const AlunoMateriais = () => {
     "Geografia": "bg-yellow-100 text-yellow-800"
   };
 
-  const handleDownload = (titulo: string) => {
-    // Simulação de download
-    alert(`Baixando: ${titulo}`);
+  const handleDownload = (titulo: string, tipo: string = "PDF") => {
+    // Criar um arquivo PDF fake para download
+    const content = `Material: ${titulo}\n\nEste é um arquivo de exemplo para demonstração.\n\nConteúdo do material educativo aqui...`;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${titulo.replace(/[^a-zA-Z0-9]/g, '_')}.${tipo.toLowerCase()}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    
+    toast({
+      title: "Download iniciado!",
+      description: `Baixando: ${titulo}`,
+    });
   };
 
   const handlePreview = (titulo: string) => {
+    // Abrir visualização em nova aba
+    const previewWindow = window.open('', '_blank');
+    if (previewWindow) {
+      previewWindow.document.write(`
+        <html>
+          <head><title>Visualização: ${titulo}</title></head>
+          <body style="font-family: Arial, sans-serif; padding: 20px; line-height: 1.6;">
+            <h1>${titulo}</h1>
+            <p><strong>Tipo:</strong> PDF</p>
+            <p><strong>Descrição:</strong> Visualização de material educativo</p>
+            <hr>
+            <h2>Conteúdo do Material</h2>
+            <p>Este é um exemplo de visualização de material educativo. O conteúdo real seria carregado aqui...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <br>
+            <button onclick="window.close()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Fechar</button>
+          </body>
+        </html>
+      `);
+    }
+    
     toast({
-      title: "Visualizando material",
-      description: `Abrindo pré-visualização de: ${titulo}`,
+      title: "Abrindo visualização",
+      description: `Visualizando: ${titulo}`,
     });
   };
 
@@ -234,7 +270,7 @@ const AlunoMateriais = () => {
               <div className="flex space-x-2">
                 <Button 
                   className="flex-1"
-                  onClick={() => handleDownload(material.titulo)}
+                  onClick={() => handleDownload(material.titulo, material.tipo)}
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Baixar
@@ -274,7 +310,7 @@ const AlunoMateriais = () => {
                   <Button variant="ghost" size="sm" onClick={() => handlePreview(material.titulo)}>
                     <Eye className="h-4 w-4" />
                   </Button>
-                  <Button variant="ghost" size="sm" onClick={() => handleDownload(material.titulo)}>
+                  <Button variant="ghost" size="sm" onClick={() => handleDownload(material.titulo, material.tipo)}>
                     <Download className="h-4 w-4" />
                   </Button>
                 </div>
