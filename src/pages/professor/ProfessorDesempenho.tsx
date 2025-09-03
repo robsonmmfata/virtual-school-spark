@@ -34,9 +34,10 @@ const ProfessorDesempenho = () => {
   ];
 
   const notasPorTurma = [
-    { turma: "1º Ano A", media: 7.8, aprovados: 26, total: 28 },
-    { turma: "2º Ano B", media: 8.1, aprovados: 23, total: 25 },
-    { turma: "3º Ano A", media: 8.7, aprovados: 21, total: 22 }
+    { turma: "9º Ano - Álgebra 1", media: 7.8, aprovados: 26, total: 28 },
+    { turma: "10º Ano - Geometria", media: 8.1, aprovados: 23, total: 25 },
+    { turma: "11º Ano - História dos EUA", media: 8.7, aprovados: 21, total: 22 },
+    { turma: "12º Ano - Economia", media: 8.4, aprovados: 19, total: 20 }
   ];
 
   const dadosGrafico = [

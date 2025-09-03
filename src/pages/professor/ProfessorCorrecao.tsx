@@ -19,16 +19,16 @@ const ProfessorCorrecao = () => {
     {
       id: 1,
       aluno: "Ana Silva",
-      tarefa: "Lista de Exercícios - Equações",
-      turma: "1º Ano A",
+      tarefa: "Lista de Exercícios - Álgebra",
+      turma: "9º Ano - Álgebra 1",
       dataEntrega: "2024-01-29",
       status: "pendente"
     },
     {
       id: 2,
       aluno: "Carlos Oliveira",
-      tarefa: "Prova - Funções",
-      turma: "2º Ano B",
+      tarefa: "Ensaio - História Mundial",
+      turma: "10º Ano - História Mundial",
       dataEntrega: "2024-01-28",
       status: "pendente"
     }
@@ -38,8 +38,8 @@ const ProfessorCorrecao = () => {
     {
       id: 3,
       aluno: "Maria Santos",
-      tarefa: "Trabalho - Geometria",
-      turma: "3º Ano A",
+      tarefa: "Projeto - História dos EUA",
+      turma: "11º Ano - História dos EUA",
       dataEntrega: "2024-01-27",
       nota: 8.5,
       status: "corrigida"
@@ -47,8 +47,8 @@ const ProfessorCorrecao = () => {
     {
       id: 4,
       aluno: "João Pereira",
-      tarefa: "Lista de Exercícios - Trigonometria",
-      turma: "3º Ano A",
+      tarefa: "Teste - Economia Básica",
+      turma: "12º Ano - Economia",
       dataEntrega: "2024-01-26",
       nota: 9.0,
       status: "corrigida"

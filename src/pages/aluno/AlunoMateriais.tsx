@@ -161,7 +161,7 @@ const AlunoMateriais = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold text-foreground">Materiais de Estudo</h1>
-          <p className="text-muted-foreground">Acesse e baixe todos os materiais das suas disciplinas</p>
+          <p className="text-muted-foreground">Acesse e baixe todos os materiais das suas disciplinas do 9º ao 12º ano</p>
         </div>
       </div>
 
@@ -208,7 +208,7 @@ const AlunoMateriais = () => {
         </Card>
         <Card>
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-education-green">6</div>
+            <div className="text-2xl font-bold text-education-green">8</div>
             <div className="text-sm text-muted-foreground">Disciplinas</div>
           </CardContent>
         </Card>

@@ -12,23 +12,44 @@ const ProfessorTurmas = () => {
   const turmas = [
     {
       id: 1,
-      nome: "1º Ano A - Matemática",
+      nome: "9º Ano - Inglês 9",
       alunos: 28,
       proximaAula: "2024-02-01 14:00",
       status: "Ativa"
     },
     {
       id: 2,
-      nome: "2º Ano B - Matemática",
+      nome: "9º Ano - Álgebra 1",
       alunos: 25,
       proximaAula: "2024-02-01 15:30",
       status: "Ativa"
     },
     {
       id: 3,
-      nome: "3º Ano A - Matemática",
+      nome: "10º Ano - Geometria",
       alunos: 22,
       proximaAula: "2024-02-02 14:00",
+      status: "Ativa"
+    },
+    {
+      id: 4,
+      nome: "10º Ano - História Mundial",
+      alunos: 26,
+      proximaAula: "2024-02-02 15:30",
+      status: "Ativa"
+    },
+    {
+      id: 5,
+      nome: "11º Ano - História dos EUA",
+      alunos: 24,
+      proximaAula: "2024-02-03 14:00",
+      status: "Ativa"
+    },
+    {
+      id: 6,
+      nome: "12º Ano - Economia",
+      alunos: 20,
+      proximaAula: "2024-02-03 15:30",
       status: "Ativa"
     }
   ];

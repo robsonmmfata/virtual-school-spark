@@ -76,9 +76,12 @@ const ProfessorConteudo = () => {
                   <SelectValue placeholder="Selecione a turma" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="1a">1º Ano A - Matemática</SelectItem>
-                  <SelectItem value="2b">2º Ano B - Matemática</SelectItem>
-                  <SelectItem value="3a">3º Ano A - Matemática</SelectItem>
+                  <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
+                  <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
+                  <SelectItem value="10a">10º Ano - Geometria</SelectItem>
+                  <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
+                  <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
+                  <SelectItem value="12a">12º Ano - Economia</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -135,9 +138,12 @@ const ProfessorConteudo = () => {
                   <SelectValue placeholder="Selecione a turma" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="1a">1º Ano A - Matemática</SelectItem>
-                  <SelectItem value="2b">2º Ano B - Matemática</SelectItem>
-                  <SelectItem value="3a">3º Ano A - Matemática</SelectItem>
+                  <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
+                  <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
+                  <SelectItem value="10a">10º Ano - Geometria</SelectItem>
+                  <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
+                  <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
+                  <SelectItem value="12a">12º Ano - Economia</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -196,9 +202,12 @@ const ProfessorConteudo = () => {
                 <SelectValue placeholder="Selecione a turma" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="1a">1º Ano A - Matemática</SelectItem>
-                <SelectItem value="2b">2º Ano B - Matemática</SelectItem>
-                <SelectItem value="3a">3º Ano A - Matemática</SelectItem>
+                <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
+                <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
+                <SelectItem value="10a">10º Ano - Geometria</SelectItem>
+                <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
+                <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
+                <SelectItem value="12a">12º Ano - Economia</SelectItem>
               </SelectContent>
             </Select>
           </div>

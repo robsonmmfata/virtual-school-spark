@@ -22,30 +22,30 @@ const AlunoAulas = () => {
   const aulas = [
     {
       id: 1,
-      titulo: "Matemática - Funções Quadráticas",
-      professor: "Prof. Ana Silva",
+      titulo: "Inglês 9 - Present Continuous",
+      professor: "Prof. Sarah Johnson",
       horario: "14:00 - 15:30",
       data: "Hoje",
       status: "ao-vivo",
       participantes: 24,
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      descricao: "Estudo completo sobre funções quadráticas, gráficos e aplicações práticas."
+      descricao: "Revisão do tempo verbal Present Continuous com exercícios práticos."
     },
     {
       id: 2,
-      titulo: "Física - Cinemática",
-      professor: "Prof. Carlos Santos",
+      titulo: "Álgebra 1 - Equações Quadráticas",
+      professor: "Prof. Maria Silva",
       horario: "16:00 - 17:30",
       data: "Hoje",
       status: "agendado",
       participantes: 28,
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      descricao: "Movimento uniformemente variado e suas aplicações no cotidiano."
+      descricao: "Resolução de equações quadráticas usando fórmula de Bhaskara."
     },
     {
       id: 3,
-      titulo: "Literatura - Machado de Assis",
-      professor: "Prof. Marina Costa",
+      titulo: "História Mundial - Revolução Industrial",
+      professor: "Prof. Carlos Santos",
       horario: "09:00 - 10:30",
       data: "Ontem",
       status: "gravado",
@@ -291,9 +291,9 @@ const AlunoAulas = () => {
         <CardContent>
           <div className="space-y-3">
             {[
-              { dia: "Quarta-feira", aula: "Biologia - Genética", horario: "14:00" },
-              { dia: "Quinta-feira", aula: "História - Revolução Industrial", horario: "15:00" },
-              { dia: "Sexta-feira", aula: "Geografia - Climatologia", horario: "16:00" },
+              { dia: "Quarta-feira", aula: "Curso de Ciências 1 - Biologia Celular", horario: "14:00" },
+              { dia: "Quinta-feira", aula: "História dos EUA - Guerra Civil", horario: "15:00" },
+              { dia: "Sexta-feira", aula: "Economia - Oferta e Demanda", horario: "16:00" },
             ].map((item, index) => (
               <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div>

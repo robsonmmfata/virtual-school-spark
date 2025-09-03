@@ -17,8 +17,8 @@ const ProfessorMensagens = () => {
     {
       id: 1,
       nome: "Ana Silva",
-      turma: "1º Ano A",
-      ultimaMensagem: "Professor, tenho dúvidas sobre a lista de exercícios",
+      turma: "9º Ano - Álgebra 1",
+      ultimaMensagem: "Professor, tenho dúvidas sobre equações quadráticas",
       horario: "14:30",
       naoLidas: 2,
       online: true
@@ -26,8 +26,8 @@ const ProfessorMensagens = () => {
     {
       id: 2,
       nome: "Carlos Oliveira",
-      turma: "2º Ano B",
-      ultimaMensagem: "Obrigado pela explicação!",
+      turma: "10º Ano - História Mundial",
+      ultimaMensagem: "Obrigado pela explicação sobre a Revolução Industrial!",
       horario: "13:15",
       naoLidas: 0,
       online: false
@@ -35,8 +35,8 @@ const ProfessorMensagens = () => {
     {
       id: 3,
       nome: "Maria Santos",
-      turma: "3º Ano A",
-      ultimaMensagem: "Quando será a próxima prova?",
+      turma: "11º Ano - História dos EUA",
+      ultimaMensagem: "Quando será a próxima prova sobre a Guerra Civil?",
       horario: "12:45",
       naoLidas: 1,
       online: true
@@ -72,14 +72,14 @@ const ProfessorMensagens = () => {
       id: 1,
       titulo: "Aviso - Prova de Matemática",
       conteudo: "A prova de matemática do 2º bimestre será no dia 15/02. Estudem os capítulos 3 e 4.",
-      turmas: ["1º Ano A", "2º Ano B"],
+      turmas: ["9º Ano - Álgebra 1", "10º Ano - Geometria"],
       data: "2024-02-01"
     },
     {
       id: 2,
       titulo: "Material Extra - Trigonometria",
       conteudo: "Disponibilizei material extra sobre trigonometria na seção de materiais.",
-      turmas: ["3º Ano A"],
+      turmas: ["11º Ano - História dos EUA"],
       data: "2024-01-30"
     }
   ];
@@ -258,9 +258,10 @@ const ProfessorMensagens = () => {
               <div className="space-y-2">
                 <label className="text-sm font-medium">Turmas</label>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm">1º Ano A</Button>
-                  <Button variant="outline" size="sm">2º Ano B</Button>
-                  <Button variant="outline" size="sm">3º Ano A</Button>
+                  <Button variant="outline" size="sm">9º Ano - Álgebra 1</Button>
+                  <Button variant="outline" size="sm">10º Ano - História Mundial</Button>
+                  <Button variant="outline" size="sm">11º Ano - História dos EUA</Button>
+                  <Button variant="outline" size="sm">12º Ano - Economia</Button>
                 </div>
               </div>
 
