@@ -1,51 +1,20 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Upload, FileText, Video, Link as LinkIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import UploadConteudoModal from "@/components/modals/UploadConteudoModal";
 
 const ProfessorConteudo = () => {
-  const [uploading, setUploading] = useState(false);
+  const [uploadModalOpen, setUploadModalOpen] = useState(false);
+  const [uploadType, setUploadType] = useState<'video' | 'material' | 'link'>('video');
   const { toast } = useToast();
   const { t } = useTranslation();
 
-  const handleUpload = async (tipo: 'video' | 'material' | 'link') => {
-    setUploading(true);
-    
-    try {
-      // Simular upload (implementar integração real com serviço de storage)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const messages = {
-        video: "Vídeo da aula foi enviado com sucesso!",
-        material: "Material de apoio foi compartilhado!",
-        link: "Link externo foi compartilhado com a turma!"
-      };
-      
-      toast({
-        title: "Conteúdo enviado!",
-        description: messages[tipo],
-      });
-      
-      // Aqui você implementaria o envio real:
-      // - Upload para AWS S3, Google Cloud Storage, etc.
-      // - Registro no banco de dados
-      // - Notificação para os alunos
-      
-    } catch (error) {
-      toast({
-        title: "Erro no envio",
-        description: "Não foi possível enviar o conteúdo no momento",
-        variant: "destructive"
-      });
-    } finally {
-      setUploading(false);
-    }
+  const handleOpenUploadModal = (tipo: 'video' | 'material' | 'link') => {
+    setUploadType(tipo);
+    setUploadModalOpen(true);
   };
 
   return (
@@ -55,8 +24,8 @@ const ProfessorConteudo = () => {
         <p className="text-muted-foreground">{t('common.shareContentWithClasses')}</p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
-        <Card>
+      <div className="grid lg:grid-cols-3 gap-6">
+        <Card className="hover:shadow-elegant transition-shadow duration-300 cursor-pointer" onClick={() => handleOpenUploadModal('video')}>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Video className="h-5 w-5 text-education-green" />
@@ -64,61 +33,19 @@ const ProfessorConteudo = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label>Título da Aula</Label>
-              <Input placeholder="Ex: Equações de 2º Grau" />
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Turma</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione a turma" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
-                  <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
-                  <SelectItem value="10a">10º Ano - Geometria</SelectItem>
-                  <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
-                  <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
-                  <SelectItem value="12a">12º Ano - Economia</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-2">
-              <Label>Descrição</Label>
-              <Textarea placeholder="Descreva o conteúdo da aula..." rows={3} />
-            </div>
-
-            <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
-              <Upload className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+            <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+              <Upload className="h-12 w-12 mx-auto mb-3 text-muted-foreground" />
               <p className="text-sm text-muted-foreground mb-2">
-                Arraste o vídeo aqui ou clique para selecionar
+                Clique para enviar vídeos da aula
               </p>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => toast({
-                  title: "Selecionando arquivo",
-                  description: "Abrindo seletor de arquivos de vídeo...",
-                })}
-              >
-                Selecionar Arquivo
-              </Button>
+              <p className="text-xs text-muted-foreground">
+                MP4, AVI, MOV (máx. 100MB)
+              </p>
             </div>
-
-            <Button 
-              onClick={() => handleUpload('video')} 
-              disabled={uploading}
-              className="w-full bg-education-green hover:bg-education-green/90"
-            >
-              {uploading ? "Enviando..." : "Enviar Vídeo"}
-            </Button>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="hover:shadow-elegant transition-shadow duration-300 cursor-pointer" onClick={() => handleOpenUploadModal('material')}>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="h-5 w-5 text-education-green" />
@@ -126,101 +53,88 @@ const ProfessorConteudo = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label>Título do Material</Label>
-              <Input placeholder="Ex: Lista de Exercícios" />
-            </div>
-            
-            <div className="space-y-2">
-              <Label>Turma</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selecione a turma" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
-                  <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
-                  <SelectItem value="10a">10º Ano - Geometria</SelectItem>
-                  <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
-                  <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
-                  <SelectItem value="12a">12º Ano - Economia</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
-              <FileText className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+            <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+              <FileText className="h-12 w-12 mx-auto mb-3 text-muted-foreground" />
               <p className="text-sm text-muted-foreground mb-2">
+                Clique para enviar materiais
+              </p>
+              <p className="text-xs text-muted-foreground">
                 PDF, DOC, PPT (máx. 10MB)
               </p>
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => toast({
-                  title: "Selecionando arquivo",
-                  description: "Abrindo seletor de materiais de apoio...",
-                })}
-              >
-                Selecionar Arquivo
-              </Button>
             </div>
+          </CardContent>
+        </Card>
 
-            <Button 
-              onClick={() => handleUpload('material')} 
-              disabled={uploading}
-              className="w-full bg-education-green hover:bg-education-green/90"
-            >
-              {uploading ? "Enviando..." : "Enviar Material"}
-            </Button>
+        <Card className="hover:shadow-elegant transition-shadow duration-300 cursor-pointer" onClick={() => handleOpenUploadModal('link')}>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <LinkIcon className="h-5 w-5 text-education-green" />
+              Link Externo
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+              <LinkIcon className="h-12 w-12 mx-auto mb-3 text-muted-foreground" />
+              <p className="text-sm text-muted-foreground mb-2">
+                Clique para compartilhar links
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Sites, simulados, recursos externos
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
 
+      {/* Conteúdos Enviados Recentemente */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <LinkIcon className="h-5 w-5 text-education-green" />
-            Link Externo
-          </CardTitle>
+          <CardTitle>Conteúdos Enviados Recentemente</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label>Título</Label>
-              <Input placeholder="Ex: Simulado Online" />
+        <CardContent>
+          <div className="space-y-3">
+            <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+              <div className="flex items-center gap-3">
+                <Video className="h-5 w-5 text-education-green" />
+                <div>
+                  <p className="font-medium">Aula - Equações Quadráticas</p>
+                  <p className="text-sm text-muted-foreground">9º Ano - Álgebra 1 • Hoje às 14:30</p>
+                </div>
+              </div>
+              <Button variant="outline" size="sm">Ver Status</Button>
             </div>
-            <div className="space-y-2">
-              <Label>URL</Label>
-              <Input placeholder="https://..." />
+            
+            <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+              <div className="flex items-center gap-3">
+                <FileText className="h-5 w-5 text-education-green" />
+                <div>
+                  <p className="font-medium">Lista de Exercícios - Cap. 3</p>
+                  <p className="text-sm text-muted-foreground">10º Ano - História Mundial • Ontem às 16:20</p>
+                </div>
+              </div>
+              <Button variant="outline" size="sm">Ver Status</Button>
             </div>
-          </div>
-          
-          <div className="space-y-2">
-            <Label>Turma</Label>
-            <Select>
-              <SelectTrigger className="md:w-1/2">
-                <SelectValue placeholder="Selecione a turma" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="9a">9º Ano - Inglês 9</SelectItem>
-                <SelectItem value="9b">9º Ano - Álgebra 1</SelectItem>
-                <SelectItem value="10a">10º Ano - Geometria</SelectItem>
-                <SelectItem value="10b">10º Ano - História Mundial</SelectItem>
-                <SelectItem value="11a">11º Ano - História dos EUA</SelectItem>
-                <SelectItem value="12a">12º Ano - Economia</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
 
-          <Button 
-            className="bg-education-green hover:bg-education-green/90"
-            onClick={() => handleUpload('link')}
-            disabled={uploading}
-          >
-            Compartilhar Link
-          </Button>
+            <div className="flex items-center justify-between p-3 border border-border rounded-lg">
+              <div className="flex items-center gap-3">
+                <LinkIcon className="h-5 w-5 text-education-green" />
+                <div>
+                  <p className="font-medium">Simulado Online - História</p>
+                  <p className="text-sm text-muted-foreground">11º Ano - História dos EUA • 2 dias atrás</p>
+                </div>
+              </div>
+              <Button variant="outline" size="sm">Ver Status</Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
+
+      {/* Modal de Upload */}
+      <UploadConteudoModal 
+        open={uploadModalOpen} 
+        onOpenChange={setUploadModalOpen}
+        tipo={uploadType}
+      />
     </div>
   );
 };

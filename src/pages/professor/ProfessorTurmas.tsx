@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Users, Eye, MessageSquare, Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
+import NovaTurmaModal from "@/components/modals/NovaTurmaModal";
+import VisualizarAlunosModal from "@/components/modals/VisualizarAlunosModal";
+import ChatTurmaModal from "@/components/modals/ChatTurmaModal";
 
 const ProfessorTurmas = () => {
+  const [novaTurmaOpen, setNovaTurmaOpen] = useState(false);
+  const [visualizarAlunosOpen, setVisualizarAlunosOpen] = useState(false);
+  const [chatTurmaOpen, setChatTurmaOpen] = useState(false);
+  const [selectedTurma, setSelectedTurma] = useState("");
   const { toast } = useToast();
   const { t } = useTranslation();
   
@@ -55,24 +63,17 @@ const ProfessorTurmas = () => {
   ];
 
   const handleNovaTurma = () => {
-    toast({
-      title: "Nova turma",
-      description: "Abrindo formulário para criar uma nova turma.",
-    });
+    setNovaTurmaOpen(true);
   };
 
   const handleVerAlunos = (nomeTurma: string) => {
-    toast({
-      title: "Lista de alunos",
-      description: `Visualizando alunos da turma: ${nomeTurma}`,
-    });
+    setSelectedTurma(nomeTurma);
+    setVisualizarAlunosOpen(true);
   };
 
   const handleChat = (nomeTurma: string) => {
-    toast({
-      title: "Chat da turma",
-      description: `Abrindo chat da turma: ${nomeTurma}`,
-    });
+    setSelectedTurma(nomeTurma);
+    setChatTurmaOpen(true);
   };
 
   return (
@@ -137,6 +138,24 @@ const ProfessorTurmas = () => {
           </Card>
         ))}
       </div>
+
+      {/* Modais */}
+      <NovaTurmaModal 
+        open={novaTurmaOpen} 
+        onOpenChange={setNovaTurmaOpen} 
+      />
+      
+      <VisualizarAlunosModal 
+        open={visualizarAlunosOpen} 
+        onOpenChange={setVisualizarAlunosOpen}
+        turma={selectedTurma}
+      />
+      
+      <ChatTurmaModal 
+        open={chatTurmaOpen} 
+        onOpenChange={setChatTurmaOpen}
+        turma={selectedTurma}
+      />
     </div>
   );
 };
