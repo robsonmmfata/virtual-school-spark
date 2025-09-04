@@ -308,7 +308,6 @@ const ProfessorMensagens = () => {
                     </div>
                   ))}
                 </div>
-              )
               )}
 
               {filteredConversas.length === 0 && !loading && (
