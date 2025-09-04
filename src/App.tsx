@@ -8,9 +8,11 @@ import Home from "./pages/Home";
 import LoginAluno from "./pages/LoginAluno";
 import LoginProfessor from "./pages/LoginProfessor";
 import LoginAdmin from "./pages/LoginAdmin";
+import LoginSecretaria from "./pages/LoginSecretaria";
 import DashboardAluno from "./pages/DashboardAluno";
 import DashboardProfessor from "./pages/DashboardProfessor";
 import DashboardAdmin from "./pages/DashboardAdmin";
+import DashboardSecretaria from "./pages/DashboardSecretaria";
 import AlunoAulas from "./pages/aluno/AlunoAulas";
 import AlunoMateriais from "./pages/aluno/AlunoMateriais";
 import AlunoTarefas from "./pages/aluno/AlunoTarefas";
@@ -27,6 +29,10 @@ import AdminProfessores from "./pages/admin/AdminProfessores";
 import AdminComunicados from "./pages/admin/AdminComunicados";
 import AdminRelatorios from "./pages/admin/AdminRelatorios";
 import AdminConfiguracoes from "./pages/admin/AdminConfiguracoes";
+import SecretariaMatriculas from "./pages/secretaria/SecretariaMatriculas";
+import SecretariaDocumentos from "./pages/secretaria/SecretariaDocumentos";
+import SecretariaHorarios from "./pages/secretaria/SecretariaHorarios";
+import SecretariaRelatorios from "./pages/secretaria/SecretariaRelatorios";
 import NotFound from "./pages/NotFound";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -46,6 +52,7 @@ const App = () => (
           <Route path="/login/aluno" element={<LoginAluno />} />
           <Route path="/login/professor" element={<LoginProfessor />} />
           <Route path="/login/admin" element={<LoginAdmin />} />
+          <Route path="/login/secretaria" element={<LoginSecretaria />} />
           
           {/* Dashboard Routes */}
           <Route path="/dashboard/aluno" element={<DashboardAluno />}>
@@ -73,6 +80,14 @@ const App = () => (
             <Route path="comunicados" element={<AdminComunicados />} />
             <Route path="relatorios" element={<AdminRelatorios />} />
             <Route path="configuracoes" element={<AdminConfiguracoes />} />
+          </Route>
+          
+          <Route path="/dashboard/secretaria" element={<DashboardSecretaria />}>
+            <Route index element={<SecretariaMatriculas />} />
+            <Route path="matriculas" element={<SecretariaMatriculas />} />
+            <Route path="documentos" element={<SecretariaDocumentos />} />
+            <Route path="horarios" element={<SecretariaHorarios />} />
+            <Route path="relatorios" element={<SecretariaRelatorios />} />
           </Route>
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 interface DashboardLayoutProps {
-  userType: "aluno" | "professor" | "admin";
+  userType: "aluno" | "professor" | "admin" | "secretaria";
   userName: string;
 }
 
@@ -57,6 +57,13 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
           { name: t('admin.reports'), path: "/dashboard/admin/relatorios", icon: FileText },
           { name: t('admin.configurations'), path: "/dashboard/admin/configuracoes", icon: Settings },
         ];
+      case "secretaria":
+        return [
+          { name: "Matrículas", path: "/dashboard/secretaria/matriculas", icon: Users },
+          { name: "Documentos", path: "/dashboard/secretaria/documentos", icon: FileText },
+          { name: "Horários e Salas", path: "/dashboard/secretaria/horarios", icon: Calendar },
+          { name: "Relatórios", path: "/dashboard/secretaria/relatorios", icon: BarChart3 },
+        ];
       default:
         return [];
     }
@@ -67,6 +74,7 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
       case "aluno": return "text-primary";
       case "professor": return "text-education-green";
       case "admin": return "text-education-purple";
+      case "secretaria": return "text-education-orange";
       default: return "text-primary";
     }
   };
@@ -76,6 +84,7 @@ const DashboardLayout = ({ userType, userName }: DashboardLayoutProps) => {
       case "aluno": return "bg-gradient-primary";
       case "professor": return "bg-education-green";
       case "admin": return "bg-education-purple";
+      case "secretaria": return "bg-education-orange";
       default: return "bg-gradient-primary";
     }
   };
