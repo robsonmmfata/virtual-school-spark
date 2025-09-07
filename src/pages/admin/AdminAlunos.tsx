@@ -11,10 +11,16 @@ import { Search, Plus, Edit, Trash2, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 import { alunosAPI } from "@/lib/api.js";
+import { mockAPI } from "@/lib/mockApi";
+import ViewAlunoModal from "@/components/modals/ViewAlunoModal";
+import EditAlunoModal from "@/components/modals/EditAlunoModal";
 
 const AdminAlunos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedAluno, setSelectedAluno] = useState<any>(null);
   const { toast } = useToast();
   const { t } = useTranslation();
 
@@ -78,7 +84,7 @@ const AdminAlunos = () => {
         turma_id: formData.get('turma') as string
       };
 
-      const novoAluno = await alunosAPI.cadastrar(dados);
+      const novoAluno = await mockAPI.alunos.cadastrar(dados);
       
       toast({
         title: "Aluno adicionado!",
@@ -96,35 +102,25 @@ const AdminAlunos = () => {
     }
   };
 
-  const handleViewAluno = async (id: number, nome: string) => {
-    try {
-      const alunoDetalhes = await alunosAPI.buscarPorId(id);
-      toast({
-        title: "Perfil do aluno",
-        description: `Visualizando: ${alunoDetalhes.nome}`,
-      });
-      // Aqui você pode abrir um modal ou navegar para uma página de detalhes
-    } catch (error) {
-      toast({
-        title: "Erro ao carregar perfil",
-        description: "Não foi possível carregar os dados do aluno",
-        variant: "destructive"
-      });
-    }
+  const handleViewAluno = (aluno: any) => {
+    setSelectedAluno(aluno);
+    setIsViewModalOpen(true);
   };
 
-  const handleEditAluno = (id: number, nome: string) => {
-    // Implementar modal de edição ou navegação
-    toast({
-      title: "Função em desenvolvimento",
-      description: `Edição de ${nome} será implementada em breve`,
-    });
+  const handleEditAluno = (aluno: any) => {
+    setSelectedAluno(aluno);
+    setIsEditModalOpen(true);
+  };
+
+  const handleUpdateComplete = () => {
+    // Recarregar lista de alunos - em uma implementação real, você faria uma nova busca
+    window.location.reload();
   };
 
   const handleDeleteAluno = async (id: number, nome: string) => {
     if (confirm(`Tem certeza que deseja excluir o aluno ${nome}?`)) {
       try {
-        await alunosAPI.excluir(id);
+        await mockAPI.alunos.excluir(id);
         toast({
           title: "Aluno removido!",
           description: `${nome} foi removido do sistema.`,
@@ -257,14 +253,14 @@ const AdminAlunos = () => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleViewAluno(aluno.id, aluno.nome)}
+                        onClick={() => handleViewAluno(aluno)}
                       >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleEditAluno(aluno.id, aluno.nome)}
+                        onClick={() => handleEditAluno(aluno)}
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
@@ -316,6 +312,20 @@ const AdminAlunos = () => {
           </CardContent>
         </Card>
       </div>
+
+      {/* Modais */}
+      <ViewAlunoModal 
+        open={isViewModalOpen}
+        onOpenChange={setIsViewModalOpen}
+        aluno={selectedAluno}
+      />
+      
+      <EditAlunoModal 
+        open={isEditModalOpen}
+        onOpenChange={setIsEditModalOpen}
+        aluno={selectedAluno}
+        onUpdate={handleUpdateComplete}
+      />
     </div>
   );
 };

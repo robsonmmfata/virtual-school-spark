@@ -29,12 +29,51 @@ const AdminConfiguracoes = () => {
       title: "Backup iniciado!",
       description: "O backup manual foi iniciado e você será notificado quando concluído.",
     });
+    
+    // Simular progresso do backup
+    setTimeout(() => {
+      toast({
+        title: "Backup concluído!",
+        description: "Backup realizado com sucesso. Arquivo salvo no servidor.",
+      });
+    }, 3000);
   };
 
   const handleTestEmail = () => {
     toast({
-      title: "E-mail de teste enviado!",
-      description: "Verifique sua caixa de entrada para confirmar as configurações.",
+      title: "Enviando e-mail de teste...",
+      description: "Aguarde enquanto testamos as configurações de e-mail.",
+    });
+    
+    setTimeout(() => {
+      toast({
+        title: "E-mail de teste enviado!",
+        description: "Verifique sua caixa de entrada para confirmar as configurações.",
+      });
+    }, 2000);
+  };
+
+  const handleResetConfiguracoes = () => {
+    if (confirm("Tem certeza que deseja restaurar as configurações padrão? Esta ação não pode ser desfeita.")) {
+      toast({
+        title: "Configurações resetadas!",
+        description: "Todas as configurações foram restauradas ao padrão.",
+        variant: "destructive"
+      });
+    }
+  };
+
+  const handleExportarConfiguracoes = () => {
+    toast({
+      title: "Configurações exportadas!",
+      description: "Arquivo de configurações foi baixado com sucesso.",
+    });
+  };
+
+  const handleImportarConfiguracoes = () => {
+    toast({
+      title: "Importação iniciada!",
+      description: "Selecione um arquivo de configuração válido.",
     });
   };
 

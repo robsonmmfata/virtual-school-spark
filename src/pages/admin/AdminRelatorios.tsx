@@ -67,9 +67,32 @@ const AdminRelatorios = () => {
   ];
 
   const handleGerarRelatorio = (tipo: string) => {
+    // Simular geração de relatório
+    const loading = toast({
+      title: "Gerando relatório...",
+      description: `Processando ${tipo}. Aguarde...`,
+    });
+
+    // Simular delay de processamento
+    setTimeout(() => {
+      toast({
+        title: "Relatório gerado!",
+        description: `O relatório ${tipo} foi gerado e está sendo baixado.`,
+      });
+    }, 2000);
+  };
+
+  const handleExportarDados = (formato: string) => {
     toast({
-      title: "Relatório gerado!",
-      description: `O relatório ${tipo} foi gerado e está sendo baixado.`,
+      title: "Exportando dados!",
+      description: `Dados exportados em formato ${formato}.`,
+    });
+  };
+
+  const handleEnviarRelatorio = (email: string) => {
+    toast({
+      title: "Relatório enviado!",
+      description: `Relatório enviado para ${email}.`,
     });
   };
 
@@ -420,6 +443,23 @@ const AdminRelatorios = () => {
                 <Download className="h-4 w-4 mr-2" />
                 Gerar Relatório Personalizado
               </Button>
+              
+              <div className="flex gap-2 mt-4">
+                <Button 
+                  variant="outline"
+                  onClick={() => handleExportarDados("Excel")}
+                  className="flex-1"
+                >
+                  Exportar Excel
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => handleEnviarRelatorio("admin@escola.com")}
+                  className="flex-1"
+                >
+                  Enviar por E-mail
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

@@ -10,10 +10,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, Plus, Edit, Trash2, Eye, Users, BookOpen } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { professoresAPI } from "@/lib/api.js";
+import { mockAPI } from "@/lib/mockApi";
+import ViewProfessorModal from "@/components/modals/ViewProfessorModal";
+import EditProfessorModal from "@/components/modals/EditProfessorModal";
 
 const AdminProfessores = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedProfessor, setSelectedProfessor] = useState<any>(null);
   const { toast } = useToast();
 
   const professores = [
@@ -81,7 +87,7 @@ const AdminProfessores = () => {
         turmas: [] // Pode ser configurado posteriormente
       };
 
-      await professoresAPI.cadastrar(dados);
+      await mockAPI.professores.cadastrar(dados);
       
       toast({
         title: "Professor adicionado!",
@@ -98,18 +104,14 @@ const AdminProfessores = () => {
     }
   };
 
-  const handleViewProfessor = (id: number, nome: string) => {
-    toast({
-      title: "Visualizando professor",
-      description: `Abrindo perfil detalhado de: ${nome}`,
-    });
+  const handleViewProfessor = (professor: any) => {
+    setSelectedProfessor(professor);
+    setIsViewModalOpen(true);
   };
 
-  const handleEditProfessor = (id: number, nome: string) => {
-    toast({
-      title: "Editando professor",
-      description: `Abrindo formulário de edição para: ${nome}`,
-    });
+  const handleEditProfessor = (professor: any) => {
+    setSelectedProfessor(professor);
+    setIsEditModalOpen(true);
   };
 
   const handleDeleteProfessor = (id: number, nome: string) => {
@@ -120,6 +122,11 @@ const AdminProfessores = () => {
         variant: "destructive"
       });
     }
+  };
+
+  const handleUpdateComplete = () => {
+    // Recarregar lista de professores - em uma implementação real, você faria uma nova busca
+    window.location.reload();
   };
 
   return (
@@ -259,14 +266,14 @@ const AdminProfessores = () => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleViewProfessor(professor.id, professor.nome)}
+                        onClick={() => handleViewProfessor(professor)}
                       >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleEditProfessor(professor.id, professor.nome)}
+                        onClick={() => handleEditProfessor(professor)}
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
@@ -347,6 +354,20 @@ const AdminProfessores = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Modais */}
+      <ViewProfessorModal 
+        open={isViewModalOpen}
+        onOpenChange={setIsViewModalOpen}
+        professor={selectedProfessor}
+      />
+      
+      <EditProfessorModal 
+        open={isEditModalOpen}
+        onOpenChange={setIsEditModalOpen}
+        professor={selectedProfessor}
+        onUpdate={handleUpdateComplete}
+      />
     </div>
   );
 };

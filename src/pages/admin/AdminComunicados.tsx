@@ -10,9 +10,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Bell, Send, Mail, Users, Eye, Edit, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ViewComunicadoModal from "@/components/modals/ViewComunicadoModal";
 
 const AdminComunicados = () => {
   const [isComposeOpen, setIsComposeOpen] = useState(false);
+  const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [selectedComunicado, setSelectedComunicado] = useState<any>(null);
   const { toast } = useToast();
 
   const comunicados = [
@@ -77,17 +80,17 @@ const AdminComunicados = () => {
     setIsComposeOpen(false);
   };
 
-  const handleView = (titulo: string) => {
-    toast({
-      title: "Visualizando comunicado",
-      description: `Abrindo detalhes de: ${titulo}`,
-    });
+  const handleView = (comunicado: any) => {
+    setSelectedComunicado(comunicado);
+    setIsViewModalOpen(true);
   };
 
-  const handleEdit = (titulo: string) => {
+  const handleEdit = (comunicado: any) => {
+    setSelectedComunicado(comunicado);
+    setIsComposeOpen(true);
     toast({
       title: "Editando comunicado",
-      description: `Abrindo editor para: ${titulo}`,
+      description: `Abrindo editor para: ${comunicado.titulo}`,
     });
   };
 
@@ -296,14 +299,14 @@ const AdminComunicados = () => {
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleView(comunicado.titulo)}
+                        onClick={() => handleView(comunicado)}
                       >
                         <Eye className="h-4 w-4" />
                       </Button>
                       <Button 
                         variant="outline" 
                         size="sm"
-                        onClick={() => handleEdit(comunicado.titulo)}
+                        onClick={() => handleEdit(comunicado)}
                       >
                         <Edit className="h-4 w-4" />
                       </Button>
@@ -382,6 +385,14 @@ const AdminComunicados = () => {
           </div>
         </TabsContent>
       </Tabs>
+
+      {/* Modal de Visualização */}
+      <ViewComunicadoModal 
+        open={isViewModalOpen}
+        onOpenChange={setIsViewModalOpen}
+        comunicado={selectedComunicado}
+        onEdit={() => handleEdit(selectedComunicado)}
+      />
     </div>
   );
 };
