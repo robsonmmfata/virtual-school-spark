@@ -10,9 +10,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Clock, MapPin, Users, Plus, Edit, Trash2, Eye } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import EditAulaModal from "@/components/modals/EditAulaModal";
+import ViewSalaModal from "@/components/modals/ViewSalaModal";
 
 const SecretariaHorarios = () => {
   const [selectedDay, setSelectedDay] = useState("segunda");
+  const [selectedAula, setSelectedAula] = useState<any>(null);
+  const [selectedSala, setSelectedSala] = useState<any>(null);
+  const [showEditAulaModal, setShowEditAulaModal] = useState(false);
+  const [showViewSalaModal, setShowViewSalaModal] = useState(false);
   const { toast } = useToast();
 
   const horarios = {
@@ -64,6 +70,31 @@ const SecretariaHorarios = () => {
       sugestao: "Mover para sala maior"
     }
   ];
+
+  const handleEditAula = (aula: any) => {
+    setSelectedAula(aula);
+    setShowEditAulaModal(true);
+  };
+
+  const handleDeleteAula = (aula: any) => {
+    toast({
+      title: "Aula Removida",
+      description: `A aula de ${aula.disciplina} foi removida do horário.`,
+      variant: "destructive"
+    });
+  };
+
+  const handleViewSala = (sala: any) => {
+    setSelectedSala(sala);
+    setShowViewSalaModal(true);
+  };
+
+  const handleEditSala = (sala: any) => {
+    toast({
+      title: "Editar Sala",
+      description: `Função de edição da ${sala.nome} será implementada.`,
+    });
+  };
 
   const handleSalvarHorario = () => {
     toast({
@@ -271,10 +302,18 @@ const SecretariaHorarios = () => {
                       </TableCell>
                       <TableCell>
                         <div className="flex gap-2">
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleEditAula(aula)}
+                          >
                             <Edit className="h-4 w-4" />
                           </Button>
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleDeleteAula(aula)}
+                          >
                             <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
@@ -377,10 +416,18 @@ const SecretariaHorarios = () => {
                       <TableCell>{getSalaStatusBadge(sala.status)}</TableCell>
                       <TableCell>
                         <div className="flex gap-2">
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleViewSala(sala)}
+                          >
                             <Eye className="h-4 w-4" />
                           </Button>
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleEditSala(sala)}
+                          >
                             <Edit className="h-4 w-4" />
                           </Button>
                         </div>
@@ -429,6 +476,18 @@ const SecretariaHorarios = () => {
           </Card>
         </TabsContent>
       </Tabs>
+
+      <EditAulaModal
+        open={showEditAulaModal}
+        onOpenChange={setShowEditAulaModal}
+        aula={selectedAula}
+      />
+      
+      <ViewSalaModal
+        open={showViewSalaModal}
+        onOpenChange={setShowViewSalaModal}
+        sala={selectedSala}
+      />
     </div>
   );
 };

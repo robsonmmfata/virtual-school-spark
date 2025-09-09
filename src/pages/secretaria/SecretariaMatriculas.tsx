@@ -7,12 +7,17 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, UserPlus, Edit, Eye, FileText, CheckCircle, XCircle } from "lucide-react";
+import { Search, UserPlus, Edit, Eye, FileText, CheckCircle, XCircle, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ViewMatriculaModal from "@/components/modals/ViewMatriculaModal";
+import EditMatriculaModal from "@/components/modals/EditMatriculaModal";
 
 const SecretariaMatriculas = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("all");
+  const [selectedMatricula, setSelectedMatricula] = useState<any>(null);
+  const [showViewModal, setShowViewModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const { toast } = useToast();
 
   const matriculas = [
@@ -53,6 +58,24 @@ const SecretariaMatriculas = () => {
       documentosPendentes: []
     }
   ];
+
+  const handleViewMatricula = (matricula: any) => {
+    setSelectedMatricula(matricula);
+    setShowViewModal(true);
+  };
+
+  const handleEditMatricula = (matricula: any) => {
+    setSelectedMatricula(matricula);
+    setShowEditModal(true);
+  };
+
+  const handleDeleteMatricula = (id: number, nome: string) => {
+    toast({
+      title: "Matrícula Removida",
+      description: `A matrícula de ${nome} foi removida do sistema.`,
+      variant: "destructive"
+    });
+  };
 
   const handleAprovarMatricula = (id: number, nome: string) => {
     toast({
@@ -293,11 +316,26 @@ const SecretariaMatriculas = () => {
                   </TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleViewMatricula(matricula)}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleEditMatricula(matricula)}
+                      >
                         <Edit className="h-4 w-4" />
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleDeleteMatricula(matricula.id, matricula.nome)}
+                      >
+                        <Trash2 className="h-4 w-4" />
                       </Button>
                       {matricula.status === "pendente" && (
                         <>
@@ -325,6 +363,18 @@ const SecretariaMatriculas = () => {
           </Table>
         </CardContent>
       </Card>
+
+      <ViewMatriculaModal
+        open={showViewModal}
+        onOpenChange={setShowViewModal}
+        matricula={selectedMatricula}
+      />
+      
+      <EditMatriculaModal
+        open={showEditModal}
+        onOpenChange={setShowEditModal}
+        matricula={selectedMatricula}
+      />
     </div>
   );
 };

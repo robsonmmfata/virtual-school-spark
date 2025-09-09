@@ -8,15 +8,18 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
-import { FileText, Download, Calendar as CalendarIcon, BarChart3, Users, BookOpen, Printer, Eye } from "lucide-react";
+import { FileText, Download, Calendar as CalendarIcon, BarChart3, Users, BookOpen, Printer, Eye, Trash2 } from "lucide-react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { useToast } from "@/hooks/use-toast";
+import ViewRelatorioModal from "@/components/modals/ViewRelatorioModal";
 
 const SecretariaRelatorios = () => {
   const [dataInicio, setDataInicio] = useState<Date>();
   const [dataFim, setDataFim] = useState<Date>();
   const [tipoRelatorio, setTipoRelatorio] = useState("matriculas");
+  const [selectedRelatorio, setSelectedRelatorio] = useState<any>(null);
+  const [showViewModal, setShowViewModal] = useState(false);
   const { toast } = useToast();
 
   // Dados para gráficos
@@ -78,6 +81,19 @@ const SecretariaRelatorios = () => {
     }
   ];
 
+  const handleViewRelatorio = (relatorio: any) => {
+    setSelectedRelatorio(relatorio);
+    setShowViewModal(true);
+  };
+
+  const handleDeleteRelatorio = (nome: string) => {
+    toast({
+      title: "Relatório Removido",
+      description: `O ${nome} foi removido do sistema.`,
+      variant: "destructive"
+    });
+  };
+
   const handleGerarRelatorio = () => {
     toast({
       title: "Relatório Agendado",
@@ -89,6 +105,13 @@ const SecretariaRelatorios = () => {
     toast({
       title: "Download Iniciado",
       description: `O download do ${nome} foi iniciado.`,
+    });
+  };
+
+  const handlePrintRelatorio = (nome: string) => {
+    toast({
+      title: "Impressão Iniciada",
+      description: `A impressão do ${nome} foi enviada para a impressora.`,
     });
   };
 
@@ -310,7 +333,11 @@ const SecretariaRelatorios = () => {
                       {getStatusBadge(relatorio.status)}
                       {relatorio.status === "concluido" && (
                         <div className="flex gap-2">
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleViewRelatorio(relatorio)}
+                          >
                             <Eye className="h-4 w-4" />
                           </Button>
                           <Button 
@@ -320,8 +347,19 @@ const SecretariaRelatorios = () => {
                           >
                             <Download className="h-4 w-4" />
                           </Button>
-                          <Button size="sm" variant="outline">
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handlePrintRelatorio(relatorio.nome)}
+                          >
                             <Printer className="h-4 w-4" />
+                          </Button>
+                          <Button 
+                            size="sm" 
+                            variant="outline"
+                            onClick={() => handleDeleteRelatorio(relatorio.nome)}
+                          >
+                            <Trash2 className="h-4 w-4" />
                           </Button>
                         </div>
                       )}
@@ -449,6 +487,12 @@ const SecretariaRelatorios = () => {
           </div>
         </TabsContent>
       </Tabs>
+
+      <ViewRelatorioModal
+        open={showViewModal}
+        onOpenChange={setShowViewModal}
+        relatorio={selectedRelatorio}
+      />
     </div>
   );
 };

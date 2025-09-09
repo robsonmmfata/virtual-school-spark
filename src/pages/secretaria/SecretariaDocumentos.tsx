@@ -8,12 +8,15 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, FileText, Download, Upload, Award, GraduationCap, Eye, Printer } from "lucide-react";
+import { Search, FileText, Download, Upload, Award, GraduationCap, Eye, Printer, Edit, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ViewDocumentoModal from "@/components/modals/ViewDocumentoModal";
 
 const SecretariaDocumentos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("all");
+  const [selectedDocumento, setSelectedDocumento] = useState<any>(null);
+  const [showViewModal, setShowViewModal] = useState(false);
   const { toast } = useToast();
 
   const documentos = [
@@ -77,6 +80,33 @@ const SecretariaDocumentos = () => {
       urgencia: "alta"
     }
   ];
+
+  const handleViewDocumento = (documento: any) => {
+    setSelectedDocumento(documento);
+    setShowViewModal(true);
+  };
+
+  const handleDownloadDocumento = (nome: string) => {
+    toast({
+      title: "Download Iniciado",
+      description: `O download do ${nome} foi iniciado.`,
+    });
+  };
+
+  const handlePrintDocumento = (nome: string) => {
+    toast({
+      title: "Impressão Iniciada",
+      description: `A impressão do ${nome} foi enviada para a impressora.`,
+    });
+  };
+
+  const handleDeleteDocumento = (nome: string) => {
+    toast({
+      title: "Documento Removido",
+      description: `O ${nome} foi removido do sistema.`,
+      variant: "destructive"
+    });
+  };
 
   const handleGerarDocumento = (tipo: string, aluno: string) => {
     toast({
@@ -346,14 +376,33 @@ const SecretariaDocumentos = () => {
                   <TableCell>{getStatusBadge(documento.status)}</TableCell>
                   <TableCell>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleViewDocumento(documento)}
+                      >
                         <Eye className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleDownloadDocumento(documento.nome)}
+                      >
                         <Download className="h-4 w-4" />
                       </Button>
-                      <Button size="sm" variant="outline">
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handlePrintDocumento(documento.nome)}
+                      >
                         <Printer className="h-4 w-4" />
+                      </Button>
+                      <Button 
+                        size="sm" 
+                        variant="outline"
+                        onClick={() => handleDeleteDocumento(documento.nome)}
+                      >
+                        <Trash2 className="h-4 w-4" />
                       </Button>
                       {documento.status === "pendente" && (
                         <Button 
@@ -372,6 +421,12 @@ const SecretariaDocumentos = () => {
           </Table>
         </CardContent>
       </Card>
+
+      <ViewDocumentoModal
+        open={showViewModal}
+        onOpenChange={setShowViewModal}
+        documento={selectedDocumento}
+      />
     </div>
   );
 };
